@@ -25,17 +25,16 @@ namespace Main_Project
 
         }
 
-        //open connection to database
+        /// <summary>
+        /// Method that tries to open a connection to the database
+        /// </summary>
+        /// <returns></returns>
         static public bool OpenConnection()
         {
 
             try
             {
                 MySqlConnection myConn = new MySqlConnection(@"Data Source=localhost;port=3306;Initial Catalog=assignmentdata;User Id=root;password=''");
-
-                /*MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
-                myDataAdapter.SelectCommand = new MySqlCommand(" select * assignmentdata.userdata ;", myConn);
-                MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);*/
                 myConn.Open();
                 MessageBox.Show("Connected");
                 myConn.Close();

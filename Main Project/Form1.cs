@@ -26,12 +26,22 @@ namespace Main_Project
             this.Close();
         }
 
+        /// <summary>
+        /// Method that checks for a database conection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void databaseConnect_Click(object sender, EventArgs e)
         {
             DBConnect.OpenConnection();
 
         }
 
+        /// <summary>
+        /// Login button method that checks for the right credentials
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void loginButton_Click(object sender, EventArgs e)
         {
             i = 0;
