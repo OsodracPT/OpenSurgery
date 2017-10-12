@@ -1,0 +1,12 @@
+C:\Users\Pedro Cardoso\OneDrive - Anglia Ruskin University\Computer Science\Year 2\Software Engineering\Main Project\Main Project\bin\Debug\Main Project.exe.config
+C:\Users\Pedro Cardoso\OneDrive - Anglia Ruskin University\Computer Science\Year 2\Software Engineering\Main Project\Main Project\bin\Debug\Main Project.exe
+C:\Users\Pedro Cardoso\OneDrive - Anglia Ruskin University\Computer Science\Year 2\Software Engineering\Main Project\Main Project\bin\Debug\Main Project.pdb
+C:\Users\Pedro Cardoso\OneDrive - Anglia Ruskin University\Computer Science\Year 2\Software Engineering\Main Project\Main Project\bin\Debug\MySql.Data.dll
+C:\Users\Pedro Cardoso\OneDrive - Anglia Ruskin University\Computer Science\Year 2\Software Engineering\Main Project\Main Project\obj\Debug\Main Project.csprojResolveAssemblyReference.cache
+C:\Users\Pedro Cardoso\OneDrive - Anglia Ruskin University\Computer Science\Year 2\Software Engineering\Main Project\Main Project\obj\Debug\Main_Project.Form1.resources
+C:\Users\Pedro Cardoso\OneDrive - Anglia Ruskin University\Computer Science\Year 2\Software Engineering\Main Project\Main Project\obj\Debug\Main_Project.Properties.Resources.resources
+C:\Users\Pedro Cardoso\OneDrive - Anglia Ruskin University\Computer Science\Year 2\Software Engineering\Main Project\Main Project\obj\Debug\Main Project.csproj.GenerateResource.Cache
+C:\Users\Pedro Cardoso\OneDrive - Anglia Ruskin University\Computer Science\Year 2\Software Engineering\Main Project\Main Project\obj\Debug\Main Project.exe
+C:\Users\Pedro Cardoso\OneDrive - Anglia Ruskin University\Computer Science\Year 2\Software Engineering\Main Project\Main Project\obj\Debug\Main Project.pdb
+C:\Users\Pedro Cardoso\OneDrive - Anglia Ruskin University\Computer Science\Year 2\Software Engineering\Main Project\Main Project\bin\Debug\MySql.Web.dll
+C:\Users\Pedro Cardoso\OneDrive - Anglia Ruskin University\Computer Science\Year 2\Software Engineering\Main Project\Main Project\obj\Debug\Main_Project.MainMenu.resources
