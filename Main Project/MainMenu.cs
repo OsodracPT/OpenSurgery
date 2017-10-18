@@ -16,5 +16,17 @@ namespace Main_Project
         {
             InitializeComponent();
         }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.selectAll);
+
+            //get the table to be displayed from the data set
+            DataTable dtUser = dsUser.Tables[0];
+
+            //set the data source for the data grid view
+            dgvUserdata.DataSource = dtUser;
+        }
+
     }
 }
