@@ -16,6 +16,10 @@ namespace Main_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            //set the connection string
+            DBConnection.ConnectionStr = Properties.Settings.Default.surgeryDBConnection; ;
+
             Application.Run(new Form1());
         }
     }

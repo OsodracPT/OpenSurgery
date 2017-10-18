@@ -26,10 +26,11 @@ namespace Main_Project.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=admin;database=oversurgerydatabase")]
-        public string oversurgerydatabaseConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\oversurgery.m" +
+            "df;Integrated Security=True;Connect Timeout=30")]
+        public string surgeryDBConnection {
             get {
-                return ((string)(this["oversurgerydatabaseConnectionString"]));
+                return ((string)(this["surgeryDBConnection"]));
             }
         }
     }
