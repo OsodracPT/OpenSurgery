@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 
 namespace Main_Project
 {
     public partial class Form1 : Form
     {
-
+        Login log = new Login();
         public Form1()
         {
             InitializeComponent();
@@ -27,10 +27,30 @@ namespace Main_Project
         /// <param name="e"></param>
         private void loginButton_Click(object sender, EventArgs e)
         {
-            Hide();
-            MainMenu mainMenu = new MainMenu();
-            mainMenu.Show();
+            int i = 0;
+
+            try
+            {
+
+                i = Login.TryLogin(txtUsername.Text, txtPassword.Text);
+
+                if (i == 0)
+                {
+                    MessageBox.Show("You have entered an invalid username or password.");
+                }
+                else
+                {
+                    this.Hide();
+                    MainMenu mainMenu = new MainMenu();
+                    mainMenu.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {

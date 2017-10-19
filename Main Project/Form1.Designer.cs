@@ -91,7 +91,6 @@
             this.txtUsername.Location = new System.Drawing.Point(331, 87);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.PasswordChar = '*';
             this.txtUsername.Size = new System.Drawing.Size(184, 30);
             this.txtUsername.TabIndex = 0;
             // 
@@ -100,6 +99,7 @@
             this.txtPassword.Location = new System.Drawing.Point(331, 129);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(184, 30);
             this.txtPassword.TabIndex = 1;
             // 
