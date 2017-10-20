@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.loginButton = new System.Windows.Forms.Button();
-            this.usernameTxt = new System.Windows.Forms.TextBox();
-            this.passwordTxt = new System.Windows.Forms.TextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.exitButton = new System.Windows.Forms.Button();
-            this.databaseConnect = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,63 +47,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "User Name:";
             // 
-            // loginButton
+            // btnLogin
             // 
-            this.loginButton.Location = new System.Drawing.Point(129, 220);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(114, 72);
-            this.loginButton.TabIndex = 2;
-            this.loginButton.Text = "Login";
-            this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
-            // 
-            // usernameTxt
-            // 
-            this.usernameTxt.Location = new System.Drawing.Point(337, 87);
-            this.usernameTxt.Multiline = true;
-            this.usernameTxt.Name = "usernameTxt";
-            this.usernameTxt.Size = new System.Drawing.Size(205, 27);
-            this.usernameTxt.TabIndex = 0;
-            this.usernameTxt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Event_KeyUp);
-            // 
-            // passwordTxt
-            // 
-            this.passwordTxt.Location = new System.Drawing.Point(337, 126);
-            this.passwordTxt.Multiline = true;
-            this.passwordTxt.Name = "passwordTxt";
-            this.passwordTxt.PasswordChar = '*';
-            this.passwordTxt.Size = new System.Drawing.Size(205, 29);
-            this.passwordTxt.TabIndex = 1;
-            this.passwordTxt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Event_KeyUp);
+            this.btnLogin.Location = new System.Drawing.Point(129, 220);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(114, 72);
+            this.btnLogin.TabIndex = 2;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(252, 129);
+            this.label2.Location = new System.Drawing.Point(252, 132);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Password:";
-            // 
-            // exitButton
-            // 
-            this.exitButton.Location = new System.Drawing.Point(337, 220);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(114, 72);
-            this.exitButton.TabIndex = 3;
-            this.exitButton.Text = "Exit";
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // databaseConnect
-            // 
-            this.databaseConnect.Location = new System.Drawing.Point(500, 326);
-            this.databaseConnect.Name = "databaseConnect";
-            this.databaseConnect.Size = new System.Drawing.Size(82, 40);
-            this.databaseConnect.TabIndex = 4;
-            this.databaseConnect.Text = "Connect";
-            this.databaseConnect.UseVisualStyleBackColor = true;
-            this.databaseConnect.Click += new System.EventHandler(this.databaseConnect_Click);
             // 
             // pictureBox1
             // 
@@ -116,17 +76,43 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(355, 220);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(114, 72);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(331, 87);
+            this.txtUsername.Multiline = true;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(184, 30);
+            this.txtUsername.TabIndex = 0;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(331, 129);
+            this.txtPassword.Multiline = true;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(184, 30);
+            this.txtPassword.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 378);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.databaseConnect);
-            this.Controls.Add(this.passwordTxt);
-            this.Controls.Add(this.usernameTxt);
-            this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.loginButton);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -142,13 +128,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button loginButton;
-        private System.Windows.Forms.TextBox usernameTxt;
-        private System.Windows.Forms.TextBox passwordTxt;
+        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.Button databaseConnect;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtPassword;
     }
 }
 

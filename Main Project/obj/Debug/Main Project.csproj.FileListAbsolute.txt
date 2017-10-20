@@ -20,3 +20,5 @@ C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_
 C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.MainMenu.resources
 C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.Properties.Resources.resources
 C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main Project.csproj.GenerateResource.Cache
+C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\bin\Debug\oversurgery.mdf
+C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\bin\Debug\oversurgery_log.ldf
