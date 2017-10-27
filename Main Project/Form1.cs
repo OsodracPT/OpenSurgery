@@ -14,11 +14,11 @@ namespace Main_Project
 {
     public partial class Form1 : Form
     {
-        Login log = new Login();
         public Form1()
         {
             InitializeComponent();
         }
+
 
         /// <summary>
         /// Login button method that checks for the right credentials
@@ -32,7 +32,7 @@ namespace Main_Project
             try
             {
 
-                i = Login.TryLogin(txtUsername.Text, txtPassword.Text);
+                i = DBConnection.getDBConnectionInstance().TryLogin(txtUsername.Text, txtPassword.Text);
 
                 if (i == 0)
                 {
