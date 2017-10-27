@@ -303,3 +303,4 @@ __pycache__/
 
 # OpenCover UI analysis results
 OpenCover/
+.vs/Main Project/v14/.suo

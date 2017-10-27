@@ -77,6 +77,20 @@ namespace Main_Project
             return dataSet;
         }
 
+        public int TryLogin(string username, string password)
+        {
+            int i = 0;
+
+
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.selectLogin(username, password));
+
+            //get the table to be displayed from the data set
+            DataTable dtUser = dsUser.Tables[0];
+
+            i = Convert.ToInt32(dtUser.Rows.Count.ToString());
+            return i;
+        }
+
 
     }
 }

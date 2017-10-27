@@ -8,7 +8,10 @@ namespace Main_Project
 {
     class Constants
     {
-        public static String selectAll = "SELECT * FROM userdata";
+        public static String selectUserData = "SELECT * FROM userdata";
+        public static String selectPatient = "SELECT * FROM PatientData";
+        public static String selectStaff = "SELECT * FROM medicalStaff";
+
         public static String selectLogin(string username, string password)
         {
             
