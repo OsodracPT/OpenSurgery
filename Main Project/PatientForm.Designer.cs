@@ -37,6 +37,7 @@
             this.fileLbl = new System.Windows.Forms.Label();
             this.PrescriptionBtn = new System.Windows.Forms.Button();
             this.TestBtn = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserdata)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,11 +131,23 @@
             this.TestBtn.Text = "Tests";
             this.TestBtn.UseVisualStyleBackColor = true;
             // 
+            // btnRegister
+            // 
+            this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.Location = new System.Drawing.Point(669, 89);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(164, 83);
+            this.btnRegister.TabIndex = 15;
+            this.btnRegister.Text = "Register new Patient";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
             // PatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(936, 510);
+            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.TestBtn);
             this.Controls.Add(this.PrescriptionBtn);
             this.Controls.Add(this.findBtn);
@@ -164,5 +177,6 @@
         private System.Windows.Forms.Label fileLbl;
         private System.Windows.Forms.Button PrescriptionBtn;
         private System.Windows.Forms.Button TestBtn;
+        private System.Windows.Forms.Button btnRegister;
     }
 }

@@ -34,6 +34,9 @@
             this.dgvUserdata = new System.Windows.Forms.DataGridView();
             this.findBtn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnBook = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserdata)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,11 +100,44 @@
             this.textBox1.Size = new System.Drawing.Size(299, 36);
             this.textBox1.TabIndex = 14;
             // 
+            // btnBook
+            // 
+            this.btnBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBook.Location = new System.Drawing.Point(714, 209);
+            this.btnBook.Name = "btnBook";
+            this.btnBook.Size = new System.Drawing.Size(148, 67);
+            this.btnBook.TabIndex = 16;
+            this.btnBook.Text = "Book";
+            this.btnBook.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(714, 301);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(148, 67);
+            this.btnEdit.TabIndex = 17;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(714, 395);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(148, 67);
+            this.btnCancel.TabIndex = 18;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
             // AppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(936, 510);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnBook);
             this.Controls.Add(this.findBtn);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.PatientBtn);
@@ -125,5 +161,8 @@
         private System.Windows.Forms.DataGridView dgvUserdata;
         private System.Windows.Forms.Button findBtn;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnBook;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

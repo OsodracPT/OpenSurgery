@@ -24,3 +24,4 @@ C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\bin\Debug\overs
 C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\bin\Debug\oversurgery_log.ldf
 C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.AppointmentForm.resources
 C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.PatientForm.resources
+C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.RegisterPatient.resources

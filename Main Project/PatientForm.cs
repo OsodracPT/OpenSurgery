@@ -31,5 +31,11 @@ namespace Main_Project
             AppointmentForm appointForm = new AppointmentForm();
             appointForm.Show();
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            RegisterPatient registerForm = new RegisterPatient();
+            registerForm.Show();
+        }
     }
 }
