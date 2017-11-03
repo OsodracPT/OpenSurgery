@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.welcomeTxt = new System.Windows.Forms.Label();
             this.dgvUserdata = new System.Windows.Forms.DataGridView();
-            this.userdataBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.oversurgeryDataSet = new Main_Project.oversurgeryDataSet();
             this.userdataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userdataTableAdapter = new Main_Project.oversurgeryDataSetTableAdapters.userdataTableAdapter();
@@ -44,7 +43,6 @@
             this.checkdutyBtn = new System.Windows.Forms.Button();
             this.checkfreeBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserdata)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userdataBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oversurgeryDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userdataBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -62,13 +60,8 @@
             this.dgvUserdata.Location = new System.Drawing.Point(27, 297);
             this.dgvUserdata.Name = "dgvUserdata";
             this.dgvUserdata.RowTemplate.Height = 24;
-            this.dgvUserdata.Size = new System.Drawing.Size(490, 191);
+            this.dgvUserdata.Size = new System.Drawing.Size(650, 191);
             this.dgvUserdata.TabIndex = 1;
-            // 
-            // userdataBindingSource1
-            // 
-            this.userdataBindingSource1.DataMember = "userdata";
-            this.userdataBindingSource1.DataSource = this.oversurgeryDataSet;
             // 
             // oversurgeryDataSet
             // 
@@ -186,7 +179,6 @@
             this.Text = "MainMenu";
             this.Load += new System.EventHandler(this.MainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserdata)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userdataBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oversurgeryDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userdataBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -201,7 +193,6 @@
         private oversurgeryDataSet oversurgeryDataSet;
         private System.Windows.Forms.BindingSource userdataBindingSource;
         private oversurgeryDataSetTableAdapters.userdataTableAdapter userdataTableAdapter;
-        private System.Windows.Forms.BindingSource userdataBindingSource1;
         private System.Windows.Forms.Label staffLbl;
         private System.Windows.Forms.Button patientBtn;
         private System.Windows.Forms.Button appointBtn;
