@@ -22,3 +22,8 @@ C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_
 C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main Project.csproj.GenerateResource.Cache
 C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\bin\Debug\oversurgery.mdf
 C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\bin\Debug\oversurgery_log.ldf
+C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.AppointmentForm.resources
+C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.PatientForm.resources
+C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.RegisterPatient.resources
+C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.Prescription.resources
+C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.TestsForm.resources

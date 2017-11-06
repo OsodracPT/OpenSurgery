@@ -77,6 +77,44 @@ namespace Main_Project
             return dataSet;
         }
 
+        public int TryLogin(string username, string password)
+        {
+            int i = 0;
 
+
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.selectLogin(username, password));
+
+            //get the table to be displayed from the data set
+            DataTable dtUser = dsUser.Tables[0];
+
+            i = Convert.ToInt32(dtUser.Rows.Count.ToString());
+            return i;
+        }
+
+        public void RegisterPatient(string name, string address, string postcode, string city, DateTime DoB, int phoneNumber)
+        {
+            connectionToDB.Open();
+
+            string dobTemp = DoB.ToString("d");
+
+            SqlCommand cmd = connectionToDB.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = Constants.RegisterPatient(name, address, postcode, city, dobTemp, phoneNumber);
+            cmd.ExecuteNonQuery();
+
+            connectionToDB.Close();
+        }
+
+        public int SelectMax()
+        {
+            connectionToDB.Open();
+
+            SqlCommand cmd = connectionToDB.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = Constants.selectMaxID;
+            int maxId = Convert.ToInt32(cmd.ExecuteScalar());
+
+            return maxId;
+        }
     }
 }

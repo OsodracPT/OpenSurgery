@@ -19,7 +19,7 @@ namespace Main_Project
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.selectAll);
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.selectStaff);
 
             //get the table to be displayed from the data set
             DataTable dtUser = dsUser.Tables[0];
@@ -28,5 +28,18 @@ namespace Main_Project
             dgvUserdata.DataSource = dtUser;
         }
 
+        private void patientBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PatientForm patientForm = new PatientForm();
+            patientForm.Show();
+        }
+
+        private void appointBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AppointmentForm appointForm = new AppointmentForm();
+            appointForm.Show();
+        }
     }
 }
