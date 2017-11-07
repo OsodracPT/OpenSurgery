@@ -20,7 +20,7 @@ namespace Main_Project
         private void staffBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainMenu mainMenu = new MainMenu();
+            overSurgeryTitle mainMenu = new overSurgeryTitle();
             mainMenu.Show();
 
         }

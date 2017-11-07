@@ -20,7 +20,7 @@ namespace Main_Project
             //set the connection string
             DBConnection.ConnectionStr = Properties.Settings.Default.surgeryDBConnection; ;
 
-            Application.Run(new Form1());
+            Application.Run(new LoginForm());
         }
     }
 }
