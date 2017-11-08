@@ -15,12 +15,27 @@ namespace Main_Project
         public overSurgeryTitle()
         {
             InitializeComponent();
-            SidePanelScroll.Height = staffButton.Height;
         }
 
+        /// <summary>
+        /// the form loads already selecting the staff usercontrol
+        /// this method ensures that
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainMenu_Load(object sender, EventArgs e)
         {
-           
+            //moves the selection side scroll to the correct position(selecting staff)
+            SidePanelScroll.Height = staffButton.Height;
+
+            if (!userControlPanel.Controls.Contains(StaffUserControl.Instance))
+            {
+                userControlPanel.Controls.Add(StaffUserControl.Instance);
+                StaffUserControl.Instance.Dock = DockStyle.Fill;
+                StaffUserControl.Instance.BringToFront();
+            }
+            else
+                StaffUserControl.Instance.BringToFront();
         }
 
         //https://www.youtube.com/watch?v=ao4HwEpW7eg
@@ -79,11 +94,38 @@ namespace Main_Project
 
         }
 
+        /// <summary>
+        /// method the log the user out, presenting the login form again.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void singOutPicture_Click(object sender, EventArgs e)
         {
             this.Close();
             LoginForm LoginForm = new LoginForm();
             LoginForm.Show();
+        }
+
+        //Code that will make the form movable
+        //got it from stack overflow
+        //https://stackoverflow.com/questions/1592876/make-a-borderless-form-movable
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        //event for the main form. Run whenever we hold the mouse button down
+        private void Form1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
     }
 }

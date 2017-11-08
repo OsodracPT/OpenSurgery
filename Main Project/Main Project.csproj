@@ -66,12 +66,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppointmentForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppointmentForm.Designer.cs">
-      <DependentUpon>AppointmentForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="AppointmentUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -96,12 +90,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>oversurgeryDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PatientForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PatientForm.Designer.cs">
-      <DependentUpon>PatientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PatientUserControl.cs">
       <SubType>UserControl</SubType>
@@ -136,9 +124,6 @@
     <Compile Include="TestsForm.Designer.cs">
       <DependentUpon>TestsForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AppointmentForm.resx">
-      <DependentUpon>AppointmentForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AppointmentUserControl.resx">
       <DependentUpon>AppointmentUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,9 +132,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PatientForm.resx">
-      <DependentUpon>PatientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientUserControl.resx">
       <DependentUpon>PatientUserControl.cs</DependentUpon>

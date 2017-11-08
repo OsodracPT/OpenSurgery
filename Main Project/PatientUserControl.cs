@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -40,6 +41,7 @@ namespace Main_Project
 
         private void findBtn_Click(object sender, EventArgs e)
         {
+
             DataSet dsPatient = DBConnection.getDBConnectionInstance().getDataSet(Constants.FindPatient(findInputTxtBox.Text));
 
             //get the table to be displayed from the data set
@@ -47,6 +49,7 @@ namespace Main_Project
 
             //set the data source for the data grid view
             dataGridView1.DataSource = dtPatient;
+
         }
 
         private void PrescriptionBtn_Click(object sender, EventArgs e)
@@ -75,5 +78,23 @@ namespace Main_Project
             //set the data source for the data grid view
             dataGridView1.DataSource = dtPatient;
         }
+
+        //Check for any special characters and prevent the user from typing them.
+        private void findInputTxtBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            base.OnKeyPress(e);
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                Console.WriteLine("Invalid Character inserted");
+            }
+            //if there are no special characters then we can run the find method and connect the string to the DB
+            else
+            {
+                findBtn_Click(sender, e);
+            }
+        }
     }
 }
+
+
