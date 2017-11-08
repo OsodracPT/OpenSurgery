@@ -39,5 +39,45 @@ namespace Main_Project
             //set the data source for the data grid view
             dgvUserdata.DataSource = dtUser;
         }
+
+        private void dgvUserdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string date = Constants.ShiftQuery(DateTime.Today.ToString(this.dateTimePicker1.Text));
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(date);
+
+            //get the table to be displayed from the data set
+            DataTable dtUser = dsUser.Tables[0];
+
+            //set the data source for the data grid view
+            dgvUserdata.DataSource = dtUser;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.selectStaff);
+
+            //get the table to be displayed from the data set
+            DataTable dtUser = dsUser.Tables[0];
+
+            //set the data source for the data grid view
+            dgvUserdata.DataSource = dtUser;
+        }
+
+        private void checkdutyBtn_Click(object sender, EventArgs e)
+        {
+            string date = Constants.ShiftQuery(DateTime.Today.ToString(this.dateTimePicker1.Text));
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(date);
+
+            //get the table to be displayed from the data set
+            DataTable dtUser = dsUser.Tables[0];
+
+            //set the data source for the data grid view
+            dgvUserdata.DataSource = dtUser;
+        }
     }
 }

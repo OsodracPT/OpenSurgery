@@ -16,11 +16,15 @@ namespace Main_Project
         {
             InitializeComponent();
             SidePanelScroll.Height = staffButton.Height;
+
+           
+
+            
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-           
+            label3.Text = LoginForm.UsernameText;
         }
 
         //https://www.youtube.com/watch?v=ao4HwEpW7eg
@@ -84,6 +88,21 @@ namespace Main_Project
             this.Close();
             LoginForm LoginForm = new LoginForm();
             LoginForm.Show();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

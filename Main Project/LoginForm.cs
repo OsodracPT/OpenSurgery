@@ -14,9 +14,14 @@ namespace Main_Project
 {
     public partial class LoginForm : Form
     {
+        public static string UsernameText;
+
+        
         public LoginForm()
         {
             InitializeComponent();
+
+            
         }
 
 
@@ -42,6 +47,9 @@ namespace Main_Project
                 {
                     this.Hide();
                     overSurgeryTitle mainMenu = new overSurgeryTitle();
+
+                    UsernameText = txtUsername.Text;
+                    
                     mainMenu.Show();
                 }
             }
@@ -54,6 +62,7 @@ namespace Main_Project
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            
             Close();
         }
     }

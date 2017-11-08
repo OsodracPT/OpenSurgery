@@ -28,6 +28,34 @@ namespace Main_Project
         public AppointmentUserControl()
         {
             InitializeComponent();
+            string tDate = Constants.Appointments(DateTime.Today.ToString("yyyy/MM/dd"));
+            
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(tDate);
+
+            //get the table to be displayed from the data set
+            DataTable dtUser = dsUser.Tables[0];
+
+            //set the data source for the data grid view
+            dgvUserdata.DataSource = dtUser;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string tDate = Constants.Appointments(DateTime.Today.ToString(this.dateTimePicker1.Text));
+
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(tDate);
+
+            //get the table to be displayed from the data set
+            DataTable dtUser = dsUser.Tables[0];
+
+            //set the data source for the data grid view
+            dgvUserdata.DataSource = dtUser;
+        }
+
+        private void dgvUserdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
