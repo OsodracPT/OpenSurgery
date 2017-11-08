@@ -47,3 +47,24 @@ C:\Users\Pedro Cardoso\Documents\MainProject-Pedro-Develop\Main Project\obj\Debu
 C:\Users\Pedro Cardoso\Documents\MainProject-Pedro-Develop\Main Project\obj\Debug\Main_Project.AppointmentUserControl.resources
 C:\Users\Pedro Cardoso\Documents\MainProject-Pedro-Develop\Main Project\obj\Debug\Main_Project.PatientUserControl.resources
 C:\Users\Pedro Cardoso\Documents\MainProject-Pedro-Develop\Main Project\obj\Debug\Main_Project.StaffUserControl.resources
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\bin\Debug\oversurgery.mdf
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\bin\Debug\oversurgery_log.ldf
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\bin\Debug\Main Project.exe.config
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\bin\Debug\Main Project.exe
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\bin\Debug\Main Project.pdb
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main Project.csprojResolveAssemblyReference.cache
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.AppointmentForm.resources
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.AppointmentUserControl.resources
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.LoginForm.resources
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.overSurgeryTitle.resources
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.PatientForm.resources
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.PatientUserControl.resources
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.Prescription.resources
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.Properties.Resources.resources
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.RegisterPatient.resources
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.StaffUserControl.resources
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.TestsForm.resources
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main Project.csproj.GenerateResource.Cache
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main Project.csproj.CoreCompileInputs.cache
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main Project.exe
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main Project.pdb
