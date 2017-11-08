@@ -96,7 +96,6 @@ namespace Main_Project
             connectionToDB.Open();
 
             string dobTemp = DoB.ToString("d");
-
             SqlCommand cmd = connectionToDB.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = Constants.RegisterPatient(name, address, postcode, city, dobTemp, phoneNumber);

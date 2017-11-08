@@ -39,55 +39,59 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(587, 81);
+            this.dateTimePicker1.Location = new System.Drawing.Point(129, 70);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(151, 22);
             this.dateTimePicker1.TabIndex = 11;
             // 
             // checkavailBtn
             // 
-            this.checkavailBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkavailBtn.Location = new System.Drawing.Point(607, 130);
+            this.checkavailBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkavailBtn.Location = new System.Drawing.Point(345, 52);
             this.checkavailBtn.Margin = new System.Windows.Forms.Padding(2);
             this.checkavailBtn.Name = "checkavailBtn";
             this.checkavailBtn.Size = new System.Drawing.Size(106, 58);
             this.checkavailBtn.TabIndex = 13;
             this.checkavailBtn.Text = "Check Availability";
             this.checkavailBtn.UseVisualStyleBackColor = true;
+            this.checkavailBtn.Click += new System.EventHandler(this.checkavailBtn_Click);
             // 
             // checkdutyBtn
             // 
-            this.checkdutyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkdutyBtn.Location = new System.Drawing.Point(607, 202);
+            this.checkdutyBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkdutyBtn.Location = new System.Drawing.Point(487, 52);
             this.checkdutyBtn.Margin = new System.Windows.Forms.Padding(2);
             this.checkdutyBtn.Name = "checkdutyBtn";
             this.checkdutyBtn.Size = new System.Drawing.Size(106, 58);
             this.checkdutyBtn.TabIndex = 14;
             this.checkdutyBtn.Text = "Check on Duty";
             this.checkdutyBtn.UseVisualStyleBackColor = true;
+            this.checkdutyBtn.Click += new System.EventHandler(this.checkdutyBtn_Click);
             // 
             // checkfreeBtn
             // 
-            this.checkfreeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkfreeBtn.Location = new System.Drawing.Point(607, 274);
+            this.checkfreeBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkfreeBtn.Location = new System.Drawing.Point(616, 52);
             this.checkfreeBtn.Margin = new System.Windows.Forms.Padding(2);
             this.checkfreeBtn.Name = "checkfreeBtn";
             this.checkfreeBtn.Size = new System.Drawing.Size(106, 58);
             this.checkfreeBtn.TabIndex = 15;
             this.checkfreeBtn.Text = "Check Free";
             this.checkfreeBtn.UseVisualStyleBackColor = true;
+            this.checkfreeBtn.Click += new System.EventHandler(this.checkfreeBtn_Click);
             // 
             // dateLabel
             // 
             this.dateLabel.AutoSize = true;
-            this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLabel.Location = new System.Drawing.Point(489, 81);
+            this.dateLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLabel.Location = new System.Drawing.Point(31, 70);
             this.dateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(83, 17);
+            this.dateLabel.Size = new System.Drawing.Size(97, 20);
             this.dateLabel.TabIndex = 12;
             this.dateLabel.Text = "Select date:";
             // 

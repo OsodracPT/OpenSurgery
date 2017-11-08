@@ -51,6 +51,7 @@ namespace Main_Project
             SidePanelScroll.Height = patientBtn.Height;
             SidePanelScroll.Top = patientBtn.Top;
 
+            //remove register patient if it is present in the panel.
             PatientUserControl.RemoveRegister();
 
 

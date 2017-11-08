@@ -31,7 +31,38 @@ namespace Main_Project
 
         private void StaffUserControl_Load(object sender, EventArgs e)
         {
-            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.selectStaff);
+            DataSet dsStaff = DBConnection.getDBConnectionInstance().getDataSet(Constants.selectStaff);
+
+            //get the table to be displayed from the data set
+            DataTable dtStaff = dsStaff.Tables[0];
+
+            //set the data source for the data grid view
+            dgvUserdata.DataSource = dtStaff;
+        }
+
+        //additions by Rom
+        private void checkdutyBtn_Click(object sender, EventArgs e)
+        {
+
+            string date = dateTimePicker1.Text;
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.SelectShiftQuery(date));
+
+            //get the table to be displayed from the data set
+            DataTable dtUser = dsUser.Tables[0];
+
+            //set the data source for the data grid view
+            dgvUserdata.DataSource = dtUser;
+        }
+
+        private void checkavailBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkfreeBtn_Click(object sender, EventArgs e)
+        {
+            string date = dateTimePicker1.Text;
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.CheckFreeQuery(date));
 
             //get the table to be displayed from the data set
             DataTable dtUser = dsUser.Tables[0];

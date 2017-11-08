@@ -53,5 +53,16 @@ namespace Main_Project
             return patientTest;
         }
 
+        public static String SelectShiftQuery(string userInput)
+        {
+            string SelectShiftDate = "SELECT staffID AS [Staff ID], startTime AS [From], endTime AS [To] FROM shift WHERE startDate= '" + userInput + "'";
+            return SelectShiftDate;
+        }
+
+        public static String CheckFreeQuery(string userInput)
+        {
+            string SelectShiftDate = "SELECT shift.staffID, medicalstaff.staffName, medicalstaff.ocupation FROM shift INNER JOIN medicalstaff ON shift.staffID = medicalstaff.staffID WHERE NOT shift.startDate= '" + userInput + "'";
+            return SelectShiftDate;
+        }
     }
 }
