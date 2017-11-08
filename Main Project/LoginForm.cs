@@ -14,6 +14,10 @@ namespace Main_Project
 {
     public partial class LoginForm : Form
     {
+
+        public static string UsernameText;
+
+
         public LoginForm()
         {
             InitializeComponent();
@@ -42,6 +46,9 @@ namespace Main_Project
                 {
                     this.Hide();
                     overSurgeryTitle mainMenu = new overSurgeryTitle();
+                    //Rom addition
+                    UsernameText = txtUsername.Text;
+                    //
                     mainMenu.Show();
                 }
             }

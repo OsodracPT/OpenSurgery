@@ -9,7 +9,9 @@ namespace Main_Project
     class Constants
     {
         public static String selectUserData = "SELECT * FROM userdata";
-        public static String selectPatient = "SELECT * FROM PatientData";
+        public static String selectPatient = "SELECT patientID AS [Patient ID], patientName AS Name," +
+            "address AS Address, postCode AS [Post Code], city AS City, Dob AS [Date of Birth], " + 
+            "phoneNumber AS [Phone Number], medicalRecordID AS [Medical Record ID]  FROM PatientData";
         public static String selectStaff = "SELECT * FROM medicalStaff";
         public static String selectPrescr = "SELECT * FROM medicalStaff";
         public static String selectTest = "SELECT test, patientID FROM medicalRecords";
@@ -37,7 +39,11 @@ namespace Main_Project
 
         public static String FindPatient(string userInput)
         {
-            string findPatient = "SELECT * FROM PatientData WHERE (patientName LIKE '%" + userInput + "%'OR patientID LIKE '%" + userInput + "%' OR address LIKE '%" + userInput + "%' OR dob LIKE '%" + userInput + "%')";
+            string findPatient = "SELECT patientID AS [Patient ID], patientName AS Name,"+
+                " address AS Address, postCode AS [Post Code], city AS City, Dob AS [Date of Birth],"+
+                " phoneNumber AS [Phone Number], medicalRecordID AS [Medical Record ID] FROM PatientData"+
+                " WHERE (patientName LIKE '%" + userInput + "%'OR patientID LIKE '%" + userInput + "%'"+
+                " OR address LIKE '%" + userInput + "%' OR dob LIKE '%" + userInput + "%')";
             return findPatient;
         }
 

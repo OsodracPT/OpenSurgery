@@ -25,9 +25,14 @@ namespace Main_Project
         /// <param name="e"></param>
         private void MainMenu_Load(object sender, EventArgs e)
         {
+
+           userLbl.Text = LoginForm.UsernameText;
+
+
             //moves the selection side scroll to the correct position(selecting staff)
             SidePanelScroll.Height = staffButton.Height;
-
+            
+            //starts the main menu with the staff user control already in front
             if (!userControlPanel.Controls.Contains(StaffUserControl.Instance))
             {
                 userControlPanel.Controls.Add(StaffUserControl.Instance);
@@ -45,6 +50,9 @@ namespace Main_Project
             //put the sidescroll panel in the correct place, selection
             SidePanelScroll.Height = patientBtn.Height;
             SidePanelScroll.Top = patientBtn.Top;
+
+            PatientUserControl.RemoveRegister();
+
 
             if (!userControlPanel.Controls.Contains(PatientUserControl.Instance))
             {

@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Main_Project
 {
     public partial class PatientUserControl : UserControl
@@ -34,11 +35,21 @@ namespace Main_Project
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            RegisterPatient registerForm = new RegisterPatient();
-            registerForm.Show();
+            //RegisterPatient Register = new RegisterPatient();
+            //Register.Show();      
+            Instance.Controls.Add(RegisterPatientUserControl.Instance);
+
+
+            RegisterPatientUserControl.Instance.Dock = DockStyle.Fill;
+            RegisterPatientUserControl.Instance.BringToFront();
+
         }
 
-
+        public static void RemoveRegister()
+        {
+            Instance.Controls.Remove(RegisterPatientUserControl.Instance);
+        }
+        
         private void findBtn_Click(object sender, EventArgs e)
         {
 

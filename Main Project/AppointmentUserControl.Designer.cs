@@ -39,8 +39,8 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(594, 273);
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(633, 53);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(111, 54);
@@ -50,8 +50,8 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(594, 197);
+            this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(518, 53);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(111, 54);
@@ -61,8 +61,8 @@
             // 
             // btnBook
             // 
-            this.btnBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBook.Location = new System.Drawing.Point(594, 122);
+            this.btnBook.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBook.Location = new System.Drawing.Point(403, 53);
             this.btnBook.Margin = new System.Windows.Forms.Padding(2);
             this.btnBook.Name = "btnBook";
             this.btnBook.Size = new System.Drawing.Size(111, 54);
@@ -72,8 +72,8 @@
             // 
             // findBtn
             // 
-            this.findBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findBtn.Location = new System.Drawing.Point(355, 53);
+            this.findBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.findBtn.Location = new System.Drawing.Point(270, 66);
             this.findBtn.Margin = new System.Windows.Forms.Padding(2);
             this.findBtn.Name = "findBtn";
             this.findBtn.Size = new System.Drawing.Size(111, 29);
@@ -83,7 +83,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 53);
+            this.textBox1.Location = new System.Drawing.Point(30, 66);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -93,7 +93,7 @@
             // dgvUserdata
             // 
             this.dgvUserdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUserdata.Location = new System.Drawing.Point(99, 133);
+            this.dgvUserdata.Location = new System.Drawing.Point(49, 139);
             this.dgvUserdata.Margin = new System.Windows.Forms.Padding(2);
             this.dgvUserdata.Name = "dgvUserdata";
             this.dgvUserdata.RowTemplate.Height = 24;

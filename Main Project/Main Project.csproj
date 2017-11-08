@@ -111,6 +111,12 @@
     <Compile Include="RegisterPatient.Designer.cs">
       <DependentUpon>RegisterPatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegisterPatientUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RegisterPatientUserControl.Designer.cs">
+      <DependentUpon>RegisterPatientUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="StaffUserControl.cs">
       <SubType>UserControl</SubType>
@@ -151,6 +157,9 @@
     </Compile>
     <EmbeddedResource Include="RegisterPatient.resx">
       <DependentUpon>RegisterPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterPatientUserControl.resx">
+      <DependentUpon>RegisterPatientUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffUserControl.resx">
       <DependentUpon>StaffUserControl.cs</DependentUpon>
