@@ -10,36 +10,99 @@ using System.Windows.Forms;
 
 namespace Main_Project
 {
-    public partial class MainMenu : Form
+    public partial class overSurgeryTitle : Form
     {
-        public MainMenu()
+        public overSurgeryTitle()
         {
             InitializeComponent();
+            SidePanelScroll.Height = staffButton.Height;
+
+           
+
+            
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.selectStaff);
-
-            //get the table to be displayed from the data set
-            DataTable dtUser = dsUser.Tables[0];
-
-            //set the data source for the data grid view
-            dgvUserdata.DataSource = dtUser;
+            label3.Text = LoginForm.UsernameText;
         }
 
+        //https://www.youtube.com/watch?v=ao4HwEpW7eg
+        //C# Tutorial : How to load User control dynamically | FoxLearn
         private void patientBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            PatientForm patientForm = new PatientForm();
-            patientForm.Show();
+            //put the sidescroll panel in the correct place, selection
+            SidePanelScroll.Height = patientBtn.Height;
+            SidePanelScroll.Top = patientBtn.Top;
+
+            if (!userControlPanel.Controls.Contains(PatientUserControl.Instance))
+            {
+                userControlPanel.Controls.Add(PatientUserControl.Instance);
+                PatientUserControl.Instance.Dock = DockStyle.Fill;
+                PatientUserControl.Instance.BringToFront();
+            }
+            else
+                PatientUserControl.Instance.BringToFront();
         }
 
         private void appointBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AppointmentForm appointForm = new AppointmentForm();
-            appointForm.Show();
+            //put the sidescroll panel in the correct place, selection
+            SidePanelScroll.Height = appointBtn.Height;
+            SidePanelScroll.Top = appointBtn.Top;
+
+            if (!userControlPanel.Controls.Contains(AppointmentUserControl.Instance))
+            {
+                userControlPanel.Controls.Add(AppointmentUserControl.Instance);
+                AppointmentUserControl.Instance.Dock = DockStyle.Fill;
+                AppointmentUserControl.Instance.BringToFront();
+            }
+            else
+                AppointmentUserControl.Instance.BringToFront();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void staffButton_Click(object sender, EventArgs e)
+        {
+            //put the sidescroll panel in the correct place, selection
+            SidePanelScroll.Height = staffButton.Height;
+            SidePanelScroll.Top = staffButton.Top;
+
+            if (!userControlPanel.Controls.Contains(StaffUserControl.Instance))
+            {
+                userControlPanel.Controls.Add(StaffUserControl.Instance);
+                StaffUserControl.Instance.Dock = DockStyle.Fill;
+                StaffUserControl.Instance.BringToFront();
+            }
+            else
+                StaffUserControl.Instance.BringToFront();
+
+        }
+
+        private void singOutPicture_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm LoginForm = new LoginForm();
+            LoginForm.Show();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

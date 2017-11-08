@@ -25,8 +25,11 @@ namespace Main_Project
         {
 
             string selectLogin = "SELECT * FROM userdata WHERE username='" + username + "' and password='" + password + "'";
+
             return selectLogin;
         }
+       
+
 
         public static String RegisterPatient(string name, string address, string postcode, string city, string DoB, int phoneNumber)
         {
@@ -46,6 +49,16 @@ namespace Main_Project
             string patientTest = "SELECT test, patientID FROM medicalRecords WHERE patientID=" + userInput;
             return patientTest;
         }
-
+        public static String ShiftQuery(string userInput)
+        {
+            string SelectShiftDate = "SELECT staffID, startTime, endTime FROM shift WHERE startDate= '" + userInput + "'";
+            return SelectShiftDate;
+        }
+        public static String Appointments(string userInput)
+        {
+            string Appointment = "SELECT time, staffID, patientID, appointmentID FROM appointment WHERE date= '" + userInput + "'";
+            return Appointment;
+        }
+        
     }
 }

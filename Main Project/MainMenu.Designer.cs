@@ -1,6 +1,6 @@
 ﻿namespace Main_Project
 {
-    partial class MainMenu
+    partial class overSurgeryTitle
     {
         /// <summary>
         /// Required designer variable.
@@ -29,39 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.welcomeTxt = new System.Windows.Forms.Label();
-            this.dgvUserdata = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(overSurgeryTitle));
             this.oversurgeryDataSet = new Main_Project.oversurgeryDataSet();
             this.userdataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userdataTableAdapter = new Main_Project.oversurgeryDataSetTableAdapters.userdataTableAdapter();
-            this.staffLbl = new System.Windows.Forms.Label();
+            this.leftPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SidePanelScroll = new System.Windows.Forms.Panel();
             this.patientBtn = new System.Windows.Forms.Button();
             this.appointBtn = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateLabel = new System.Windows.Forms.Label();
-            this.checkavailBtn = new System.Windows.Forms.Button();
-            this.checkdutyBtn = new System.Windows.Forms.Button();
-            this.checkfreeBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUserdata)).BeginInit();
+            this.staffButton = new System.Windows.Forms.Button();
+            this.topPanel = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.oversurgeryLogo = new System.Windows.Forms.PictureBox();
+            this.userControlPanel = new System.Windows.Forms.Panel();
+            this.closePictureBox = new System.Windows.Forms.PictureBox();
+            this.singOutPicture = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.oversurgeryDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userdataBindingSource)).BeginInit();
+            this.leftPanel.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.oversurgeryLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.singOutPicture)).BeginInit();
             this.SuspendLayout();
-            // 
-            // welcomeTxt
-            // 
-            this.welcomeTxt.Location = new System.Drawing.Point(0, 0);
-            this.welcomeTxt.Name = "welcomeTxt";
-            this.welcomeTxt.Size = new System.Drawing.Size(100, 23);
-            this.welcomeTxt.TabIndex = 2;
-            // 
-            // dgvUserdata
-            // 
-            this.dgvUserdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUserdata.Location = new System.Drawing.Point(27, 297);
-            this.dgvUserdata.Name = "dgvUserdata";
-            this.dgvUserdata.RowTemplate.Height = 24;
-            this.dgvUserdata.Size = new System.Drawing.Size(650, 191);
-            this.dgvUserdata.TabIndex = 1;
             // 
             // oversurgeryDataSet
             // 
@@ -77,129 +70,223 @@
             // 
             this.userdataTableAdapter.ClearBeforeFill = true;
             // 
-            // staffLbl
+            // leftPanel
             // 
-            this.staffLbl.AutoSize = true;
-            this.staffLbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.staffLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.staffLbl.Location = new System.Drawing.Point(52, 35);
-            this.staffLbl.Name = "staffLbl";
-            this.staffLbl.Size = new System.Drawing.Size(57, 25);
-            this.staffLbl.TabIndex = 3;
-            this.staffLbl.Text = "Staff";
+            this.leftPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.leftPanel.Controls.Add(this.label3);
+            this.leftPanel.Controls.Add(this.label1);
+            this.leftPanel.Controls.Add(this.SidePanelScroll);
+            this.leftPanel.Controls.Add(this.patientBtn);
+            this.leftPanel.Controls.Add(this.appointBtn);
+            this.leftPanel.Controls.Add(this.staffButton);
+            this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.leftPanel.Location = new System.Drawing.Point(0, 0);
+            this.leftPanel.Name = "leftPanel";
+            this.leftPanel.Size = new System.Drawing.Size(209, 544);
+            this.leftPanel.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(12, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 20);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Welcome";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // SidePanelScroll
+            // 
+            this.SidePanelScroll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.SidePanelScroll.Location = new System.Drawing.Point(3, 166);
+            this.SidePanelScroll.Name = "SidePanelScroll";
+            this.SidePanelScroll.Size = new System.Drawing.Size(10, 54);
+            this.SidePanelScroll.TabIndex = 14;
             // 
             // patientBtn
             // 
-            this.patientBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patientBtn.Location = new System.Drawing.Point(169, 26);
+            this.patientBtn.FlatAppearance.BorderSize = 0;
+            this.patientBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.patientBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patientBtn.ForeColor = System.Drawing.Color.White;
+            this.patientBtn.Image = ((System.Drawing.Image)(resources.GetObject("patientBtn.Image")));
+            this.patientBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.patientBtn.Location = new System.Drawing.Point(12, 294);
             this.patientBtn.Name = "patientBtn";
-            this.patientBtn.Size = new System.Drawing.Size(116, 43);
-            this.patientBtn.TabIndex = 4;
-            this.patientBtn.Text = "Patient";
+            this.patientBtn.Size = new System.Drawing.Size(197, 54);
+            this.patientBtn.TabIndex = 7;
+            this.patientBtn.Text = "           Patient";
+            this.patientBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.patientBtn.UseVisualStyleBackColor = true;
             this.patientBtn.Click += new System.EventHandler(this.patientBtn_Click);
             // 
             // appointBtn
             // 
-            this.appointBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.appointBtn.Location = new System.Drawing.Point(334, 26);
+            this.appointBtn.FlatAppearance.BorderSize = 0;
+            this.appointBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.appointBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appointBtn.ForeColor = System.Drawing.Color.White;
+            this.appointBtn.Image = ((System.Drawing.Image)(resources.GetObject("appointBtn.Image")));
+            this.appointBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.appointBtn.Location = new System.Drawing.Point(12, 226);
             this.appointBtn.Name = "appointBtn";
-            this.appointBtn.Size = new System.Drawing.Size(153, 43);
-            this.appointBtn.TabIndex = 5;
-            this.appointBtn.Text = "Appointment";
+            this.appointBtn.Size = new System.Drawing.Size(197, 54);
+            this.appointBtn.TabIndex = 6;
+            this.appointBtn.Text = "           Appointments";
+            this.appointBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.appointBtn.UseVisualStyleBackColor = true;
             this.appointBtn.Click += new System.EventHandler(this.appointBtn_Click);
             // 
-            // dateTimePicker1
+            // staffButton
             // 
-            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(651, 114);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 6;
+            this.staffButton.FlatAppearance.BorderSize = 0;
+            this.staffButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.staffButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.staffButton.ForeColor = System.Drawing.Color.White;
+            this.staffButton.Image = ((System.Drawing.Image)(resources.GetObject("staffButton.Image")));
+            this.staffButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.staffButton.Location = new System.Drawing.Point(12, 166);
+            this.staffButton.Name = "staffButton";
+            this.staffButton.Size = new System.Drawing.Size(197, 54);
+            this.staffButton.TabIndex = 5;
+            this.staffButton.Text = "           Staff";
+            this.staffButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.staffButton.UseVisualStyleBackColor = true;
+            this.staffButton.Click += new System.EventHandler(this.staffButton_Click);
             // 
-            // dateLabel
+            // topPanel
             // 
-            this.dateLabel.AutoSize = true;
-            this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLabel.Location = new System.Drawing.Point(648, 83);
-            this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(98, 20);
-            this.dateLabel.TabIndex = 7;
-            this.dateLabel.Text = "Select date:";
+            this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topPanel.Location = new System.Drawing.Point(209, 0);
+            this.topPanel.Name = "topPanel";
+            this.topPanel.Size = new System.Drawing.Size(801, 10);
+            this.topPanel.TabIndex = 12;
             // 
-            // checkavailBtn
+            // panel3
             // 
-            this.checkavailBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkavailBtn.Location = new System.Drawing.Point(709, 175);
-            this.checkavailBtn.Name = "checkavailBtn";
-            this.checkavailBtn.Size = new System.Drawing.Size(142, 72);
-            this.checkavailBtn.TabIndex = 8;
-            this.checkavailBtn.Text = "Check Availability";
-            this.checkavailBtn.UseVisualStyleBackColor = true;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.oversurgeryLogo);
+            this.panel3.Location = new System.Drawing.Point(243, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(111, 143);
+            this.panel3.TabIndex = 13;
             // 
-            // checkdutyBtn
+            // label2
             // 
-            this.checkdutyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkdutyBtn.Location = new System.Drawing.Point(709, 274);
-            this.checkdutyBtn.Name = "checkdutyBtn";
-            this.checkdutyBtn.Size = new System.Drawing.Size(142, 72);
-            this.checkdutyBtn.TabIndex = 9;
-            this.checkdutyBtn.Text = "Check on Duty";
-            this.checkdutyBtn.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 111);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 19);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Over Surgery";
             // 
-            // checkfreeBtn
+            // oversurgeryLogo
             // 
-            this.checkfreeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkfreeBtn.Location = new System.Drawing.Point(709, 374);
-            this.checkfreeBtn.Name = "checkfreeBtn";
-            this.checkfreeBtn.Size = new System.Drawing.Size(142, 72);
-            this.checkfreeBtn.TabIndex = 10;
-            this.checkfreeBtn.Text = "Check Free";
-            this.checkfreeBtn.UseVisualStyleBackColor = true;
+            this.oversurgeryLogo.ErrorImage = ((System.Drawing.Image)(resources.GetObject("oversurgeryLogo.ErrorImage")));
+            this.oversurgeryLogo.Image = ((System.Drawing.Image)(resources.GetObject("oversurgeryLogo.Image")));
+            this.oversurgeryLogo.Location = new System.Drawing.Point(16, 26);
+            this.oversurgeryLogo.Name = "oversurgeryLogo";
+            this.oversurgeryLogo.Size = new System.Drawing.Size(77, 71);
+            this.oversurgeryLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.oversurgeryLogo.TabIndex = 14;
+            this.oversurgeryLogo.TabStop = false;
             // 
-            // MainMenu
+            // userControlPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.userControlPanel.Location = new System.Drawing.Point(229, 166);
+            this.userControlPanel.Name = "userControlPanel";
+            this.userControlPanel.Size = new System.Drawing.Size(769, 366);
+            this.userControlPanel.TabIndex = 16;
+            // 
+            // closePictureBox
+            // 
+            this.closePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("closePictureBox.Image")));
+            this.closePictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("closePictureBox.InitialImage")));
+            this.closePictureBox.Location = new System.Drawing.Point(953, 26);
+            this.closePictureBox.Name = "closePictureBox";
+            this.closePictureBox.Size = new System.Drawing.Size(29, 32);
+            this.closePictureBox.TabIndex = 15;
+            this.closePictureBox.TabStop = false;
+            this.closePictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // singOutPicture
+            // 
+            this.singOutPicture.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.singOutPicture.Image = ((System.Drawing.Image)(resources.GetObject("singOutPicture.Image")));
+            this.singOutPicture.InitialImage = ((System.Drawing.Image)(resources.GetObject("singOutPicture.InitialImage")));
+            this.singOutPicture.Location = new System.Drawing.Point(918, 26);
+            this.singOutPicture.Name = "singOutPicture";
+            this.singOutPicture.Size = new System.Drawing.Size(29, 32);
+            this.singOutPicture.TabIndex = 17;
+            this.singOutPicture.TabStop = false;
+            this.singOutPicture.Click += new System.EventHandler(this.singOutPicture_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.label3.Location = new System.Drawing.Point(74, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 30);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "User";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // overSurgeryTitle
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 510);
-            this.Controls.Add(this.checkfreeBtn);
-            this.Controls.Add(this.checkdutyBtn);
-            this.Controls.Add(this.checkavailBtn);
-            this.Controls.Add(this.dateLabel);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.appointBtn);
-            this.Controls.Add(this.patientBtn);
-            this.Controls.Add(this.staffLbl);
-            this.Controls.Add(this.dgvUserdata);
-            this.Controls.Add(this.welcomeTxt);
-            this.Name = "MainMenu";
+            this.ClientSize = new System.Drawing.Size(1010, 544);
+            this.Controls.Add(this.singOutPicture);
+            this.Controls.Add(this.closePictureBox);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.topPanel);
+            this.Controls.Add(this.leftPanel);
+            this.Controls.Add(this.userControlPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "overSurgeryTitle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
             this.Load += new System.EventHandler(this.MainMenu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUserdata)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oversurgeryDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userdataBindingSource)).EndInit();
+            this.leftPanel.ResumeLayout(false);
+            this.leftPanel.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.oversurgeryLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.singOutPicture)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label welcomeTxt;
-        private System.Windows.Forms.DataGridView dgvUserdata;
         private oversurgeryDataSet oversurgeryDataSet;
         private System.Windows.Forms.BindingSource userdataBindingSource;
         private oversurgeryDataSetTableAdapters.userdataTableAdapter userdataTableAdapter;
-        private System.Windows.Forms.Label staffLbl;
+        private System.Windows.Forms.Panel leftPanel;
         private System.Windows.Forms.Button patientBtn;
         private System.Windows.Forms.Button appointBtn;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label dateLabel;
-        private System.Windows.Forms.Button checkavailBtn;
-        private System.Windows.Forms.Button checkdutyBtn;
-        private System.Windows.Forms.Button checkfreeBtn;
+        private System.Windows.Forms.Button staffButton;
+        private System.Windows.Forms.Panel topPanel;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox oversurgeryLogo;
+        private System.Windows.Forms.Panel SidePanelScroll;
+        private System.Windows.Forms.PictureBox closePictureBox;
+        private System.Windows.Forms.Panel userControlPanel;
+        private System.Windows.Forms.PictureBox singOutPicture;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }
