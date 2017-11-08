@@ -93,11 +93,11 @@
             // dgvUserdata
             // 
             this.dgvUserdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUserdata.Location = new System.Drawing.Point(99, 133);
+            this.dgvUserdata.Location = new System.Drawing.Point(24, 68);
             this.dgvUserdata.Margin = new System.Windows.Forms.Padding(2);
             this.dgvUserdata.Name = "dgvUserdata";
             this.dgvUserdata.RowTemplate.Height = 24;
-            this.dgvUserdata.Size = new System.Drawing.Size(394, 194);
+            this.dgvUserdata.Size = new System.Drawing.Size(695, 274);
             this.dgvUserdata.TabIndex = 19;
             // 
             // AppointmentUserControl
