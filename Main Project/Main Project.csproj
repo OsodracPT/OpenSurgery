@@ -72,6 +72,12 @@
     <Compile Include="AppointmentUserControl.Designer.cs">
       <DependentUpon>AppointmentUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="BookAppointUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BookAppointUserControl.Designer.cs">
+      <DependentUpon>BookAppointUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Constants.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="LoginForm.cs">
@@ -132,6 +138,9 @@
     </Compile>
     <EmbeddedResource Include="AppointmentUserControl.resx">
       <DependentUpon>AppointmentUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookAppointUserControl.resx">
+      <DependentUpon>BookAppointUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

@@ -12,9 +12,18 @@ namespace Main_Project
         public static String selectPatient = "SELECT patientID AS [Patient ID], patientName AS Name," +
             "address AS Address, postCode AS [Post Code], city AS City, Dob AS [Date of Birth], " + 
             "phoneNumber AS [Phone Number], medicalRecordID AS [Medical Record ID]  FROM PatientData";
+        //gets all the patient names and order it alphabetically
+        public static String selectPatientName = "SELECT  patientName FROM PatientData ORDER BY patientName";
         public static String selectStaff = "SELECT * FROM medicalStaff";
+        //gets all the staff names and order it alphabetically
+        public static String selectStaffName = "SELECT staffName FROM medicalstaff ORDER BY staffName";
         public static String selectPrescr = "SELECT * FROM medicalStaff";
         public static String selectTest = "SELECT test, patientID FROM medicalRecords";
+
+        public static String selectAllAppointment = "SELECT appointmentID AS [Appointment ID], date AS Date," +
+            "time AS Time, description AS [Description], staffName AS [Staff Name], patientName AS [Patient Name], " +
+            "staffID AS [Staff ID], patientID AS [Patient ID] FROM appointment";
+
 
         //select the maximum value of patient ID
         public static String selectMaxID = "SELECT MAX(patientID) FROM PatientData";
@@ -63,6 +72,19 @@ namespace Main_Project
         {
             string SelectShiftDate = "SELECT shift.staffID AS [Staff ID] , medicalstaff.staffName AS [Name], medicalstaff.ocupation AS [Occupation] FROM shift INNER JOIN medicalstaff ON shift.staffID = medicalstaff.staffID WHERE NOT shift.startDate= '" + userInput + "'";
             return SelectShiftDate;
+        }
+
+        public static String CheckStaffAvailability(string userInput)
+        {
+            string SelectAvailability = "SELECT medicalstaff.staffID AS [Staff ID], medicalstaff.staffName AS [Name], shift.startDate AS [Date], shift.startTime AS [From], shift.endTime AS [To] FROM medicalstaff INNER JOIN shift ON medicalstaff.staffID = medicalstaff.staffID WHERE shift.startDate= '" + userInput + "'";
+            return SelectAvailability;
+        }
+
+        public static String BookAppointment(string date, string time, string staffName, string patientName, string description)
+        {
+
+            string bookAppointment = $"INSERT INTO appointment (date, time, description, staffName, patientName) VALUES('{date} ', '{time}', '{staffName} ', '{patientName}', '{description}')";
+            return bookAppointment;
         }
     }
 }

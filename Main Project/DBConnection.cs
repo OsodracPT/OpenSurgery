@@ -115,5 +115,17 @@ namespace Main_Project
 
             return maxId;
         }
+
+        public void BookAppointment(string date, string time, string staffName, string patientName, string description)
+        {
+            connectionToDB.Open();
+
+            SqlCommand cmd = connectionToDB.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = Constants.BookAppointment(date, time, staffName, patientName, description);
+            cmd.ExecuteNonQuery();
+
+            connectionToDB.Close();
+        }
     }
 }

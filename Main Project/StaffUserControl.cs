@@ -56,7 +56,14 @@ namespace Main_Project
 
         private void checkavailBtn_Click(object sender, EventArgs e)
         {
+            string date = dateTimePicker1.Text;
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.CheckStaffAvailability(date));
 
+            //get the table to be displayed from the data set
+            DataTable dtUser = dsUser.Tables[0];
+
+            //set the data source for the data grid view
+            dgvUserdata.DataSource = dtUser;
         }
 
         private void checkfreeBtn_Click(object sender, EventArgs e)

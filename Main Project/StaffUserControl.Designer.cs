@@ -102,7 +102,7 @@
             this.dgvUserdata.Margin = new System.Windows.Forms.Padding(2);
             this.dgvUserdata.Name = "dgvUserdata";
             this.dgvUserdata.RowTemplate.Height = 24;
-            this.dgvUserdata.Size = new System.Drawing.Size(488, 155);
+            this.dgvUserdata.Size = new System.Drawing.Size(578, 183);
             this.dgvUserdata.TabIndex = 16;
             // 
             // StaffUserControl
