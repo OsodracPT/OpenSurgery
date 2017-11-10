@@ -21,6 +21,7 @@ namespace Main_Project
         public LoginForm()
         {
             InitializeComponent();
+          
         }
 
 
@@ -84,6 +85,11 @@ namespace Main_Project
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

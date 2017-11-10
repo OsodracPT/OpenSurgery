@@ -41,6 +41,7 @@
             this.nameTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.registerBtn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dobTimePick
@@ -182,10 +183,21 @@
             this.registerBtn.UseVisualStyleBackColor = false;
             this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label6.Location = new System.Drawing.Point(331, 15);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(94, 20);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Prescription";
+            // 
             // RegisterPatientUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.dobTimePick);
             this.Controls.Add(this.cityTxt);
             this.Controls.Add(this.cityLbl);
@@ -201,6 +213,7 @@
             this.Controls.Add(this.registerBtn);
             this.Name = "RegisterPatientUserControl";
             this.Size = new System.Drawing.Size(769, 366);
+            this.Load += new System.EventHandler(this.RegisterPatientUserControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +234,6 @@
         private System.Windows.Forms.TextBox nameTxt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button registerBtn;
+        private System.Windows.Forms.Label label6;
     }
 }

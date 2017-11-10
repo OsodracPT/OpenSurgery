@@ -42,7 +42,7 @@
             this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(129, 70);
+            this.dateTimePicker1.Location = new System.Drawing.Point(109, 70);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(151, 22);
@@ -50,8 +50,8 @@
             // 
             // checkavailBtn
             // 
-            this.checkavailBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkavailBtn.Location = new System.Drawing.Point(345, 52);
+            this.checkavailBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.checkavailBtn.Location = new System.Drawing.Point(427, 51);
             this.checkavailBtn.Margin = new System.Windows.Forms.Padding(2);
             this.checkavailBtn.Name = "checkavailBtn";
             this.checkavailBtn.Size = new System.Drawing.Size(106, 58);
@@ -62,8 +62,8 @@
             // 
             // checkdutyBtn
             // 
-            this.checkdutyBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkdutyBtn.Location = new System.Drawing.Point(487, 52);
+            this.checkdutyBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.checkdutyBtn.Location = new System.Drawing.Point(537, 51);
             this.checkdutyBtn.Margin = new System.Windows.Forms.Padding(2);
             this.checkdutyBtn.Name = "checkdutyBtn";
             this.checkdutyBtn.Size = new System.Drawing.Size(106, 58);
@@ -74,8 +74,8 @@
             // 
             // checkfreeBtn
             // 
-            this.checkfreeBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkfreeBtn.Location = new System.Drawing.Point(616, 52);
+            this.checkfreeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.checkfreeBtn.Location = new System.Drawing.Point(647, 51);
             this.checkfreeBtn.Margin = new System.Windows.Forms.Padding(2);
             this.checkfreeBtn.Name = "checkfreeBtn";
             this.checkfreeBtn.Size = new System.Drawing.Size(106, 58);
@@ -88,7 +88,7 @@
             // 
             this.dateLabel.AutoSize = true;
             this.dateLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLabel.Location = new System.Drawing.Point(31, 70);
+            this.dateLabel.Location = new System.Drawing.Point(8, 70);
             this.dateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(97, 20);
@@ -98,11 +98,12 @@
             // dgvUserdata
             // 
             this.dgvUserdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUserdata.Location = new System.Drawing.Point(60, 144);
+            this.dgvUserdata.Location = new System.Drawing.Point(12, 186);
             this.dgvUserdata.Margin = new System.Windows.Forms.Padding(2);
             this.dgvUserdata.Name = "dgvUserdata";
+            this.dgvUserdata.ReadOnly = true;
             this.dgvUserdata.RowTemplate.Height = 24;
-            this.dgvUserdata.Size = new System.Drawing.Size(578, 183);
+            this.dgvUserdata.Size = new System.Drawing.Size(741, 166);
             this.dgvUserdata.TabIndex = 16;
             // 
             // StaffUserControl

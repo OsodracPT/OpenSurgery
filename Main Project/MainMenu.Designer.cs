@@ -34,6 +34,8 @@
             this.userdataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userdataTableAdapter = new Main_Project.oversurgeryDataSetTableAdapters.userdataTableAdapter();
             this.leftPanel = new System.Windows.Forms.Panel();
+            this.userLbl = new System.Windows.Forms.Label();
+            this.welcomeLbl = new System.Windows.Forms.Label();
             this.SidePanelScroll = new System.Windows.Forms.Panel();
             this.patientBtn = new System.Windows.Forms.Button();
             this.appointBtn = new System.Windows.Forms.Button();
@@ -45,8 +47,6 @@
             this.userControlPanel = new System.Windows.Forms.Panel();
             this.closePictureBox = new System.Windows.Forms.PictureBox();
             this.singOutPicture = new System.Windows.Forms.PictureBox();
-            this.userLbl = new System.Windows.Forms.Label();
-            this.welcomeLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.oversurgeryDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userdataBindingSource)).BeginInit();
             this.leftPanel.SuspendLayout();
@@ -84,6 +84,28 @@
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(209, 544);
             this.leftPanel.TabIndex = 11;
+            // 
+            // userLbl
+            // 
+            this.userLbl.AutoSize = true;
+            this.userLbl.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.userLbl.Location = new System.Drawing.Point(42, 50);
+            this.userLbl.Name = "userLbl";
+            this.userLbl.Size = new System.Drawing.Size(62, 30);
+            this.userLbl.TabIndex = 18;
+            this.userLbl.Text = "User";
+            // 
+            // welcomeLbl
+            // 
+            this.welcomeLbl.AutoSize = true;
+            this.welcomeLbl.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.welcomeLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.welcomeLbl.Location = new System.Drawing.Point(25, 30);
+            this.welcomeLbl.Name = "welcomeLbl";
+            this.welcomeLbl.Size = new System.Drawing.Size(80, 20);
+            this.welcomeLbl.TabIndex = 17;
+            this.welcomeLbl.Text = "Welcome";
             // 
             // SidePanelScroll
             // 
@@ -216,28 +238,6 @@
             this.singOutPicture.TabStop = false;
             this.singOutPicture.Click += new System.EventHandler(this.singOutPicture_Click);
             // 
-            // userLbl
-            // 
-            this.userLbl.AutoSize = true;
-            this.userLbl.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.userLbl.Location = new System.Drawing.Point(64, 67);
-            this.userLbl.Name = "userLbl";
-            this.userLbl.Size = new System.Drawing.Size(62, 30);
-            this.userLbl.TabIndex = 18;
-            this.userLbl.Text = "User";
-            // 
-            // welcomeLbl
-            // 
-            this.welcomeLbl.AutoSize = true;
-            this.welcomeLbl.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.welcomeLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.welcomeLbl.Location = new System.Drawing.Point(25, 30);
-            this.welcomeLbl.Name = "welcomeLbl";
-            this.welcomeLbl.Size = new System.Drawing.Size(80, 20);
-            this.welcomeLbl.TabIndex = 17;
-            this.welcomeLbl.Text = "Welcome";
-            // 
             // overSurgeryTitle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,7 +250,7 @@
             this.Controls.Add(this.leftPanel);
             this.Controls.Add(this.userControlPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "overSurgeryTitle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
