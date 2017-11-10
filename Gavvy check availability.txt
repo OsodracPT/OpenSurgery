@@ -1,0 +1,23 @@
+  
+Check Availablity 6/11/17- Gavvy
+
+
+private void checkavailabilityButton_Click(object sender, EventArgs e)
+        {
+            string date = dateTimePicker1.Text;
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.CheckStaffAvailability(date));
+
+            //this shows data set from the table and get displayed
+            DataTable dtUser = dsUser.Tables[0];
+
+            //Data View will show data source 
+            dgvUserdata.DataSource = dateUser;
+        }
+
+{
+    myConnection.Open();
+}
+catch(Exception e)
+{
+    Console.WriteLine(e.ToString());
+}
