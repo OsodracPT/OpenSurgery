@@ -31,7 +31,7 @@ namespace Main_Project
 
 
 
-
+        //Sql statement that checks the user input with the data present in userdata
         public static String selectLogin(string username, string password)
         {
 
