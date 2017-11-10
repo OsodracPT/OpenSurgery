@@ -304,3 +304,8 @@ __pycache__/
 # OpenCover UI analysis results
 OpenCover/
 .vs/Main Project/v14/.suo
+Main Project/bin/Debug/Main Project.exe
+Main Project/bin/Debug/Main Project.exe
+Main Project/bin/Debug/Main Project.pdb
+Main Project/bin/Debug/oversurgery.mdf
+Main Project/bin/Debug/Main Project.exe
