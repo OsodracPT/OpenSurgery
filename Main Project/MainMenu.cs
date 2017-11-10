@@ -26,12 +26,12 @@ namespace Main_Project
         private void MainMenu_Load(object sender, EventArgs e)
         {
 
-           userLbl.Text = LoginForm.UsernameText;
+            userLbl.Text = LoginForm.UsernameText;
 
 
             //moves the selection side scroll to the correct position(selecting staff)
             SidePanelScroll.Height = staffButton.Height;
-            
+
             //starts the main menu with the staff user control already in front
             if (!userControlPanel.Controls.Contains(StaffUserControl.Instance))
             {
