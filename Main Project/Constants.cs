@@ -10,7 +10,7 @@ namespace Main_Project
     {
         public static String selectUserData = "SELECT * FROM userdata";
         public static String selectPatient = "SELECT patientID AS [Patient ID], patientName AS Name," +
-            "address AS Address, postCode AS [Post Code], city AS City, Dob AS [Date of Birth], " + 
+            "address AS Address, postCode AS [Post Code], city AS City, Dob AS [Date of Birth], " +
             "phoneNumber AS [Phone Number], medicalRecordID AS [Medical Record ID]  FROM PatientData";
         //gets all the patient names and order it alphabetically
         public static String selectPatientName = "SELECT  patientName FROM PatientData ORDER BY patientName";
@@ -28,7 +28,13 @@ namespace Main_Project
         //select the maximum value of patient ID
         public static String selectMaxID = "SELECT MAX(patientID) FROM PatientData";
 
+        //sql statement that takes in the staff name and gives out his ID
+        public static String GetStaffID(string staffName)
+        {
 
+            string staffID = "SELECT staffID FROM medicalstaff WHERE staffName='" + staffName + "'";
+            return staffID;
+        }
 
 
         //Sql statement that checks the user input with the data present in userdata
@@ -48,10 +54,10 @@ namespace Main_Project
 
         public static String FindPatient(string userInput)
         {
-            string findPatient = "SELECT patientID AS [Patient ID], patientName AS Name,"+
-                " address AS Address, postCode AS [Post Code], city AS City, Dob AS [Date of Birth],"+
-                " phoneNumber AS [Phone Number], medicalRecordID AS [Medical Record ID] FROM PatientData"+
-                " WHERE (patientName LIKE '%" + userInput + "%'OR patientID LIKE '%" + userInput + "%'"+
+            string findPatient = "SELECT patientID AS [Patient ID], patientName AS Name," +
+                " address AS Address, postCode AS [Post Code], city AS City, Dob AS [Date of Birth]," +
+                " phoneNumber AS [Phone Number], medicalRecordID AS [Medical Record ID] FROM PatientData" +
+                " WHERE (patientName LIKE '%" + userInput + "%'OR patientID LIKE '%" + userInput + "%'" +
                 " OR address LIKE '%" + userInput + "%' OR dob LIKE '%" + userInput + "%')";
             return findPatient;
         }
@@ -76,7 +82,7 @@ namespace Main_Project
 
         public static String CheckStaffAvailability(string userInput)
         {
-            string SelectAvailability = "SELECT medicalstaff.staffID AS [Staff ID], medicalstaff.staffName AS [Name], shift.startDate AS [Date], shift.startTime AS [From], shift.endTime AS [To] FROM medicalstaff INNER JOIN shift ON medicalstaff.staffID = medicalstaff.staffID WHERE shift.startDate= '" + userInput + "'";
+            string SelectAvailability = "SELECT shift.staffID AS [Staff ID] , medicalstaff.staffName AS [Name], startTime AS [From], endTime AS [To], medicalstaff.ocupation AS [Occupation] FROM shift INNER JOIN medicalstaff ON shift.staffID = medicalstaff.staffID WHERE startDate= '" + userInput + "' OR NOT shift.startDate= '" + userInput + "'";
             return SelectAvailability;
         }
 
@@ -85,6 +91,12 @@ namespace Main_Project
 
             string bookAppointment = $"INSERT INTO appointment (date, time, description, staffName, patientName) VALUES('{date} ', '{time}', '{staffName} ', '{patientName}', '{description}')";
             return bookAppointment;
+        }
+
+        public static String AddShift(string startDate, string startTime, string endTime, int staffID)
+        {
+            string addShift = $"INSERT INTO shift (startDate, startTime, endTime, staffID) VALUES('{startDate} ', '{startTime}', '{endTime} ', '{staffID}')";
+            return addShift;
         }
     }
 }

@@ -65,6 +65,11 @@ namespace Main_Project
                 PatientUserControl.Instance.BringToFront();
         }
 
+        /// <summary>
+        /// Method runs when the user clicks the appointments button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void appointBtn_Click(object sender, EventArgs e)
         {
             //put the sidescroll panel in the correct place, selection
@@ -84,6 +89,11 @@ namespace Main_Project
                 AppointmentUserControl.Instance.BringToFront();
         }
 
+        /// <summary>
+        /// Method that runs when the user clicks the exit button. It closes the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
