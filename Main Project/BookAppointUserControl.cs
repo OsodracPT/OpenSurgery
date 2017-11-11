@@ -53,43 +53,63 @@ namespace Main_Project
 
                 string description = descriptionTxt.Text;
 
-                //Add this appointment as a shift to a staff member
-                //get the staff id based on the name selected by the user in the combo box
-                string str = DBConnection.getDBConnectionInstance().GetStaffID(staffInput);
-                int staffID = Convert.ToInt32(str);
-
-                //check too see if the staff member is already busy
-                int i = 0;
-
-                try
+                //check if all the combo boxes have values selected and then run the code
+                if (patientCombox.Text != String.Empty && staffComboBox.Text != String.Empty && timeComboBox.Text != String.Empty)
                 {
+                    //Add this appointment as a shift to a staff member
+                    //get the staff id based on the name selected by the user in the combo box
+                    string str = DBConnection.getDBConnectionInstance().GetStaffID(staffInput);
+                    int staffID = Convert.ToInt32(str);
 
-                    i = DBConnection.getDBConnectionInstance().CheckStaffBusy(staffID, date, timeInput);
+                    //check too see if the staff member is already busy
+                    int i = 0;
 
-                    if (i != 0)
+                    try
                     {
-                        MessageBox.Show("The staff member selected is already busy in that time period.");
+
+                        i = DBConnection.getDBConnectionInstance().CheckStaffBusy(staffID, date, timeInput);
+
+                        if (i != 0)
+                        {
+                            MessageBox.Show("The staff member selected is already busy in that time period.");
+                        }
+                        else
+                        {
+                            //Try to register patient by getting the data from the user input textboxes
+                            DBConnection.getDBConnectionInstance().BookAppointment(date, timeInput, staffInput, patientInput, description, staffID);
+
+
+                            Console.WriteLine(date + " " + timeInput + " " + AddHourTime(timeInput) + " " + staffID);
+                            //insert appointment as a shift in the shift table for a specific member of staff
+                            DBConnection.getDBConnectionInstance().AddShift(date, timeInput, AddHourTime(timeInput), staffID);
+
+                            //Show success message and close form
+                            MessageBox.Show("Booking was successfull!");
+
+                            AppointmentUserControl.RemoveBook();
+
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        //Try to register patient by getting the data from the user input textboxes
-                        DBConnection.getDBConnectionInstance().BookAppointment(date, timeInput, staffInput, patientInput, description, staffID);
-
-
-                        Console.WriteLine(date+" "+timeInput +" "+ AddHourTime(timeInput) + " "+ staffID);
-                        //insert appointment as a shift in the shift table for a specific member of staff
-                        DBConnection.getDBConnectionInstance().AddShift(date, timeInput, AddHourTime(timeInput), staffID);
-
-                        //Show success message and close form
-                        MessageBox.Show("Booking was successfull!");
-
-                        AppointmentUserControl.RemoveBook();
-
+                        MessageBox.Show(ex.Message);
                     }
                 }
-                catch (Exception ex)
+
+                //warning for the user to select a staff
+                else if (string.IsNullOrEmpty(staffComboBox.Text))
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Please select a staff member.");
+                }
+                //warning for the user to select a time
+                else if (string.IsNullOrEmpty(timeComboBox.Text))
+                {
+                    MessageBox.Show("Please select a time period.");
+                }
+                //warning for the user to select a patient
+                else if (string.IsNullOrEmpty(patientCombox.Text))
+                {
+                    MessageBox.Show("Please select a patient.");
                 }
 
             }
@@ -117,15 +137,23 @@ namespace Main_Project
                 input[1]++;
 
             }
+            else if (index == 9)
+            {
+                if (firstIndex == 0)
+                {
+                    input[0] = '1';
+                    input[1] = '0';
+                }
+                else if (firstIndex == 1)
+                {
+                    input[0] = '2';
+                    input[1] = '0';
+                }
+            }
             else if (index < 9 && firstIndex == 1)
             {
                 input[0] = '1';
-                if (index == 9)
-                {
-                    input[1] = '0';
-                }
-                else
-                    input[1]++;
+                input[1]++;
             }
             else
             {
@@ -135,6 +163,7 @@ namespace Main_Project
                     input[1] = '0';
                     input[0] = '0';
                 }
+
                 else
                     input[1]++;
             }
