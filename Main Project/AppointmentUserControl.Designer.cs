@@ -37,6 +37,7 @@
             this.userdataTableAdapter = new Main_Project.oversurgeryDataSetTableAdapters.userdataTableAdapter();
             this.oversurgeryDataSet = new Main_Project.oversurgeryDataSet();
             this.refreshBtn = new System.Windows.Forms.Button();
+            this.fileLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oversurgeryDataSet)).BeginInit();
             this.SuspendLayout();
@@ -44,10 +45,10 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(633, 53);
+            this.btnCancel.Location = new System.Drawing.Point(647, 51);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(111, 54);
+            this.btnCancel.Size = new System.Drawing.Size(106, 58);
             this.btnCancel.TabIndex = 24;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -55,10 +56,10 @@
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(518, 53);
+            this.btnEdit.Location = new System.Drawing.Point(537, 51);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(111, 54);
+            this.btnEdit.Size = new System.Drawing.Size(106, 58);
             this.btnEdit.TabIndex = 23;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -66,10 +67,10 @@
             // btnBook
             // 
             this.btnBook.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBook.Location = new System.Drawing.Point(403, 53);
+            this.btnBook.Location = new System.Drawing.Point(427, 51);
             this.btnBook.Margin = new System.Windows.Forms.Padding(2);
             this.btnBook.Name = "btnBook";
-            this.btnBook.Size = new System.Drawing.Size(111, 54);
+            this.btnBook.Size = new System.Drawing.Size(106, 58);
             this.btnBook.TabIndex = 22;
             this.btnBook.Text = "Book";
             this.btnBook.UseVisualStyleBackColor = true;
@@ -78,7 +79,7 @@
             // findBtn
             // 
             this.findBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findBtn.Location = new System.Drawing.Point(270, 66);
+            this.findBtn.Location = new System.Drawing.Point(257, 67);
             this.findBtn.Margin = new System.Windows.Forms.Padding(2);
             this.findBtn.Name = "findBtn";
             this.findBtn.Size = new System.Drawing.Size(111, 29);
@@ -88,7 +89,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(30, 66);
+            this.textBox1.Location = new System.Drawing.Point(12, 66);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -98,11 +99,12 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 165);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 186);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(714, 174);
+            this.dataGridView1.Size = new System.Drawing.Size(741, 166);
             this.dataGridView1.TabIndex = 25;
             // 
             // userdataTableAdapter
@@ -117,7 +119,7 @@
             // refreshBtn
             // 
             this.refreshBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshBtn.Location = new System.Drawing.Point(30, 134);
+            this.refreshBtn.Location = new System.Drawing.Point(129, 142);
             this.refreshBtn.Margin = new System.Windows.Forms.Padding(2);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(82, 27);
@@ -126,10 +128,23 @@
             this.refreshBtn.UseVisualStyleBackColor = true;
             this.refreshBtn.Click += new System.EventHandler(this.AppointmentUserControl_Load);
             // 
+            // fileLbl
+            // 
+            this.fileLbl.AutoSize = true;
+            this.fileLbl.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fileLbl.Location = new System.Drawing.Point(14, 143);
+            this.fileLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.fileLbl.Name = "fileLbl";
+            this.fileLbl.Size = new System.Drawing.Size(104, 40);
+            this.fileLbl.TabIndex = 27;
+            this.fileLbl.Text = "Appointment\r\n         File";
+            this.fileLbl.Click += new System.EventHandler(this.fileLbl_Click);
+            // 
             // AppointmentUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.fileLbl);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCancel);
@@ -158,5 +173,6 @@
         private oversurgeryDataSetTableAdapters.userdataTableAdapter userdataTableAdapter;
         private oversurgeryDataSet oversurgeryDataSet;
         private System.Windows.Forms.Button refreshBtn;
+        private System.Windows.Forms.Label fileLbl;
     }
 }

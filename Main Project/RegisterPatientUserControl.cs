@@ -54,5 +54,10 @@ namespace Main_Project
         {
             dobTimePick.MaxDate = DateTime.Now;
         }
+
+        private void RegisterPatientUserControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -55,6 +55,7 @@
     <Reference Include="MySql.Web, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -103,11 +104,11 @@
     <Compile Include="PatientUserControl.Designer.cs">
       <DependentUpon>PatientUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prescription.cs">
-      <SubType>Form</SubType>
+    <Compile Include="PrescriptionUserControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Prescription.Designer.cs">
-      <DependentUpon>Prescription.cs</DependentUpon>
+    <Compile Include="PrescriptionUserControl.Designer.cs">
+      <DependentUpon>PrescriptionUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -151,8 +152,8 @@
     <EmbeddedResource Include="PatientUserControl.resx">
       <DependentUpon>PatientUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Prescription.resx">
-      <DependentUpon>Prescription.cs</DependentUpon>
+    <EmbeddedResource Include="PrescriptionUserControl.resx">
+      <DependentUpon>PrescriptionUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

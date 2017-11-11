@@ -12,6 +12,7 @@ namespace Main_Project
         public static String selectPatient = "SELECT patientID AS [Patient ID], patientName AS Name," +
             "address AS Address, postCode AS [Post Code], city AS City, Dob AS [Date of Birth], " + 
             "phoneNumber AS [Phone Number], medicalRecordID AS [Medical Record ID]  FROM PatientData";
+        public static String selectAllPatients = "SELECT patientName AS [Patient Name], dob AS [D.O.B], postCode AS [Post Code], patientID AS [Patient ID] FROM PatientData";
         //gets all the patient names and order it alphabetically
         public static String selectPatientName = "SELECT  patientName FROM PatientData ORDER BY patientName";
         public static String selectStaff = "SELECT * FROM medicalStaff";
@@ -86,5 +87,13 @@ namespace Main_Project
             string bookAppointment = $"INSERT INTO appointment (date, time, description, staffName, patientName) VALUES('{date} ', '{time}', '{staffName} ', '{patientName}', '{description}')";
             return bookAppointment;
         }
+        public static String SelectPrescription(string userInput)
+        {
+
+            string selectPrescription = "SELECT PatientData.patientName AS [Patient Name], medicalRecords.content AS[Prescription], PatientData.patientID AS[PatientID], medicalRecords.mostRecentPrescription AS [Most Recent Prescription] FROM medicalRecords INNER JOIN PatientData ON medicalRecords.medicalRecordID = PatientData.medicalRecordID WHERE medicalRecords.patientID ='"+userInput+"'";
+            return selectPrescription;
+        }
+
+
     }
 }

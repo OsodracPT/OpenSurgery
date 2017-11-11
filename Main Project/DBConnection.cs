@@ -14,7 +14,7 @@ namespace Main_Project
         //attributes
         private static DBConnection _instance;
 
-        private static string connectionString;
+        internal static string connectionString;
 
         //theSqlConnection object used to store the connection to the database
         private SqlConnection connectionToDB;
@@ -76,6 +76,8 @@ namespace Main_Project
 
             return dataSet;
         }
+        
+
 
         public int TryLogin(string username, string password)
         {
@@ -127,5 +129,6 @@ namespace Main_Project
 
             connectionToDB.Close();
         }
+        
     }
 }

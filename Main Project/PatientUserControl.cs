@@ -49,7 +49,10 @@ namespace Main_Project
         {
             Instance.Controls.Remove(RegisterPatientUserControl.Instance);
         }
-        
+        public static void RemoveRegisterPresription()
+        {
+            Instance.Controls.Remove(PrescriptionUserControl.Instance);
+        }
         private void findBtn_Click(object sender, EventArgs e)
         {
 
@@ -65,8 +68,11 @@ namespace Main_Project
 
         private void PrescriptionBtn_Click(object sender, EventArgs e)
         {
-            Prescription prescriptionForm = new Prescription();
-            prescriptionForm.Show();
+            Instance.Controls.Add(PrescriptionUserControl.Instance);
+
+
+            PrescriptionUserControl.Instance.Dock = DockStyle.Fill;
+            PrescriptionUserControl.Instance.BringToFront();
         }
 
 
@@ -104,6 +110,16 @@ namespace Main_Project
             {
                 findBtn_Click(sender, e);
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void findInputTxtBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
