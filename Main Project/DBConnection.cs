@@ -129,6 +129,33 @@ namespace Main_Project
 
             connectionToDB.Close();
         }
-        
+
+
+        public void AddShift(string startDate, string startTime, string endTime, int staffID)
+        {
+            connectionToDB.Open();
+
+            SqlCommand cmd = connectionToDB.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = Constants.AddShift(startDate, startTime, endTime, staffID);
+            cmd.ExecuteNonQuery();
+
+            connectionToDB.Close();
+        }
+
+        public string GetStaffID(string staffName)
+        {
+            connectionToDB.Open();
+
+            SqlCommand cmd = connectionToDB.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = Constants.GetStaffID(staffName);
+            cmd.ExecuteNonQuery();
+            string str = Convert.ToString(cmd.ExecuteScalar());
+            connectionToDB.Close();
+
+            return str;
+        }
+
     }
 }

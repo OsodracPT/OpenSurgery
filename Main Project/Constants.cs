@@ -30,7 +30,13 @@ namespace Main_Project
         public static String selectMaxID = "SELECT MAX(patientID) FROM PatientData";
 
 
+        //sql statement that takes in the staff name and gives out his ID
+        public static String GetStaffID(string staffName)
+        {
 
+            string staffID = "SELECT staffID FROM medicalstaff WHERE staffName='" + staffName + "'";
+            return staffID;
+        }
 
         //Sql statement that checks the user input with the data present in userdata
         public static String selectLogin(string username, string password)
@@ -94,6 +100,11 @@ namespace Main_Project
             return selectPrescription;
         }
 
+        public static String AddShift(string startDate, string startTime, string endTime, int staffID)
+        {
+            string addShift = $"INSERT INTO shift (startDate, startTime, endTime, staffID) VALUES('{startDate} ', '{startTime}', '{endTime} ', '{staffID}')";
+            return addShift;
+        }
 
     }
 }

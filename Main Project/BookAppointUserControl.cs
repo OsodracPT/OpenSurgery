@@ -57,6 +57,13 @@ namespace Main_Project
                 //Try to register patient by getting the data from the user input textboxes
                 DBConnection.getDBConnectionInstance().BookAppointment(date, timeInput, staffInput, patientInput, description);
 
+                //Add this appointment as a shift to a staff member
+                //get the staff id based on the name selected by thje user in the combo box
+                string str = DBConnection.getDBConnectionInstance().GetStaffID(staffInput);
+                int staffID = Convert.ToInt32(str);
+                //insert appointment as a shift in the shift table for a specific member of staff
+                DBConnection.getDBConnectionInstance().AddShift(date, timeInput, AddHourTime(timeInput), staffID);
+
                 //Show success message and close form
                 MessageBox.Show("Booking was successfull!");
             }
@@ -66,6 +73,48 @@ namespace Main_Project
                 MessageBox.Show(ex.Message);
             }
             AppointmentUserControl.RemoveBook();
+        }
+
+        /// <summary>
+        /// This method adds an hour to the time selected by the user in the combo box
+        /// </summary>
+        /// <param name="timeInput"></param>
+        /// <returns></returns>
+        private string AddHourTime(string timeInput)
+        {
+            //Add an hour to the time selected
+            var input = timeInput.ToCharArray();
+            int index = input[1] - '0';
+            int firstIndex = input[0] - '0';
+
+            if (index < 9 && firstIndex == 0)
+            {
+                input[1]++;
+
+            }
+            else if (index < 9 && firstIndex == 1)
+            {
+                input[0] = '1';
+                if (index == 9)
+                {
+                    input[1] = '0';
+                }
+                else
+                    input[1]++;
+            }
+            else
+            {
+                input[0] = '2';
+                if (index == 3)
+                {
+                    input[1] = '0';
+                    input[0] = '0';
+                }
+                else
+                    input[1]++;
+            }
+            string endTime = Convert.ToString(input);
+            return endTime;
         }
 
         /// <summary>
