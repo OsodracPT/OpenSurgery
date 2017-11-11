@@ -84,6 +84,7 @@
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(209, 544);
             this.leftPanel.TabIndex = 11;
+            this.leftPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // userLbl
             // 
@@ -174,6 +175,7 @@
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(801, 10);
             this.topPanel.TabIndex = 12;
+            this.topPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // panel3
             // 
@@ -184,6 +186,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(111, 143);
             this.panel3.TabIndex = 13;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // label2
             // 

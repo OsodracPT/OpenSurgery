@@ -136,6 +136,7 @@
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(200, 338);
             this.leftPanel.TabIndex = 5;
+            this.leftPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseDown);
             // 
             // label3
             // 
