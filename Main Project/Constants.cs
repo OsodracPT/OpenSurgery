@@ -46,6 +46,14 @@ namespace Main_Project
             return selectLogin;
         }
 
+        //Sql statement that checks for a specific staff member according to user input
+        public static String SpecificStaffMember(string staffID, string date, string time)
+        {
+            Console.WriteLine(date + time);
+            string selectStaffMember = "SELECT * FROM shift WHERE staffID='" + staffID + "' AND startDate='" + date + "' AND startTime='" + time + "'";
+            return selectStaffMember;
+        }
+
         public static String RegisterPatient(string name, string address, string postcode, string city, string DoB, int phoneNumber)
         {
 
@@ -87,10 +95,10 @@ namespace Main_Project
             return SelectAvailability;
         }
 
-        public static String BookAppointment(string date, string time, string staffName, string patientName, string description)
+        public static String BookAppointment(string date, string time, string staffName, string patientName, string description, int staffID)
         {
 
-            string bookAppointment = $"INSERT INTO appointment (date, time, description, staffName, patientName) VALUES('{date} ', '{time}', '{staffName} ', '{patientName}', '{description}')";
+            string bookAppointment = $"INSERT INTO appointment (date, time, description, staffName, patientName, staffID) VALUES('{date} ', '{time}', '{description} ', '{staffName}', '{patientName}','{staffID}')";
             return bookAppointment;
         }
         public static String SelectPrescription(string userInput)

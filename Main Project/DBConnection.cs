@@ -118,13 +118,13 @@ namespace Main_Project
             return maxId;
         }
 
-        public void BookAppointment(string date, string time, string staffName, string patientName, string description)
+        public void BookAppointment(string date, string time, string staffName, string patientName, string description, int staffID)
         {
             connectionToDB.Open();
 
             SqlCommand cmd = connectionToDB.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = Constants.BookAppointment(date, time, staffName, patientName, description);
+            cmd.CommandText = Constants.BookAppointment(date, time, staffName, patientName, description, staffID);
             cmd.ExecuteNonQuery();
 
             connectionToDB.Close();
@@ -155,6 +155,20 @@ namespace Main_Project
             connectionToDB.Close();
 
             return str;
+        }
+
+        //check if a staff member is already busy according to the user input
+        public int CheckStaffBusy(int  staffID, string date, string time)
+        {
+            int i = 0;
+            string staffString = Convert.ToString(staffID);
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.SpecificStaffMember(staffString, date, time));
+
+            //get the table to be displayed from the data set
+            DataTable dtUser = dsUser.Tables[0];
+
+            i = Convert.ToInt32(dtUser.Rows.Count.ToString());
+            return i;
         }
 
     }

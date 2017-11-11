@@ -44,7 +44,6 @@ namespace Main_Project
             try
             {
 
-
                 //get all the user input
                 string patientInput = patientCombox.Text;
                 string staffInput = staffComboBox.Text;
@@ -54,25 +53,51 @@ namespace Main_Project
 
                 string description = descriptionTxt.Text;
 
-                //Try to register patient by getting the data from the user input textboxes
-                DBConnection.getDBConnectionInstance().BookAppointment(date, timeInput, staffInput, patientInput, description);
-
                 //Add this appointment as a shift to a staff member
-                //get the staff id based on the name selected by thje user in the combo box
+                //get the staff id based on the name selected by the user in the combo box
                 string str = DBConnection.getDBConnectionInstance().GetStaffID(staffInput);
                 int staffID = Convert.ToInt32(str);
-                //insert appointment as a shift in the shift table for a specific member of staff
-                DBConnection.getDBConnectionInstance().AddShift(date, timeInput, AddHourTime(timeInput), staffID);
 
-                //Show success message and close form
-                MessageBox.Show("Booking was successfull!");
+                //check too see if the staff member is already busy
+                int i = 0;
+
+                try
+                {
+
+                    i = DBConnection.getDBConnectionInstance().CheckStaffBusy(staffID, date, timeInput);
+
+                    if (i != 0)
+                    {
+                        MessageBox.Show("The staff member selected is already busy in that time period.");
+                    }
+                    else
+                    {
+                        //Try to register patient by getting the data from the user input textboxes
+                        DBConnection.getDBConnectionInstance().BookAppointment(date, timeInput, staffInput, patientInput, description, staffID);
+
+
+                        Console.WriteLine(date+" "+timeInput +" "+ AddHourTime(timeInput) + " "+ staffID);
+                        //insert appointment as a shift in the shift table for a specific member of staff
+                        DBConnection.getDBConnectionInstance().AddShift(date, timeInput, AddHourTime(timeInput), staffID);
+
+                        //Show success message and close form
+                        MessageBox.Show("Booking was successfull!");
+
+                        AppointmentUserControl.RemoveBook();
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
             }
 
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            AppointmentUserControl.RemoveBook();
         }
 
         /// <summary>
@@ -113,7 +138,9 @@ namespace Main_Project
                 else
                     input[1]++;
             }
-            string endTime = Convert.ToString(input);
+
+
+            String endTime = new String(input);
             return endTime;
         }
 
