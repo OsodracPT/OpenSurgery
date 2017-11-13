@@ -21,7 +21,7 @@ namespace Main_Project
         {
             get
             {
-                if (_instance == null)
+                if (_instance == null || _instance.IsDisposed == true)
                     _instance = new BookAppointUserControl();
                 return _instance;
             }
