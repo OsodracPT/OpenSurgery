@@ -26,7 +26,7 @@ namespace Main_Project
         private void MainMenu_Load(object sender, EventArgs e)
         {
 
-           userLbl.Text = LoginForm.UsernameText;
+            userLbl.Text = LoginForm.UsernameText;
 
 
             //moves the selection side scroll to the correct position(selecting staff)
@@ -42,6 +42,7 @@ namespace Main_Project
             else
                 StaffUserControl.Instance.BringToFront();
         }
+
 
         //https://www.youtube.com/watch?v=ao4HwEpW7eg
         //C# Tutorial : How to load User control dynamically | FoxLearn
