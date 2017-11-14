@@ -114,9 +114,9 @@ namespace Main_Project
             return addShift;
         }
 
-        public static String DeleteShift(string startDate, string startTime, string endTime, int staffID)
+        public static String DeleteShift(string appointID)
         {
-            string deleteShift = "DELETE FROM shift WHERE staffID = '" + staffID + "' AND startDate='" + startDate + "' AND startTime='" + startTime + "' ";
+            string deleteShift = "DELETE FROM shift WHERE appointmentID = '" + appointID + "'";
             return deleteShift;
         }
 
@@ -139,6 +139,12 @@ namespace Main_Project
             return updateSpecificAppointment;
         }
 
+        //deletes the selected appointment statement
+        public static String DeleteAppointment(string userInput)
+        {
+            string deleteAppointment = "DELETE FROM appointment WHERE appointmentID = '" + userInput + "'";
+            return deleteAppointment;
+        }
         public static String UpdateShift(string startDate, string startTime, string endTime, int staffID, string appointID)
         {
             string updateShift = $"UPDATE shift SET startDate = '" + startDate + "', startTime = '" + startTime + "', endTime = '" + endTime + "', staffID = '" + staffID + "' WHERE appointmentID ='" + appointID + "'";

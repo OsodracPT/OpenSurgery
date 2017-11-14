@@ -130,6 +130,18 @@ namespace Main_Project
             connectionToDB.Close();
         }
 
+        public void SqlStatementExecute(String sqlStatement)
+        {
+            connectionToDB.Open();
+
+            SqlCommand cmd = connectionToDB.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = sqlStatement;
+            cmd.ExecuteNonQuery();
+
+            connectionToDB.Close();
+        }
+
         //edit appointment
         public void EditAppointment(string appointID, string date, string time, string staffName, string patientName, string description, int staffID)
         {

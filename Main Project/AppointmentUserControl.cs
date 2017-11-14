@@ -122,5 +122,32 @@ namespace Main_Project
         {
             return AppointmentID;
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (valueNotSelected == true)
+            {
+                MessageBox.Show("Please select the appointment you want to cancel.");
+            }
+            else
+            {
+                try
+                {
+                    //try to delete appointment
+                    DBConnection.getDBConnectionInstance().SqlStatementExecute(Constants.DeleteAppointment(AppointmentID));
+
+                    //try to delete the shift related to the same appointment
+                    DBConnection.getDBConnectionInstance().SqlStatementExecute(Constants.DeleteShift(AppointmentID));
+
+
+                    MessageBox.Show("Appointment deleted successfully!");
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+        }
+
     }
 }
