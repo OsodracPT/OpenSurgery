@@ -63,6 +63,7 @@
             this.btnEdit.TabIndex = 23;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnBook
             // 
@@ -106,6 +107,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(741, 166);
             this.dataGridView1.TabIndex = 25;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // userdataTableAdapter
             // 
@@ -138,7 +140,6 @@
             this.fileLbl.Size = new System.Drawing.Size(104, 40);
             this.fileLbl.TabIndex = 27;
             this.fileLbl.Text = "Appointment\r\n         File";
-            this.fileLbl.Click += new System.EventHandler(this.fileLbl_Click);
             // 
             // AppointmentUserControl
             // 

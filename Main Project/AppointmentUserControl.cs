@@ -12,6 +12,9 @@ namespace Main_Project
 {
     public partial class AppointmentUserControl : UserControl
     {
+        //holds the value of the appointment ID
+        private static string appointmentID;
+        static bool valueNotSelected = false;
 
         //singleton initiation
         private static AppointmentUserControl _instance;
@@ -25,6 +28,20 @@ namespace Main_Project
                 return _instance;
             }
         }
+
+        public static string AppointmentID
+        {
+            get
+            {
+                return appointmentID;
+            }
+
+            set
+            {
+                appointmentID = value;
+            }
+        }
+
         public AppointmentUserControl()
         {
             InitializeComponent();
@@ -43,6 +60,8 @@ namespace Main_Project
         public static void RemoveBook()
         {
             Instance.Controls.Remove(BookAppointUserControl.Instance);
+            Instance.Controls.Remove(EditAppoinUserControl.Instance);
+
         }
 
         private void AppointmentUserControl_Load(object sender, EventArgs e)
@@ -59,9 +78,49 @@ namespace Main_Project
             dataGridView1.DataSource = dtAppoint;
         }
 
-        private void fileLbl_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
+            if (valueNotSelected==true)
+            {
+                MessageBox.Show("Please select the appointment you want to edit.");
+            }
+            else
+            {
+                Instance.Controls.Add(EditAppoinUserControl.Instance);
 
+
+                EditAppoinUserControl.Instance.Dock = DockStyle.Fill;
+                EditAppoinUserControl.Instance.BringToFront();
+            }
+        }
+
+        /// <summary>
+        /// Gets the value from the selected row in the data grid view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            valueNotSelected = false;
+
+            DataGridViewRow selectedRow = dataGridView1.Rows[index];
+            try
+            {
+                AppointmentID = selectedRow.Cells[0].Value.ToString();
+
+                int appointId = Convert.ToInt32(AppointmentID);
+                Console.WriteLine(AppointmentID);
+            }
+            catch (Exception ex)
+            {
+                valueNotSelected = true;
+            }
+        }
+
+        public static string returnValue()
+        {
+            return AppointmentID;
         }
     }
 }

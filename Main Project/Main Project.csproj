@@ -81,6 +81,12 @@
     </Compile>
     <Compile Include="Constants.cs" />
     <Compile Include="DBConnection.cs" />
+    <Compile Include="EditAppoinUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditAppoinUserControl.Designer.cs">
+      <DependentUpon>EditAppoinUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BookAppointUserControl.resx">
       <DependentUpon>BookAppointUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditAppoinUserControl.resx">
+      <DependentUpon>EditAppoinUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

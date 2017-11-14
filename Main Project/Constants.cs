@@ -10,7 +10,7 @@ namespace Main_Project
     {
         public static String selectUserData = "SELECT * FROM userdata";
         public static String selectPatient = "SELECT patientID AS [Patient ID], patientName AS Name," +
-            "address AS Address, postCode AS [Post Code], city AS City, Dob AS [Date of Birth], " + 
+            "address AS Address, postCode AS [Post Code], city AS City, Dob AS [Date of Birth], " +
             "phoneNumber AS [Phone Number], medicalRecordID AS [Medical Record ID]  FROM PatientData";
         public static String selectAllPatients = "SELECT patientName AS [Patient Name], dob AS [D.O.B], postCode AS [Post Code], patientID AS [Patient ID] FROM PatientData";
         //gets all the patient names and order it alphabetically
@@ -63,10 +63,10 @@ namespace Main_Project
 
         public static String FindPatient(string userInput)
         {
-            string findPatient = "SELECT patientID AS [Patient ID], patientName AS Name,"+
-                " address AS Address, postCode AS [Post Code], city AS City, Dob AS [Date of Birth],"+
-                " phoneNumber AS [Phone Number], medicalRecordID AS [Medical Record ID] FROM PatientData"+
-                " WHERE (patientName LIKE '%" + userInput + "%'OR patientID LIKE '%" + userInput + "%'"+
+            string findPatient = "SELECT patientID AS [Patient ID], patientName AS Name," +
+                " address AS Address, postCode AS [Post Code], city AS City, Dob AS [Date of Birth]," +
+                " phoneNumber AS [Phone Number], medicalRecordID AS [Medical Record ID] FROM PatientData" +
+                " WHERE (patientName LIKE '%" + userInput + "%'OR patientID LIKE '%" + userInput + "%'" +
                 " OR address LIKE '%" + userInput + "%' OR dob LIKE '%" + userInput + "%')";
             return findPatient;
         }
@@ -104,15 +104,47 @@ namespace Main_Project
         public static String SelectPrescription(string userInput)
         {
 
-            string selectPrescription = "SELECT PatientData.patientName AS [Patient Name], medicalRecords.content AS[Prescription], PatientData.patientID AS[PatientID], medicalRecords.mostRecentPrescription AS [Most Recent Prescription] FROM medicalRecords INNER JOIN PatientData ON medicalRecords.medicalRecordID = PatientData.medicalRecordID WHERE medicalRecords.patientID ='"+userInput+"'";
+            string selectPrescription = "SELECT PatientData.patientName AS [Patient Name], medicalRecords.content AS[Prescription], PatientData.patientID AS[PatientID], medicalRecords.mostRecentPrescription AS [Most Recent Prescription] FROM medicalRecords INNER JOIN PatientData ON medicalRecords.medicalRecordID = PatientData.medicalRecordID WHERE medicalRecords.patientID ='" + userInput + "'";
             return selectPrescription;
         }
 
-        public static String AddShift(string startDate, string startTime, string endTime, int staffID)
+        public static String AddShift(string startDate, string startTime, string endTime, int staffID, string appointID)
         {
-            string addShift = $"INSERT INTO shift (startDate, startTime, endTime, staffID) VALUES('{startDate} ', '{startTime}', '{endTime} ', '{staffID}')";
+            string addShift = $"INSERT INTO shift (startDate, startTime, endTime, staffID, appointmentID) VALUES('{startDate} ', '{startTime}', '{endTime} ', '{staffID}', '{appointID}')";
             return addShift;
         }
+
+        public static String DeleteShift(string startDate, string startTime, string endTime, int staffID)
+        {
+            string deleteShift = "DELETE FROM shift WHERE staffID = '" + staffID + "' AND startDate='" + startDate + "' AND startTime='" + startTime + "' ";
+            return deleteShift;
+        }
+
+        //selects specific appointment based on the id, used in the edit appointment function
+        public static String SelectAppointment(string userInput)
+        {
+            string selectSpecificAppointment = "SELECT * FROM appointment WHERE appointmentID='" + userInput + "'";
+            return selectSpecificAppointment;
+        }
+
+        //get the appointment ID based on the other user entries
+        public static String GetAppointmentNoID(string date, string time, string staffName, string patientName, string description, int staffID)
+        {
+            string selectSpecificAppointment = "SELECT appointmentID FROM appointment WHERE date = '" + date + "' AND time='" + time + "' AND staffName='" + staffName + "' AND patientName='" + patientName + "' AND description='" + description + "' AND staffID='" + staffID + "' ";
+            return selectSpecificAppointment;
+        }
+        public static String UpdateAppointment(string appointID, string date, string time, string staffName, string patientName, string description, int staffID)
+        {
+            string updateSpecificAppointment = $"UPDATE appointment SET date = '" + date + "', time = '" + time + "', staffID = '" + staffID + "', description = '" + description + "', staffName = '" + staffName + "', patientName = '" + patientName + "' WHERE appointmentID ='" + appointID + "'";
+            return updateSpecificAppointment;
+        }
+
+        public static String UpdateShift(string startDate, string startTime, string endTime, int staffID, string appointID)
+        {
+            string updateShift = $"UPDATE shift SET startDate = '" + startDate + "', startTime = '" + startTime + "', endTime = '" + endTime + "', staffID = '" + staffID + "' WHERE appointmentID ='" + appointID + "'";
+            return updateShift;
+        }
+
 
     }
 }

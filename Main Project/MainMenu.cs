@@ -74,7 +74,7 @@ namespace Main_Project
             SidePanelScroll.Height = appointBtn.Height;
             SidePanelScroll.Top = appointBtn.Top;
 
-            //removes "booking appointment" if it is present in the panel.
+            //removes "booking appointment" and edit appointment if it is present in the panel.
             AppointmentUserControl.RemoveBook();
 
             if (!userControlPanel.Controls.Contains(AppointmentUserControl.Instance))

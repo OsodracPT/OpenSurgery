@@ -12,8 +12,6 @@ namespace Main_Project
 {
     public partial class BookAppointUserControl : UserControl
     {
-
-
         //singleton initiation
         private static BookAppointUserControl _instance;
 
@@ -80,8 +78,12 @@ namespace Main_Project
 
 
                             Console.WriteLine(date + " " + timeInput + " " + AddHourTime(timeInput) + " " + staffID);
+
+                            //Need to get the id from the appointment created
+                            string appointID = DBConnection.getDBConnectionInstance().GetAppointmentID(date, timeInput, staffInput, patientInput, description, staffID);
+
                             //insert appointment as a shift in the shift table for a specific member of staff
-                            DBConnection.getDBConnectionInstance().AddShift(date, timeInput, AddHourTime(timeInput), staffID);
+                            DBConnection.getDBConnectionInstance().AddShift(date, timeInput, AddHourTime(timeInput), staffID, appointID);
 
                             //Show success message and close form
                             MessageBox.Show("Booking was successfull!");
@@ -207,5 +209,6 @@ namespace Main_Project
                 else
                     timeComboBox.Items.Add(i + ":00");
         }
+
     }
 }

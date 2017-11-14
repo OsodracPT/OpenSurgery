@@ -76,7 +76,7 @@ namespace Main_Project
 
             return dataSet;
         }
-        
+
 
 
         public int TryLogin(string username, string password)
@@ -130,14 +130,38 @@ namespace Main_Project
             connectionToDB.Close();
         }
 
-
-        public void AddShift(string startDate, string startTime, string endTime, int staffID)
+        //edit appointment
+        public void EditAppointment(string appointID, string date, string time, string staffName, string patientName, string description, int staffID)
         {
             connectionToDB.Open();
 
             SqlCommand cmd = connectionToDB.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = Constants.AddShift(startDate, startTime, endTime, staffID);
+            cmd.CommandText = Constants.UpdateAppointment(appointID, date, time, staffName, patientName, description, staffID);
+            cmd.ExecuteNonQuery();
+
+            connectionToDB.Close();
+        }
+
+        public void AddShift(string startDate, string startTime, string endTime, int staffID, string appointID)
+        {
+            connectionToDB.Open();
+
+            SqlCommand cmd = connectionToDB.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = Constants.AddShift(startDate, startTime, endTime, staffID, appointID);
+            cmd.ExecuteNonQuery();
+
+            connectionToDB.Close();
+        }
+
+        public void UpdateShift(string startDate, string startTime, string endTime, int staffID, string apointID)
+        {
+            connectionToDB.Open();
+
+            SqlCommand cmd = connectionToDB.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = Constants.UpdateShift(startDate, startTime, endTime, staffID, apointID);
             cmd.ExecuteNonQuery();
 
             connectionToDB.Close();
@@ -157,8 +181,22 @@ namespace Main_Project
             return str;
         }
 
+        public string GetAppointmentID(string date, string time, string staffName, string patientName, string description, int staffID)
+        {
+            connectionToDB.Open();
+
+            SqlCommand cmd = connectionToDB.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = Constants.GetAppointmentNoID(date, time, staffName, patientName, description, staffID);
+            cmd.ExecuteNonQuery();
+            string str = Convert.ToString(cmd.ExecuteScalar());
+            connectionToDB.Close();
+
+            return str;
+        }
+
         //check if a staff member is already busy according to the user input
-        public int CheckStaffBusy(int  staffID, string date, string time)
+        public int CheckStaffBusy(int staffID, string date, string time)
         {
             int i = 0;
             string staffString = Convert.ToString(staffID);

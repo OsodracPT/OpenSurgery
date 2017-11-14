@@ -70,3 +70,4 @@ C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main Pro
 C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main Project.pdb
 C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.PrescriptionUserControl.resources
 C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.PrescriptionUserControl.resources
+C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.EditAppoinUserControl.resources
