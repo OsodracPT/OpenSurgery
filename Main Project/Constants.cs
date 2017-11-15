@@ -18,6 +18,9 @@ namespace Main_Project
         public static String selectStaff = "SELECT * FROM medicalStaff";
         //gets all the staff names and order it alphabetically
         public static String selectStaffName = "SELECT staffName FROM medicalstaff ORDER BY staffName";
+        //counts the number of staff
+        public static String countStaff = "SELECT COUNT(staffID) FROM medicalstaff";
+
         public static String selectPrescr = "SELECT * FROM medicalStaff";
         public static String selectTest = "SELECT test, patientID FROM medicalRecords";
 

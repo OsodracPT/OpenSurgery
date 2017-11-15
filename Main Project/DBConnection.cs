@@ -221,5 +221,20 @@ namespace Main_Project
             return i;
         }
 
+        public int GetIntValue(String sqlStatement)
+        {
+            connectionToDB.Open();
+
+            SqlCommand cmd = connectionToDB.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = sqlStatement;
+            cmd.ExecuteNonQuery();
+            int value = Convert.ToInt32(cmd.ExecuteScalar());
+            connectionToDB.Close();
+
+            return value;
+        }
+
+
     }
 }
