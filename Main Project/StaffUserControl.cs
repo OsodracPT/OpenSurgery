@@ -31,6 +31,70 @@ namespace Main_Project
 
         private void StaffUserControl_Load(object sender, EventArgs e)
         {
+
+            LoadlistView();
+        }
+
+
+        //additions by Rom
+        private void checkdutyBtn_Click(object sender, EventArgs e)
+        {
+
+            string date = dateTimePicker1.Text;
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.SelectShiftQuery(date));
+
+            //get the table to be displayed from the data set
+            DataTable dtUser = dsUser.Tables[0];
+
+            //set the data source for the data grid view
+        }
+
+        private void checkavailBtn_Click(object sender, EventArgs e)
+        {
+            string date = dateTimePicker1.Text;
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.CheckStaffAvailability(date));
+
+            //get the table to be displayed from the data set
+            DataTable dtUser = dsUser.Tables[0];
+
+            //set the data source for the data grid view
+        }
+
+        private void checkfreeBtn_Click(object sender, EventArgs e)
+        {
+            string date = dateTimePicker1.Text;
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.CheckFreeQuery(date));
+
+            //get the table to be displayed from the data set
+            DataTable dtUser = dsUser.Tables[0];
+
+            //set the data source for the data grid view
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+            //reload the listview
+            LoadlistView();
+
+            //Get the number of staff for the loop
+            int staffNumber = DBConnection.getDBConnectionInstance().GetIntValue(Constants.countStaff);
+            for (int i = 0; i < staffNumber; i++)
+            {
+                string staffID = Convert.ToString(i);
+                AddShiftToListView(staffID);
+            }
+
+
+
+
+        }
+
+        private void LoadlistView()
+        {
+
+            listView1.Items.Clear();
+
             //I want to add a listview
             listView1.Columns.Add("Time");
 
@@ -62,84 +126,100 @@ namespace Main_Project
             {
                 for (int i = 0; i < 16; i++)
                 {
-                    listView1.Items[i].SubItems.Add(index + " column");
+                    listView1.Items[i].SubItems.Add("Available");
+                    //property to add colour
+                    listView1.Items[i].UseItemStyleForSubItems = false;
                 }
 
             }
 
-
-
-
-
-
-            //
-            DataSet dsStaff = DBConnection.getDBConnectionInstance().getDataSet(Constants.selectStaff);
-
-            //get the table to be displayed from the data set
-            //DataTable dtStaff = dsStaff.Tables[0];
-
-            //set the data source for the data grid view
-            dgvUserdata.DataSource = dtStaff;
         }
 
-
-        //additions by Rom
-        private void checkdutyBtn_Click(object sender, EventArgs e)
+        private void AddShiftToListView(string staffID)
         {
 
             string date = dateTimePicker1.Text;
-            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.SelectShiftQuery(date));
-
-            //get the table to be displayed from the data set
-            DataTable dtUser = dsUser.Tables[0];
-
-            //set the data source for the data grid view
-            dgvUserdata.DataSource = dtUser;
-        }
-
-        private void checkavailBtn_Click(object sender, EventArgs e)
-        {
-            string date = dateTimePicker1.Text;
-            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.CheckStaffAvailability(date));
-
-            //get the table to be displayed from the data set
-            DataTable dtUser = dsUser.Tables[0];
-
-            //set the data source for the data grid view
-            dgvUserdata.DataSource = dtUser;
-        }
-
-        private void checkfreeBtn_Click(object sender, EventArgs e)
-        {
-            string date = dateTimePicker1.Text;
-            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.CheckFreeQuery(date));
-
-            //get the table to be displayed from the data set
-            DataTable dtUser = dsUser.Tables[0];
-
-            //set the data source for the data grid view
-            dgvUserdata.DataSource = dtUser;
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            string date = dateTimePicker1.Text;
-            Console.WriteLine("HI");
 
             DataSet dsStaffAvail = DBConnection.getDBConnectionInstance().getDataSet(Constants.SelectShiftQuery(date));
 
             //get the table to be displayed from the data set
             DataTable dtStaffAvail = dsStaffAvail.Tables[0];
 
-            if ((dtStaffAvail.Rows[0]["Name"].ToString()) == "Pedro Cardoso")
+            //find out how many shifts a member of staff has in that specific day
+            int shiftAmount = DBConnection.getDBConnectionInstance().GetIntValue(Constants.Countshifts(date));
+            Console.WriteLine("Shift Amount=" + shiftAmount);
+            
+            //debug
+            Console.WriteLine("Passed Value:"+staffID);
+            for (int i = 0; i < shiftAmount; i++)
             {
-                //change the subitems value to change the staff member
-                listView1.Items[4].SubItems[1].Text = "working";
+                Console.WriteLine("Value from the datatable:"+(dtStaffAvail.Rows[i]["Staff ID"].ToString()));
+                if ((dtStaffAvail.Rows[i]["Staff ID"].ToString()) == staffID)
+                {
+                    //change the subitems value to change the staff member
 
-                //analyse the datatable in search of startTimes
+                    string value = (dtStaffAvail.Rows[i]["From"].ToString());
+                    Console.WriteLine("Row value=" + value);
+                    int staffInt = Convert.ToInt32(staffID);
+
+                    switch (value)
+                    {
+                        case "08:00:00":
+                            listView1.Items[0].SubItems[staffInt].Text = "working";
+                            break;
+                        case "09:00:00":
+                            listView1.Items[1].SubItems[staffInt].Text = "working";
+                            break;
+                        case "10:00:00":
+                            listView1.Items[2].SubItems[staffInt].Text = "working";
+                            break;
+                        case "11:00:00":
+                            listView1.Items[3].SubItems[staffInt].Text = "working";
+                            break;
+                        case "12:00:00":
+                            listView1.Items[4].SubItems[staffInt].Text = "Working";
+                            listView1.Items[4].SubItems[staffInt].ForeColor = Color.Red;
+                            break;
+                        case "13:00:00":
+                            listView1.Items[5].SubItems[staffInt].Text = "working";
+                            break;
+                        case "14:00:00":
+                            listView1.Items[6].SubItems[staffInt].Text = "working";
+                            break;
+                        case "15:00:00":
+                            listView1.Items[7].SubItems[staffInt].Text = "working";
+                            break;
+                        case "16:00:00":
+                            listView1.Items[8].SubItems[staffInt].Text = "working";
+                            break;
+                        case "17:00:00":
+                            listView1.Items[9].SubItems[staffInt].Text = "working";
+                            break;
+                        case "18:00:00":
+                            listView1.Items[10].SubItems[staffInt].Text = "working";
+                            break;
+                        case "19:00:00":
+                            listView1.Items[11].SubItems[staffInt].Text = "working";
+                            break;
+                        case "20:00:00":
+                            listView1.Items[12].SubItems[staffInt].Text = "working";
+                            break;
+                        case "21:00:00":
+                            listView1.Items[13].SubItems[staffInt].Text = "working";
+                            break;
+                        case "22:00:00":
+                            listView1.Items[14].SubItems[staffInt].Text = "working";
+                            break;
+                        case "23:00:00":
+                            listView1.Items[15].SubItems[staffInt].Text = "working";
+                            break;
+                        default:
+                            Console.WriteLine("No time found");
+                            break;
+                    }
+                }
+
             }
-
-
         }
     }
 }

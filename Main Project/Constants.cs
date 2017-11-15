@@ -154,6 +154,11 @@ namespace Main_Project
             return updateShift;
         }
 
-
+        //count how many shifts a member of staff has in a specific day
+        public static String Countshifts(string date)
+        {
+            string countShifts = "SELECT COUNT(staffID) FROM shift WHERE startDate= '" + date + "'";
+            return countShifts;
+        }
     }
 }
