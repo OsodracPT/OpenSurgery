@@ -165,53 +165,83 @@ namespace Main_Project
                     switch (value)
                     {
                         case "08:00:00":
-                            listView1.Items[0].SubItems[staffInt].Text = "working";
+                            listView1.Items[0].SubItems[staffInt].Text = "Working";
+                            listView1.Items[4].SubItems[staffInt].ForeColor = Color.Green;
+
                             break;
                         case "09:00:00":
-                            listView1.Items[1].SubItems[staffInt].Text = "working";
+                            listView1.Items[1].SubItems[staffInt].Text = "Working";
+                            listView1.Items[1].SubItems[staffInt].ForeColor = Color.Green;
+
                             break;
                         case "10:00:00":
-                            listView1.Items[2].SubItems[staffInt].Text = "working";
+                            listView1.Items[2].SubItems[staffInt].Text = "Working";
+                            listView1.Items[2].SubItems[staffInt].ForeColor = Color.Green;
+
                             break;
                         case "11:00:00":
-                            listView1.Items[3].SubItems[staffInt].Text = "working";
+                            listView1.Items[3].SubItems[staffInt].Text = "Working";
+                            listView1.Items[3].SubItems[staffInt].ForeColor = Color.Green;
+
                             break;
                         case "12:00:00":
                             listView1.Items[4].SubItems[staffInt].Text = "Working";
-                            listView1.Items[4].SubItems[staffInt].ForeColor = Color.Red;
+                            listView1.Items[4].SubItems[staffInt].ForeColor = Color.Green;
                             break;
                         case "13:00:00":
-                            listView1.Items[5].SubItems[staffInt].Text = "working";
+                            listView1.Items[5].SubItems[staffInt].Text = "Working";
+                            listView1.Items[5].SubItems[staffInt].ForeColor = Color.Green;
+
                             break;
                         case "14:00:00":
-                            listView1.Items[6].SubItems[staffInt].Text = "working";
+                            listView1.Items[6].SubItems[staffInt].Text = "Working";
+                            listView1.Items[6].SubItems[staffInt].ForeColor = Color.Green;
+
                             break;
                         case "15:00:00":
-                            listView1.Items[7].SubItems[staffInt].Text = "working";
+                            listView1.Items[7].SubItems[staffInt].Text = "Working";
+                            listView1.Items[7].SubItems[staffInt].ForeColor = Color.Green;
+
                             break;
                         case "16:00:00":
-                            listView1.Items[8].SubItems[staffInt].Text = "working";
+                            listView1.Items[8].SubItems[staffInt].Text = "Working";
+                            listView1.Items[8].SubItems[staffInt].ForeColor = Color.Green;
+
                             break;
                         case "17:00:00":
-                            listView1.Items[9].SubItems[staffInt].Text = "working";
+                            listView1.Items[9].SubItems[staffInt].Text = "Working";
+                            listView1.Items[9].SubItems[staffInt].ForeColor = Color.Green;
+
                             break;
                         case "18:00:00":
-                            listView1.Items[10].SubItems[staffInt].Text = "working";
+                            listView1.Items[10].SubItems[staffInt].Text = "Working";
+                            listView1.Items[10].SubItems[staffInt].ForeColor = Color.Green;
+
                             break;
                         case "19:00:00":
-                            listView1.Items[11].SubItems[staffInt].Text = "working";
+                            listView1.Items[11].SubItems[staffInt].Text = "Working";
+                            listView1.Items[11].SubItems[staffInt].ForeColor = Color.Green;
+
                             break;
                         case "20:00:00":
-                            listView1.Items[12].SubItems[staffInt].Text = "working";
+                            listView1.Items[12].SubItems[staffInt].Text = "Working";
+                            listView1.Items[12].SubItems[staffInt].ForeColor = Color.Green;
+
                             break;
                         case "21:00:00":
-                            listView1.Items[13].SubItems[staffInt].Text = "working";
+                            listView1.Items[13].SubItems[staffInt].Text = "Working";
+                            listView1.Items[13].SubItems[staffInt].ForeColor = Color.Green;
+
                             break;
                         case "22:00:00":
-                            listView1.Items[14].SubItems[staffInt].Text = "working";
+                            listView1.Items[14].SubItems[staffInt].Text = "Working";
+                            listView1.Items[14].SubItems[staffInt].ForeColor = Color.Green;
+
                             break;
                         case "23:00:00":
-                            listView1.Items[15].SubItems[staffInt].Text = "working";
+                            listView1.Items[15].SubItems[staffInt].Text = "Working";
+                            listView1.Items[15].SubItems[staffInt].ForeColor = Color.Green;
+
                             break;
                         default:
                             Console.WriteLine("No time found");
