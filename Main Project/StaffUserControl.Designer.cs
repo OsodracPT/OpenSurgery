@@ -34,6 +34,7 @@
             this.checkfreeBtn = new System.Windows.Forms.Button();
             this.dateLabel = new System.Windows.Forms.Label();
             this.dgvUserdata = new System.Windows.Forms.DataGridView();
+            this.fileLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserdata)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,10 +107,22 @@
             this.dgvUserdata.Size = new System.Drawing.Size(741, 166);
             this.dgvUserdata.TabIndex = 16;
             // 
+            // fileLbl
+            // 
+            this.fileLbl.AutoSize = true;
+            this.fileLbl.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fileLbl.Location = new System.Drawing.Point(6, 4);
+            this.fileLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.fileLbl.Name = "fileLbl";
+            this.fileLbl.Size = new System.Drawing.Size(68, 20);
+            this.fileLbl.TabIndex = 20;
+            this.fileLbl.Text = "Staff File";
+            // 
             // StaffUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.fileLbl);
             this.Controls.Add(this.dgvUserdata);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.checkavailBtn);
@@ -133,5 +146,6 @@
         private System.Windows.Forms.Button checkfreeBtn;
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.DataGridView dgvUserdata;
+        private System.Windows.Forms.Label fileLbl;
     }
 }

@@ -37,7 +37,7 @@
             this.userdataTableAdapter = new Main_Project.oversurgeryDataSetTableAdapters.userdataTableAdapter();
             this.oversurgeryDataSet = new Main_Project.oversurgeryDataSet();
             this.refreshBtn = new System.Windows.Forms.Button();
-            this.fileLbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oversurgeryDataSet)).BeginInit();
             this.SuspendLayout();
@@ -119,32 +119,31 @@
             // refreshBtn
             // 
             this.refreshBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshBtn.Location = new System.Drawing.Point(129, 142);
+            this.refreshBtn.Location = new System.Drawing.Point(11, 142);
             this.refreshBtn.Margin = new System.Windows.Forms.Padding(2);
             this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(82, 27);
+            this.refreshBtn.Size = new System.Drawing.Size(99, 40);
             this.refreshBtn.TabIndex = 26;
-            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.Text = "Show All Appointments";
             this.refreshBtn.UseVisualStyleBackColor = true;
             this.refreshBtn.Click += new System.EventHandler(this.AppointmentUserControl_Load);
             // 
-            // fileLbl
+            // label1
             // 
-            this.fileLbl.AutoSize = true;
-            this.fileLbl.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fileLbl.Location = new System.Drawing.Point(14, 143);
-            this.fileLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.fileLbl.Name = "fileLbl";
-            this.fileLbl.Size = new System.Drawing.Size(104, 40);
-            this.fileLbl.TabIndex = 27;
-            this.fileLbl.Text = "Appointment\r\n         File";
-            this.fileLbl.Click += new System.EventHandler(this.fileLbl_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 4);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 40);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Appointment\r\n        File";
             // 
             // AppointmentUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.fileLbl);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCancel);
@@ -173,6 +172,6 @@
         private oversurgeryDataSetTableAdapters.userdataTableAdapter userdataTableAdapter;
         private oversurgeryDataSet oversurgeryDataSet;
         private System.Windows.Forms.Button refreshBtn;
-        private System.Windows.Forms.Label fileLbl;
+        private System.Windows.Forms.Label label1;
     }
 }

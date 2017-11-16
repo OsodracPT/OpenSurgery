@@ -38,6 +38,8 @@
             this.findInputTxtBox = new System.Windows.Forms.TextBox();
             this.userdataTableAdapter = new Main_Project.oversurgeryDataSetTableAdapters.userdataTableAdapter();
             this.oversurgeryDataSet = new Main_Project.oversurgeryDataSet();
+            this.printButton = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oversurgeryDataSet)).BeginInit();
             this.SuspendLayout();
@@ -45,12 +47,12 @@
             // refreshBtn
             // 
             this.refreshBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshBtn.Location = new System.Drawing.Point(129, 142);
+            this.refreshBtn.Location = new System.Drawing.Point(11, 142);
             this.refreshBtn.Margin = new System.Windows.Forms.Padding(2);
             this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(82, 27);
+            this.refreshBtn.Size = new System.Drawing.Size(99, 40);
             this.refreshBtn.TabIndex = 25;
-            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.Text = "Show All Patients";
             this.refreshBtn.UseVisualStyleBackColor = true;
             this.refreshBtn.Click += new System.EventHandler(this.PatientUserControl_Load);
             // 
@@ -118,12 +120,13 @@
             // 
             this.fileLbl.AutoSize = true;
             this.fileLbl.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fileLbl.Location = new System.Drawing.Point(20, 143);
+            this.fileLbl.Location = new System.Drawing.Point(6, 4);
             this.fileLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.fileLbl.Name = "fileLbl";
             this.fileLbl.Size = new System.Drawing.Size(87, 20);
             this.fileLbl.TabIndex = 19;
             this.fileLbl.Text = "Patient File";
+            this.fileLbl.Click += new System.EventHandler(this.fileLbl_Click);
             // 
             // findInputTxtBox
             // 
@@ -145,10 +148,27 @@
             this.oversurgeryDataSet.DataSetName = "oversurgeryDataSet";
             this.oversurgeryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // printButton
+            // 
+            this.printButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printButton.Location = new System.Drawing.Point(647, 155);
+            this.printButton.Margin = new System.Windows.Forms.Padding(2);
+            this.printButton.Name = "printButton";
+            this.printButton.Size = new System.Drawing.Size(106, 27);
+            this.printButton.TabIndex = 26;
+            this.printButton.Text = "Print Test";
+            this.printButton.UseVisualStyleBackColor = true;
+            this.printButton.Click += new System.EventHandler(this.printButton_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
             // PatientUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.printButton);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnRegister);
@@ -179,5 +199,7 @@
         private System.Windows.Forms.TextBox findInputTxtBox;
         private oversurgeryDataSetTableAdapters.userdataTableAdapter userdataTableAdapter;
         private oversurgeryDataSet oversurgeryDataSet;
+        private System.Windows.Forms.Button printButton;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

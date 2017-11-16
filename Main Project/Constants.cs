@@ -59,7 +59,9 @@ namespace Main_Project
 
         public static String SelectPatientTest(string userInput)
         {
-            string patientTest = "SELECT test, patientID FROM medicalRecords WHERE patientID=" + userInput;
+           // string patientTest = "SELECT patientID AS [Patient ID], test AS [Test] FROM medicalRecords WHERE patientID=" + userInput;
+            string patientTest = " SELECT PatientData.patientName AS [Name],PatientData.patientID AS[Patient ID], medicalRecords.test AS[Test], CASE WHEN testResult = 1 THEN 'POSATIVE' ELSE 'NEGATIVE' END AS [Result] FROM medicalRecords INNER JOIN PatientData ON medicalRecords.medicalRecordID = PatientData.medicalRecordID WHERE medicalRecords.patientID ='" + userInput + "'";
+
             return patientTest;
         }
 
@@ -71,7 +73,7 @@ namespace Main_Project
 
         public static String CheckFreeQuery(string userInput)
         {
-            string SelectShiftDate = "SELECT shift.staffID AS [Staff ID] , medicalstaff.staffName AS [Name], medicalstaff.ocupation AS [Occupation] FROM shift INNER JOIN medicalstaff ON shift.staffID = medicalstaff.staffID WHERE NOT shift.startDate= '" + userInput + "'";
+            string SelectShiftDate = "SELECT shift.staffID AS [Staff ID] , medicalstaff.staffName AS [Patient Name], medicalstaff.ocupation AS [Occupation] FROM shift INNER JOIN medicalstaff ON shift.staffID = medicalstaff.staffID WHERE NOT shift.startDate= '" + userInput + "'";
             return SelectShiftDate;
         }
 
@@ -90,7 +92,7 @@ namespace Main_Project
         public static String SelectPrescription(string userInput)
         {
 
-            string selectPrescription = "SELECT PatientData.patientName AS [Patient Name], medicalRecords.content AS[Prescription], PatientData.patientID AS[PatientID], medicalRecords.mostRecentPrescription AS [Most Recent Prescription] FROM medicalRecords INNER JOIN PatientData ON medicalRecords.medicalRecordID = PatientData.medicalRecordID WHERE medicalRecords.patientID ='"+userInput+"'";
+            string selectPrescription = "SELECT PatientData.patientID AS[Patient ID],PatientData.patientName AS [Name], medicalRecords.content AS[Prescription], medicalRecords.mostRecentPrescription AS [Most Recent Prescription] FROM medicalRecords INNER JOIN PatientData ON medicalRecords.medicalRecordID = PatientData.medicalRecordID WHERE medicalRecords.patientID ='" + userInput+"'";
             return selectPrescription;
         }
 
