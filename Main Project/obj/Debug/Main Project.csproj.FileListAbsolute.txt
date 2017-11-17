@@ -60,14 +60,12 @@ C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Pro
 C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.overSurgeryTitle.resources
 C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.PatientUserControl.resources
 C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.Properties.Resources.resources
-C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.RegisterPatient.resources
 C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.RegisterPatientUserControl.resources
 C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.StaffUserControl.resources
-C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.TestsForm.resources
 C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main Project.csproj.GenerateResource.Cache
 C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main Project.csproj.CoreCompileInputs.cache
 C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main Project.exe
 C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main Project.pdb
-C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.PrescriptionUserControl.resources
 C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.PrescriptionUserControl.resources
 C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.EditAppoinUserControl.resources
+C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.EditAppoinUserControl.resources

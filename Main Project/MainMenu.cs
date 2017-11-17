@@ -54,7 +54,7 @@ namespace Main_Project
 
             //remove register patient if it is present in the panel.
             PatientUserControl.RemoveRegister();
-            PatientUserControl.RemoveRegisterPresription();
+
 
             if (!userControlPanel.Controls.Contains(PatientUserControl.Instance))
             {
@@ -65,8 +65,11 @@ namespace Main_Project
             else
             {
                 PatientUserControl.Instance.BringToFront();
+                PatientUserControl.Instance.PatientUserControlRefresh();
+
+
             }
-            
+
         }
 
         private void appointBtn_Click(object sender, EventArgs e)
