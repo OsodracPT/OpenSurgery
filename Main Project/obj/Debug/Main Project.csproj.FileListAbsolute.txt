@@ -20,7 +20,6 @@ C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_
 C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main Project.csproj.GenerateResource.Cache
 C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\bin\Debug\oversurgery.mdf
 C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\bin\Debug\oversurgery_log.ldf
-C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.TestsForm.resources
 C:\Users\Pedro Cardoso\Documents\MainProject-Pedro-Develop\Main Project\bin\Debug\Main Project.exe.config
 C:\Users\Pedro Cardoso\Documents\MainProject-Pedro-Develop\Main Project\obj\Debug\Main Project.exe
 C:\Users\Pedro Cardoso\Documents\MainProject-Pedro-Develop\Main Project\obj\Debug\Main Project.pdb
@@ -66,6 +65,5 @@ C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main Pro
 C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main Project.csproj.CoreCompileInputs.cache
 C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main Project.exe
 C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main Project.pdb
-C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.PrescriptionUserControl.resources
 C:\Users\Pedro Cardoso\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.EditAppoinUserControl.resources
 C:\Users\Rommulluss\Documents\GitHub\MainProject\Main Project\obj\Debug\Main_Project.EditAppoinUserControl.resources
