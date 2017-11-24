@@ -21,7 +21,7 @@ namespace Main_Project
         public LoginForm()
         {
             InitializeComponent();
-          
+
         }
 
 
@@ -89,7 +89,31 @@ namespace Main_Project
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void LoginForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                capsLockLbl.Text = "Caps Lock is ON!";
+            }
+            else
+            {
+                capsLockLbl.Text = "";
+            }
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                capsLockLbl.Text = "Caps Lock is ON!";
+            }
+            else
+            {
+                capsLockLbl.Text = "";
+            }
         }
     }
 }
