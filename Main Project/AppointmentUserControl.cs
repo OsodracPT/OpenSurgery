@@ -19,16 +19,19 @@ namespace Main_Project
         //singleton initiation
         private static AppointmentUserControl _instance;
 
+
         public static AppointmentUserControl Instance
         {
             get
             {
+                //check if any previous instance was properly disposed
                 if (_instance == null || _instance.IsDisposed == true)
                     _instance = new AppointmentUserControl();
                 return _instance;
             }
         }
 
+        //public string
         public static string AppointmentID
         {
             get
@@ -47,6 +50,11 @@ namespace Main_Project
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Method that runs the book appointment user control
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBook_Click(object sender, EventArgs e)
         {
             Instance.Controls.Add(BookAppointUserControl.Instance);
@@ -57,6 +65,9 @@ namespace Main_Project
 
         }
 
+        /// <summary>
+        /// Method that removes any user control present in front of the appointment user control
+        /// </summary>
         public static void RemoveBook()
         {
             Instance.Controls.Remove(BookAppointUserControl.Instance);
@@ -64,6 +75,11 @@ namespace Main_Project
 
         }
 
+        /// <summary>
+        /// Load method for the appointment user control
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AppointmentUserControl_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'oversurgeryDataSet.userdata' table. You can move, or remove it, as needed.
@@ -78,16 +94,21 @@ namespace Main_Project
             dataGridView1.DataSource = dtAppoint;
         }
 
+        /// <summary>
+        /// Method that opens the edit appointment windows according to the selected appointment
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (valueNotSelected==true)
+            //check to see if an appointment is selected
+            if (valueNotSelected == true)
             {
                 MessageBox.Show("Please select the appointment you want to edit.");
             }
             else
             {
                 Instance.Controls.Add(EditAppoinUserControl.Instance);
-
 
                 EditAppoinUserControl.Instance.Dock = DockStyle.Fill;
                 EditAppoinUserControl.Instance.BringToFront();
@@ -118,13 +139,23 @@ namespace Main_Project
             }
         }
 
+        /// <summary>
+        /// Method that return the appointmentID public value
+        /// </summary>
+        /// <returns></returns>
         public static string returnValue()
         {
             return AppointmentID;
         }
 
+        /// <summary>
+        /// Method that cancels/deletes a selected appointment
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            //check to see if an appointment is seleted
             if (valueNotSelected == true)
             {
                 MessageBox.Show("Please select the appointment you want to cancel.");
@@ -133,14 +164,23 @@ namespace Main_Project
             {
                 try
                 {
-                    //try to delete appointment
-                    DBConnection.getDBConnectionInstance().SqlStatementExecute(Constants.DeleteAppointment(AppointmentID));
+                    //warning message to prevent the user from deleting an appointment by mistake.
+                    DialogResult dr = MessageBox.Show("Do you really want to delete this appointment?",
+                      "Warning", MessageBoxButtons.YesNo);
+                    switch (dr)
+                    {
+                        case DialogResult.Yes:
+                            //try to delete appointment
+                            DBConnection.getDBConnectionInstance().SqlStatementExecute(Constants.DeleteAppointment(AppointmentID));
+                            //try to delete the shift related to the same appointment
+                            DBConnection.getDBConnectionInstance().SqlStatementExecute(Constants.DeleteShift(AppointmentID));
+                            MessageBox.Show("Appointment deleted successfully!");
 
-                    //try to delete the shift related to the same appointment
-                    DBConnection.getDBConnectionInstance().SqlStatementExecute(Constants.DeleteShift(AppointmentID));
+                            break;
+                        case DialogResult.No:
+                            break;
+                    }
 
-
-                    MessageBox.Show("Appointment deleted successfully!");
                 }
                 catch (Exception ex)
                 {

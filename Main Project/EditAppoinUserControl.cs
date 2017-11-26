@@ -21,12 +21,14 @@ namespace Main_Project
         {
             get
             {
+                //check if any previous instance was properly disposed
                 if (_instance == null || _instance.IsDisposed == true)
                     _instance = new EditAppoinUserControl();
                 return _instance;
             }
         }
 
+        //public appontmentID string
         public static string AppointID
         {
             get
@@ -46,13 +48,21 @@ namespace Main_Project
             string appointmentID = AppointmentUserControl.returnValue();
         }
 
+        /// <summary>
+        /// Edit appointment load method
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EditAppoinUserControl_Load(object sender, EventArgs e)
         {
+            //fills the combo boxes with data from the database
             FillComboBoxes();
 
             //get the appointment id
             string appointmentID = AppointmentUserControl.returnValue();
             AppointID = AppointmentUserControl.returnValue();
+
+            //debug purposes
             Console.WriteLine("id is" + appointmentID);
             DataSet dsAppointment = DBConnection.getDBConnectionInstance().getDataSet(Constants.SelectAppointment(appointmentID));
 
@@ -61,6 +71,11 @@ namespace Main_Project
 
         }
 
+        /// <summary>
+        /// Method that updated the appointment selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void updateBtn_Click(object sender, EventArgs e)
         {
             try

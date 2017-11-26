@@ -19,6 +19,8 @@ namespace Main_Project
         {
             get
             {
+                //check if any previous instance was properly disposed
+
                 if (_instance == null || _instance.IsDisposed == true)
                     _instance = new BookAppointUserControl();
                 return _instance;
@@ -30,19 +32,30 @@ namespace Main_Project
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Load method for the book appointment user control
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BookAppointUserControl_Load(object sender, EventArgs e)
         {
 
+            //fill the combo boxes with data from the database
             FillComboBoxes();
 
         }
 
+        /// <summary>
+        /// Method that tries to book an appointment
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bookBtn_Click(object sender, EventArgs e)
         {
             try
             {
 
-                //get all the user input
+                //get all the user input from the combo boxes
                 string patientInput = patientCombox.Text;
                 string staffInput = staffComboBox.Text;
                 string timeInput = timeComboBox.Text + ":00";
@@ -176,7 +189,7 @@ namespace Main_Project
         }
 
         /// <summary>
-        /// Method that fill the combo boxes with the correct data
+        /// Method that fill the combo boxes with the correct data from the database
         /// </summary>
         private void FillComboBoxes()
         {

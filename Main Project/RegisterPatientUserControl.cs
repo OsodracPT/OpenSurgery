@@ -20,6 +20,7 @@ namespace Main_Project
         {
             get
             {
+                //check if any previous instance was properly disposed
                 if (_instance == null || _instance.IsDisposed == true)
                     _instance = new RegisterPatientUserControl();
                 return _instance;
@@ -31,6 +32,11 @@ namespace Main_Project
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Method that tries to register the patient into the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void registerBtn_Click(object sender, EventArgs e)
         {
 
@@ -50,14 +56,16 @@ namespace Main_Project
             }
         }
 
+        /// <summary>
+        /// Load method for the register patient user control
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RegisterPatient_Load(object sender, EventArgs e)
         {
+            //add maximum date to the date time picker
             dobTimePick.MaxDate = DateTime.Now;
         }
 
-        private void RegisterPatientUserControl_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

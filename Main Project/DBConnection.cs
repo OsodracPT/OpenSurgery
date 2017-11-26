@@ -130,6 +130,10 @@ namespace Main_Project
             connectionToDB.Close();
         }
 
+        /// <summary>
+        /// This method executes an Slq statment based on the statements present in the Constants class. May need to reuse this method for better code efficiency
+        /// </summary>
+        /// <param name="sqlStatement"></param>
         public void SqlStatementExecute(String sqlStatement)
         {
             connectionToDB.Open();

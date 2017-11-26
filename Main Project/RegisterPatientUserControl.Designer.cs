@@ -213,7 +213,6 @@
             this.Controls.Add(this.registerBtn);
             this.Name = "RegisterPatientUserControl";
             this.Size = new System.Drawing.Size(769, 366);
-            this.Load += new System.EventHandler(this.RegisterPatientUserControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

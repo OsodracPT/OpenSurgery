@@ -19,6 +19,7 @@ namespace Main_Project
         {
             get
             {
+                //check if any previous instance was properly disposed
                 if (_instance == null || _instance.IsDisposed == true)
                     _instance = new StaffUserControl();
                 return _instance;
@@ -29,9 +30,14 @@ namespace Main_Project
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Load method for the staff usercontrol
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StaffUserControl_Load(object sender, EventArgs e)
         {
-
+            //Load the listview that will serve as a rota
             LoadlistView();
         }
 
@@ -49,27 +55,8 @@ namespace Main_Project
             //set the data source for the data grid view
         }
 
-        private void checkavailBtn_Click(object sender, EventArgs e)
-        {
-            string date = dateTimePicker1.Text;
-            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.CheckStaffAvailability(date));
 
-            //get the table to be displayed from the data set
-            DataTable dtUser = dsUser.Tables[0];
 
-            //set the data source for the data grid view
-        }
-
-        private void checkfreeBtn_Click(object sender, EventArgs e)
-        {
-            string date = dateTimePicker1.Text;
-            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.CheckFreeQuery(date));
-
-            //get the table to be displayed from the data set
-            DataTable dtUser = dsUser.Tables[0];
-
-            //set the data source for the data grid view
-        }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
@@ -77,7 +64,7 @@ namespace Main_Project
             //reload the listview
             LoadlistView();
 
-            //Get the number of staff for the loop
+            //Get the quantity of staff for the loop
             int staffNumber = DBConnection.getDBConnectionInstance().GetIntValue(Constants.countStaff);
             for (int i = 0; i < staffNumber; i++)
             {
@@ -87,9 +74,11 @@ namespace Main_Project
 
 
 
-
         }
 
+        /// <summary>
+        /// Method that load the list view with the staff shifts data.
+        /// </summary>
         private void LoadlistView()
         {
 
@@ -135,6 +124,10 @@ namespace Main_Project
 
         }
 
+        /// <summary>
+        /// Method that load the list view with the staff shifts data.
+        /// </summary>
+        /// <param name="staffID"></param>
         private void AddShiftToListView(string staffID)
         {
 
@@ -148,12 +141,12 @@ namespace Main_Project
             //find out how many shifts a member of staff has in that specific day
             int shiftAmount = DBConnection.getDBConnectionInstance().GetIntValue(Constants.Countshifts(date));
             Console.WriteLine("Shift Amount=" + shiftAmount);
-            
+
             //debug
-            Console.WriteLine("Passed Value:"+staffID);
+            Console.WriteLine("Passed Value:" + staffID);
             for (int i = 0; i < shiftAmount; i++)
             {
-                Console.WriteLine("Value from the datatable:"+(dtStaffAvail.Rows[i]["Staff ID"].ToString()));
+                Console.WriteLine("Value from the datatable:" + (dtStaffAvail.Rows[i]["Staff ID"].ToString()));
                 if ((dtStaffAvail.Rows[i]["Staff ID"].ToString()) == staffID)
                 {
                     //change the subitems value to change the staff member

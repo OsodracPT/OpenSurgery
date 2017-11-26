@@ -37,12 +37,15 @@ namespace Main_Project
             try
             {
 
+                //access the database and get an int
                 i = DBConnection.getDBConnectionInstance().TryLogin(txtUsername.Text, txtPassword.Text);
 
+                //if i=0 then no result was outputed in the query so invalid username
                 if (i == 0)
                 {
                     MessageBox.Show("You have entered an invalid username or password.");
                 }
+                //else the main menu can open
                 else
                 {
                     this.Hide();
@@ -87,11 +90,11 @@ namespace Main_Project
             }
         }
 
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Method that check if the caps lock key is on
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoginForm_KeyDown(object sender, KeyEventArgs e)
         {
             if (Control.IsKeyLocked(Keys.CapsLock))
@@ -104,6 +107,11 @@ namespace Main_Project
             }
         }
 
+        /// <summary>
+        /// Method that check if the caps lock key is on during the form load
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoginForm_Load(object sender, EventArgs e)
         {
             if (Control.IsKeyLocked(Keys.CapsLock))

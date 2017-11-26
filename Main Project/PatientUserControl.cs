@@ -23,6 +23,7 @@ namespace Main_Project
         {
             get
             {
+                //check if any previous instance was properly disposed
                 if (_instance == null || _instance.IsDisposed == true)
                     _instance = new PatientUserControl();
                 return _instance;
@@ -33,12 +34,15 @@ namespace Main_Project
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Button that initialises the register patient usercontrol
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegister_Click(object sender, EventArgs e)
         {
             testfocus = false;
-            //RegisterPatient Register = new RegisterPatient();
-            //Register.Show();      
+
             Instance.Controls.Add(RegisterPatientUserControl.Instance);
 
 
@@ -47,11 +51,14 @@ namespace Main_Project
 
         }
 
+        /// <summary>
+        /// Method that removes any usercontrol present in front of the patient usercontrol
+        /// </summary>
         public static void RemoveRegister()
         {
             Instance.Controls.Remove(RegisterPatientUserControl.Instance);
         }
-        
+
         private void findBtn_Click(object sender, EventArgs e)
         {
 
@@ -65,6 +72,11 @@ namespace Main_Project
 
         }
 
+        /// <summary>
+        /// Method for the prescription button click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PrescriptionBtn_Click(object sender, EventArgs e)
         {
             testfocus = false;
@@ -77,15 +89,14 @@ namespace Main_Project
                 DataTable dtPatient = dsPatient.Tables[0];
                 dataGridView1.DataSource = dtPatient;
 
-
             }
             catch (Exception ex)
             {
 
             }
         }
-        
-       
+
+
 
         private void PatientUserControl_Load(object sender, EventArgs e)
         {
@@ -101,6 +112,7 @@ namespace Main_Project
             //set the data source for the data grid view
             dataGridView1.DataSource = dtPatient;
         }
+
         internal void PatientUserControlRefresh()
         {
             refreshBtn.PerformClick();
@@ -132,6 +144,11 @@ namespace Main_Project
             testfocus = false;
         }
 
+        /// <summary>
+        /// Test button click method
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TestBtn_Click(object sender, EventArgs e)
         {
             testfocus = true;
@@ -151,6 +168,11 @@ namespace Main_Project
             }
         }
 
+        /// <summary>
+        /// Method that prints the test results
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void printButton_Click(object sender, EventArgs e)
         {
             if (testfocus == true)
