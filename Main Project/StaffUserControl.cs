@@ -82,7 +82,9 @@ namespace Main_Project
         private void LoadlistView()
         {
 
+            //Clears the list view
             listView1.Items.Clear();
+            listView1.Columns.Clear();
 
             //I want to add a listview
             listView1.Columns.Add("Time");
