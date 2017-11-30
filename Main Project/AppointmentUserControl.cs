@@ -12,8 +12,12 @@ namespace Main_Project
 {
     public partial class AppointmentUserControl : UserControl
     {
-        //holds the value of the appointment ID
+        //holds the value of the data selected in the datagridview
         private static string appointmentID;
+        private static string staffName;
+        private static string patientName;
+
+
         static bool valueNotSelected = false;
 
         //singleton initiation
@@ -31,7 +35,7 @@ namespace Main_Project
             }
         }
 
-        //public string
+        //public strings
         public static string AppointmentID
         {
             get
@@ -42,6 +46,32 @@ namespace Main_Project
             set
             {
                 appointmentID = value;
+            }
+        }
+
+        public static string StaffName
+        {
+            get
+            {
+                return staffName;
+            }
+
+            set
+            {
+                staffName = value;
+            }
+        }
+
+        public static string PatientName
+        {
+            get
+            {
+                return patientName;
+            }
+
+            set
+            {
+                patientName = value;
             }
         }
 
@@ -57,7 +87,10 @@ namespace Main_Project
         public static void RemoveBook()
         {
             Instance.Controls.Remove(BookAppointUserControl.Instance);
+            BookAppointUserControl.Instance.Dispose();
             Instance.Controls.Remove(EditAppoinUserControl.Instance);
+            EditAppoinUserControl.Instance.Dispose();
+
 
         }
 
@@ -178,6 +211,9 @@ namespace Main_Project
             {
                 AppointmentID = selectedRow.Cells[0].Value.ToString();
 
+                PatientName = selectedRow.Cells[5].Value.ToString();
+                StaffName = selectedRow.Cells[4].Value.ToString();
+
                 int appointId = Convert.ToInt32(AppointmentID);
                 Console.WriteLine(AppointmentID);
             }
@@ -191,9 +227,18 @@ namespace Main_Project
         /// Method that return the appointmentID public value
         /// </summary>
         /// <returns></returns>
-        public static string returnValue()
+        public static string returnAppointmentValue()
         {
             return AppointmentID;
+        }
+
+        public static string returnStaffValue()
+        {
+            return StaffName;
+        }
+        public static string returnPatientValue()
+        {
+            return PatientName;
         }
 
     }

@@ -13,6 +13,8 @@ namespace Main_Project
     public partial class EditAppoinUserControl : UserControl
     {
         private static string appointID;
+        private static string staffName;
+        private static string patientName;
 
         //singleton initiation
         private static EditAppoinUserControl _instance;
@@ -28,7 +30,7 @@ namespace Main_Project
             }
         }
 
-        //public appontmentID string
+        //public strings
         public static string AppointID
         {
             get
@@ -42,10 +44,36 @@ namespace Main_Project
             }
         }
 
+        public static string StaffName
+        {
+            get
+            {
+                return staffName;
+            }
+
+            set
+            {
+                staffName = value;
+            }
+        }
+
+        public static string PatientName
+        {
+            get
+            {
+                return patientName;
+            }
+
+            set
+            {
+                patientName = value;
+            }
+        }
+
         public EditAppoinUserControl()
         {
             InitializeComponent();
-            string appointmentID = AppointmentUserControl.returnValue();
+            string appointmentID = AppointmentUserControl.returnAppointmentValue();
         }
 
         /// <summary>
@@ -59,8 +87,10 @@ namespace Main_Project
             FillComboBoxes();
 
             //get the appointment id
-            string appointmentID = AppointmentUserControl.returnValue();
-            AppointID = AppointmentUserControl.returnValue();
+            string appointmentID = AppointmentUserControl.returnAppointmentValue();
+            AppointID = AppointmentUserControl.returnAppointmentValue();
+
+
 
             //debug purposes
             Console.WriteLine("id is" + appointmentID);
@@ -246,6 +276,13 @@ namespace Main_Project
                     timeComboBox.Items.Add("0" + i + ":00");
                 else
                     timeComboBox.Items.Add(i + ":00");
+
+            StaffName = AppointmentUserControl.returnStaffValue();
+            PatientName = AppointmentUserControl.returnPatientValue();
+
+            //make the selected combo box item be on the right staff and patient from the previous user control
+            staffComboBox.Text = StaffName;
+            patientCombox.Text = PatientName;
         }
     }
 }
