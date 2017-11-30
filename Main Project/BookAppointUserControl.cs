@@ -45,6 +45,9 @@ namespace Main_Project
 
         }
 
+
+        //Button Related Methods
+
         /// <summary>
         /// Method that tries to book an appointment
         /// </summary>
@@ -69,7 +72,9 @@ namespace Main_Project
                 {
                     //Add this appointment as a shift to a staff member
                     //get the staff id based on the name selected by the user in the combo box
-                    string str = DBConnection.getDBConnectionInstance().GetStaffID(staffInput);
+                    string str = DBConnection.getDBConnectionInstance().GetStringValue(Constants.GetStaffID(staffInput));
+
+
                     int staffID = Convert.ToInt32(str);
 
                     //check too see if the staff member is already busy
@@ -87,16 +92,16 @@ namespace Main_Project
                         else
                         {
                             //Try to register patient by getting the data from the user input textboxes
-                            DBConnection.getDBConnectionInstance().BookAppointment(date, timeInput, staffInput, patientInput, description, staffID);
+                            DBConnection.getDBConnectionInstance().SqlStatementExecute(Constants.BookAppointment(date, timeInput, staffInput, patientInput, description, staffID));
 
 
                             Console.WriteLine(date + " " + timeInput + " " + AddHourTime(timeInput) + " " + staffID);
 
                             //Need to get the id from the appointment created
-                            string appointID = DBConnection.getDBConnectionInstance().GetAppointmentID(date, timeInput, staffInput, patientInput, description, staffID);
+                            string appointID = DBConnection.getDBConnectionInstance().GetStringValue(Constants.GetAppointmentNoID(date, timeInput, staffInput, patientInput, description, staffID));
 
                             //insert appointment as a shift in the shift table for a specific member of staff
-                            DBConnection.getDBConnectionInstance().AddShift(date, timeInput, AddHourTime(timeInput), staffID, appointID);
+                            DBConnection.getDBConnectionInstance().SqlStatementExecute(Constants.AddShift(date, timeInput, AddHourTime(timeInput), staffID, appointID));
 
                             //Show success message and close form
                             MessageBox.Show("Booking was successfull!");

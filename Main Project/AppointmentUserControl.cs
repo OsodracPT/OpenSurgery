@@ -50,20 +50,6 @@ namespace Main_Project
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Method that runs the book appointment user control
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnBook_Click(object sender, EventArgs e)
-        {
-            Instance.Controls.Add(BookAppointUserControl.Instance);
-
-
-            BookAppointUserControl.Instance.Dock = DockStyle.Fill;
-            BookAppointUserControl.Instance.BringToFront();
-
-        }
 
         /// <summary>
         /// Method that removes any user control present in front of the appointment user control
@@ -94,59 +80,8 @@ namespace Main_Project
             dataGridView1.DataSource = dtAppoint;
         }
 
-        /// <summary>
-        /// Method that opens the edit appointment windows according to the selected appointment
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            //check to see if an appointment is selected
-            if (valueNotSelected == true)
-            {
-                MessageBox.Show("Please select the appointment you want to edit.");
-            }
-            else
-            {
-                Instance.Controls.Add(EditAppoinUserControl.Instance);
+        //Button Methods
 
-                EditAppoinUserControl.Instance.Dock = DockStyle.Fill;
-                EditAppoinUserControl.Instance.BringToFront();
-            }
-        }
-
-        /// <summary>
-        /// Gets the value from the selected row in the data grid view
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int index = e.RowIndex;
-            valueNotSelected = false;
-
-            DataGridViewRow selectedRow = dataGridView1.Rows[index];
-            try
-            {
-                AppointmentID = selectedRow.Cells[0].Value.ToString();
-
-                int appointId = Convert.ToInt32(AppointmentID);
-                Console.WriteLine(AppointmentID);
-            }
-            catch (Exception ex)
-            {
-                valueNotSelected = true;
-            }
-        }
-
-        /// <summary>
-        /// Method that return the appointmentID public value
-        /// </summary>
-        /// <returns></returns>
-        public static string returnValue()
-        {
-            return AppointmentID;
-        }
 
         /// <summary>
         /// Method that cancels/deletes a selected appointment
@@ -184,9 +119,81 @@ namespace Main_Project
                 }
                 catch (Exception ex)
                 {
-
+                    MessageBox.Show(ex.ToString());
                 }
             }
+        }
+
+        /// <summary>
+        /// Method that opens the edit appointment windows according to the selected appointment
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            //check to see if an appointment is selected
+            if (valueNotSelected == true)
+            {
+                MessageBox.Show("Please select the appointment you want to edit.");
+            }
+            else
+            {
+                Instance.Controls.Add(EditAppoinUserControl.Instance);
+
+                EditAppoinUserControl.Instance.Dock = DockStyle.Fill;
+                EditAppoinUserControl.Instance.BringToFront();
+            }
+        }
+
+        /// <summary>
+        /// Method that runs the book appointment user control
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnBook_Click(object sender, EventArgs e)
+        {
+            Instance.Controls.Add(BookAppointUserControl.Instance);
+
+
+            BookAppointUserControl.Instance.Dock = DockStyle.Fill;
+            BookAppointUserControl.Instance.BringToFront();
+
+        }
+
+        //Methods
+
+
+        /// <summary>
+        /// Gets the value from the selected row in the data grid view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            valueNotSelected = false;
+
+            DataGridViewRow selectedRow = dataGridView1.Rows[index];
+            try
+            {
+                AppointmentID = selectedRow.Cells[0].Value.ToString();
+
+                int appointId = Convert.ToInt32(AppointmentID);
+                Console.WriteLine(AppointmentID);
+            }
+            catch (Exception ex)
+            {
+                valueNotSelected = true;
+            }
+        }
+
+        /// <summary>
+        /// Method that return the appointmentID public value
+        /// </summary>
+        /// <returns></returns>
+        public static string returnValue()
+        {
+            return AppointmentID;
         }
 
     }

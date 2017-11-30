@@ -95,7 +95,7 @@ namespace Main_Project
                 {
                     //Add this appointment as a shift to a staff member
                     //get the staff id based on the name selected by the user in the combo box
-                    string str = DBConnection.getDBConnectionInstance().GetStaffID(staffInput);
+                    string str = DBConnection.getDBConnectionInstance().GetStringValue(Constants.GetStaffID(staffInput));
                     int staffID = Convert.ToInt32(str);
 
                     //check too see if the staff member is already busy
@@ -113,12 +113,12 @@ namespace Main_Project
                         else
                         {
                             //Try to Update booking by getting the data from the user input textboxes
-                            DBConnection.getDBConnectionInstance().EditAppointment(AppointID, date, timeInput, staffInput, patientInput, description, staffID);
-
+                            DBConnection.getDBConnectionInstance().SqlStatementExecute(Constants.UpdateAppointment(AppointID, date, timeInput, staffInput, patientInput, description, staffID));
 
                             Console.WriteLine(date + " " + timeInput + " " + AddHourTime(timeInput) + " " + staffID);
                             //insert Update booking and update the shift created
-                            DBConnection.getDBConnectionInstance().UpdateShift(date, timeInput, AddHourTime(timeInput), staffID, AppointID);
+                            DBConnection.getDBConnectionInstance().SqlStatementExecute(Constants.UpdateShift(date, timeInput, AddHourTime(timeInput), staffID, appointID));
+
 
                             //Show success message and close form
                             MessageBox.Show("Booking was updated successfully!");

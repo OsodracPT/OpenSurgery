@@ -77,58 +77,7 @@ namespace Main_Project
             return dataSet;
         }
 
-
-
-        public int TryLogin(string username, string password)
-        {
-            int i = 0;
-
-
-            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.selectLogin(username, password));
-
-            //get the table to be displayed from the data set
-            DataTable dtUser = dsUser.Tables[0];
-
-            i = Convert.ToInt32(dtUser.Rows.Count.ToString());
-            return i;
-        }
-
-        public void RegisterPatient(string name, string address, string postcode, string city, DateTime DoB, int phoneNumber)
-        {
-            connectionToDB.Open();
-
-            string dobTemp = DoB.ToString("d");
-            SqlCommand cmd = connectionToDB.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = Constants.RegisterPatient(name, address, postcode, city, dobTemp, phoneNumber);
-            cmd.ExecuteNonQuery();
-
-            connectionToDB.Close();
-        }
-
-        public int SelectMax()
-        {
-            connectionToDB.Open();
-
-            SqlCommand cmd = connectionToDB.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = Constants.selectMaxID;
-            int maxId = Convert.ToInt32(cmd.ExecuteScalar());
-
-            return maxId;
-        }
-
-        public void BookAppointment(string date, string time, string staffName, string patientName, string description, int staffID)
-        {
-            connectionToDB.Open();
-
-            SqlCommand cmd = connectionToDB.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = Constants.BookAppointment(date, time, staffName, patientName, description, staffID);
-            cmd.ExecuteNonQuery();
-
-            connectionToDB.Close();
-        }
+        //Methods that execute a query in the database
 
         /// <summary>
         /// This method executes an Slq statment based on the statements present in the Constants class. May need to reuse this method for better code efficiency
@@ -146,69 +95,35 @@ namespace Main_Project
             connectionToDB.Close();
         }
 
-        //edit appointment
-        public void EditAppointment(string appointID, string date, string time, string staffName, string patientName, string description, int staffID)
+
+        //Methods that return an int in from the database
+
+        public int GetIntValue(String sqlStatement)
         {
             connectionToDB.Open();
 
             SqlCommand cmd = connectionToDB.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = Constants.UpdateAppointment(appointID, date, time, staffName, patientName, description, staffID);
+            cmd.CommandText = sqlStatement;
             cmd.ExecuteNonQuery();
-
+            int value = Convert.ToInt32(cmd.ExecuteScalar());
             connectionToDB.Close();
+
+            return value;
         }
 
-        public void AddShift(string startDate, string startTime, string endTime, int staffID, string appointID)
+        public int TryLogin(string username, string password)
         {
-            connectionToDB.Open();
+            int i = 0;
 
-            SqlCommand cmd = connectionToDB.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = Constants.AddShift(startDate, startTime, endTime, staffID, appointID);
-            cmd.ExecuteNonQuery();
 
-            connectionToDB.Close();
-        }
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.selectLogin(username, password));
 
-        public void UpdateShift(string startDate, string startTime, string endTime, int staffID, string apointID)
-        {
-            connectionToDB.Open();
+            //get the table to be displayed from the data set
+            DataTable dtUser = dsUser.Tables[0];
 
-            SqlCommand cmd = connectionToDB.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = Constants.UpdateShift(startDate, startTime, endTime, staffID, apointID);
-            cmd.ExecuteNonQuery();
-
-            connectionToDB.Close();
-        }
-
-        public string GetStaffID(string staffName)
-        {
-            connectionToDB.Open();
-
-            SqlCommand cmd = connectionToDB.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = Constants.GetStaffID(staffName);
-            cmd.ExecuteNonQuery();
-            string str = Convert.ToString(cmd.ExecuteScalar());
-            connectionToDB.Close();
-
-            return str;
-        }
-
-        public string GetAppointmentID(string date, string time, string staffName, string patientName, string description, int staffID)
-        {
-            connectionToDB.Open();
-
-            SqlCommand cmd = connectionToDB.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = Constants.GetAppointmentNoID(date, time, staffName, patientName, description, staffID);
-            cmd.ExecuteNonQuery();
-            string str = Convert.ToString(cmd.ExecuteScalar());
-            connectionToDB.Close();
-
-            return str;
+            i = Convert.ToInt32(dtUser.Rows.Count.ToString());
+            return i;
         }
 
         //check if a staff member is already busy according to the user input
@@ -225,7 +140,9 @@ namespace Main_Project
             return i;
         }
 
-        public int GetIntValue(String sqlStatement)
+
+        //Methods that return a string from the database
+        public string GetStringValue(String sqlStatement)
         {
             connectionToDB.Open();
 
@@ -233,12 +150,11 @@ namespace Main_Project
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = sqlStatement;
             cmd.ExecuteNonQuery();
-            int value = Convert.ToInt32(cmd.ExecuteScalar());
+            string str = Convert.ToString(cmd.ExecuteScalar());
             connectionToDB.Close();
 
-            return value;
+            return str;
         }
-
 
     }
 }

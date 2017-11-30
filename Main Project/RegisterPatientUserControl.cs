@@ -43,8 +43,9 @@ namespace Main_Project
             try
             {
                 //Try to register patient by getting the data from the user input textboxes
-                DBConnection.getDBConnectionInstance().RegisterPatient(nameTxt.Text, addressTxt.Text, pstCodeTxt.Text, cityTxt.Text, dobTimePick.Value, Convert.ToInt32(phoneNumberTxt.Text));
-
+                //Convert the date time from the value picker to a desired value
+                string dobTemp = dobTimePick.Value.ToString("d");
+                DBConnection.getDBConnectionInstance().SqlStatementExecute(Constants.RegisterPatient(nameTxt.Text, addressTxt.Text, pstCodeTxt.Text, cityTxt.Text, dobTemp, Convert.ToInt32(phoneNumberTxt.Text)));
                 //Show success message and close form
                 MessageBox.Show("Patient added successfully!");
 

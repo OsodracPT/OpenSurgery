@@ -24,6 +24,7 @@ namespace Main_Project
 
         }
 
+        //Code for the button methods
 
         /// <summary>
         /// Login button method that checks for the right credentials
@@ -65,7 +66,7 @@ namespace Main_Project
         //method that runs whenever we click the exit button. closes the application
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         //Code that will make the form movable
