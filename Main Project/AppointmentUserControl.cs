@@ -91,7 +91,6 @@ namespace Main_Project
             Instance.Controls.Remove(EditAppoinUserControl.Instance);
             EditAppoinUserControl.Instance.Dispose();
 
-
         }
 
         /// <summary>

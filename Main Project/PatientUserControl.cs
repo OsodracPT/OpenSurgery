@@ -59,6 +59,11 @@ namespace Main_Project
             Instance.Controls.Remove(RegisterPatientUserControl.Instance);
         }
 
+        /// <summary>
+        /// Method that runs whenever the user enter a key in order to find a patient in the DB
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void findBtn_Click(object sender, EventArgs e)
         {
 

@@ -161,7 +161,7 @@ namespace Main_Project
                     {
                         case "08:00:00":
                             listView1.Items[0].SubItems[staffInt].Text = "Working";
-                            listView1.Items[4].SubItems[staffInt].ForeColor = Color.Green;
+                            listView1.Items[0].SubItems[staffInt].ForeColor = Color.Green;
 
                             break;
                         case "09:00:00":

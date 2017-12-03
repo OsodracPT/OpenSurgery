@@ -46,7 +46,7 @@ namespace Main_Project
             return staffID;
         }
 
-        //Sql statement that checks the user input with the data present in userdata
+        //Sql statement that checks the user input with the data present in userdata table
         public static String selectLogin(string username, string password)
         {
 

@@ -112,6 +112,12 @@ namespace Main_Project
             return value;
         }
 
+        /// <summary>
+        /// Method that returns an in based on the amount of rows with the same data as the user input.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public int TryLogin(string username, string password)
         {
             int i = 0;
