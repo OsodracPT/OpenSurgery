@@ -21,9 +21,10 @@ namespace Main_Project
         public LoginForm()
         {
             InitializeComponent();
-          
+
         }
 
+        //Code for the button methods
 
         /// <summary>
         /// Login button method that checks for the right credentials
@@ -36,13 +37,16 @@ namespace Main_Project
 
             try
             {
-
+                Logger.Instance.Log("LoginFrom:loginButton_Click() -> Accessing the database with the user input");
+                //access the database and get an int
                 i = DBConnection.getDBConnectionInstance().TryLogin(txtUsername.Text, txtPassword.Text);
 
+                //if i=0 then no result was outputed in the query so invalid username
                 if (i == 0)
                 {
                     MessageBox.Show("You have entered an invalid username or password.");
                 }
+                //else the main menu can open
                 else
                 {
                     this.Hide();
@@ -62,7 +66,7 @@ namespace Main_Project
         //method that runs whenever we click the exit button. closes the application
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         //Code that will make the form movable
@@ -87,9 +91,38 @@ namespace Main_Project
             }
         }
 
-        private void txtPassword_TextChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Method that check if the caps lock key is on
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LoginForm_KeyDown(object sender, KeyEventArgs e)
         {
-            
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                capsLockLbl.Text = "Caps Lock is ON!";
+            }
+            else
+            {
+                capsLockLbl.Text = "";
+            }
+        }
+
+        /// <summary>
+        /// Method that check if the caps lock key is on during the form load
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                capsLockLbl.Text = "Caps Lock is ON!";
+            }
+            else
+            {
+                capsLockLbl.Text = "";
+            }
         }
     }
 }

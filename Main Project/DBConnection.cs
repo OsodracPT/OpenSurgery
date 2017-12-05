@@ -76,9 +76,48 @@ namespace Main_Project
 
             return dataSet;
         }
-        
+
+        //Methods that execute a query in the database
+
+        /// <summary>
+        /// This method executes an Slq statment based on the statements present in the Constants class. May need to reuse this method for better code efficiency
+        /// </summary>
+        /// <param name="sqlStatement"></param>
+        public void SqlStatementExecute(String sqlStatement)
+        {
+            connectionToDB.Open();
+
+            SqlCommand cmd = connectionToDB.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = sqlStatement;
+            cmd.ExecuteNonQuery();
+
+            connectionToDB.Close();
+        }
 
 
+        //Methods that return an int in from the database
+
+        public int GetIntValue(String sqlStatement)
+        {
+            connectionToDB.Open();
+
+            SqlCommand cmd = connectionToDB.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = sqlStatement;
+            cmd.ExecuteNonQuery();
+            int value = Convert.ToInt32(cmd.ExecuteScalar());
+            connectionToDB.Close();
+
+            return value;
+        }
+
+        /// <summary>
+        /// Method that returns an in based on the amount of rows with the same data as the user input.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public int TryLogin(string username, string password)
         {
             int i = 0;
@@ -93,42 +132,35 @@ namespace Main_Project
             return i;
         }
 
-        public void RegisterPatient(string name, string address, string postcode, string city, DateTime DoB, int phoneNumber)
+        //check if a staff member is already busy according to the user input
+        public int CheckStaffBusy(int staffID, string date, string time)
+        {
+            int i = 0;
+            string staffString = Convert.ToString(staffID);
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.SpecificStaffMember(staffString, date, time));
+
+            //get the table to be displayed from the data set
+            DataTable dtUser = dsUser.Tables[0];
+
+            i = Convert.ToInt32(dtUser.Rows.Count.ToString());
+            return i;
+        }
+
+
+        //Methods that return a string from the database
+        public string GetStringValue(String sqlStatement)
         {
             connectionToDB.Open();
 
-            string dobTemp = DoB.ToString("d");
             SqlCommand cmd = connectionToDB.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = Constants.RegisterPatient(name, address, postcode, city, dobTemp, phoneNumber);
+            cmd.CommandText = sqlStatement;
             cmd.ExecuteNonQuery();
-
+            string str = Convert.ToString(cmd.ExecuteScalar());
             connectionToDB.Close();
+
+            return str;
         }
 
-        public int SelectMax()
-        {
-            connectionToDB.Open();
-
-            SqlCommand cmd = connectionToDB.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = Constants.selectMaxID;
-            int maxId = Convert.ToInt32(cmd.ExecuteScalar());
-
-            return maxId;
-        }
-
-        public void BookAppointment(string date, string time, string staffName, string patientName, string description)
-        {
-            connectionToDB.Open();
-
-            SqlCommand cmd = connectionToDB.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = Constants.BookAppointment(date, time, staffName, patientName, description);
-            cmd.ExecuteNonQuery();
-
-            connectionToDB.Close();
-        }
-        
     }
 }

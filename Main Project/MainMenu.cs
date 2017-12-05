@@ -25,13 +25,14 @@ namespace Main_Project
         /// <param name="e"></param>
         private void MainMenu_Load(object sender, EventArgs e)
         {
+            Logger.Instance.Log("MainMenu:MainMenu_Load() -> Loading the main Menu");
 
-           userLbl.Text = LoginForm.UsernameText;
+            userLbl.Text = LoginForm.UsernameText;
 
 
             //moves the selection side scroll to the correct position(selecting staff)
             SidePanelScroll.Height = staffButton.Height;
-            
+
             //starts the main menu with the staff user control already in front
             if (!userControlPanel.Controls.Contains(StaffUserControl.Instance))
             {
@@ -43,6 +44,7 @@ namespace Main_Project
                 StaffUserControl.Instance.BringToFront();
         }
 
+
         //https://www.youtube.com/watch?v=ao4HwEpW7eg
         //C# Tutorial : How to load User control dynamically | FoxLearn
         private void patientBtn_Click(object sender, EventArgs e)
@@ -53,7 +55,7 @@ namespace Main_Project
 
             //remove register patient if it is present in the panel.
             PatientUserControl.RemoveRegister();
-            PatientUserControl.RemoveRegisterPresription();
+
 
             if (!userControlPanel.Controls.Contains(PatientUserControl.Instance))
             {
@@ -64,8 +66,9 @@ namespace Main_Project
             else
             {
                 PatientUserControl.Instance.BringToFront();
+                PatientUserControl.Instance.PatientUserControlRefresh();
             }
-            
+
         }
 
         private void appointBtn_Click(object sender, EventArgs e)
@@ -74,7 +77,7 @@ namespace Main_Project
             SidePanelScroll.Height = appointBtn.Height;
             SidePanelScroll.Top = appointBtn.Top;
 
-            //removes "booking appointment" if it is present in the panel.
+            //removes "booking appointment" and edit appointment if it is present in the panel.
             AppointmentUserControl.RemoveBook();
 
             if (!userControlPanel.Controls.Contains(AppointmentUserControl.Instance))

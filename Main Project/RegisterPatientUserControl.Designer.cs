@@ -85,6 +85,7 @@
             this.phoneNumberTxt.Name = "phoneNumberTxt";
             this.phoneNumberTxt.Size = new System.Drawing.Size(116, 23);
             this.phoneNumberTxt.TabIndex = 19;
+            this.phoneNumberTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneNumberTxt_KeyPress);
             // 
             // label5
             // 
@@ -213,7 +214,6 @@
             this.Controls.Add(this.registerBtn);
             this.Name = "RegisterPatientUserControl";
             this.Size = new System.Drawing.Size(769, 366);
-            this.Load += new System.EventHandler(this.RegisterPatientUserControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

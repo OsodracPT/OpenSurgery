@@ -21,6 +21,7 @@ namespace Main_Project
             DBConnection.ConnectionStr = Properties.Settings.Default.surgeryDBConnection; ;
 
             Application.Run(new LoginForm());
+
         }
     }
 }

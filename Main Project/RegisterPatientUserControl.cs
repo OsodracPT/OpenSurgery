@@ -20,7 +20,8 @@ namespace Main_Project
         {
             get
             {
-                if (_instance == null)
+                //check if any previous instance was properly disposed
+                if (_instance == null || _instance.IsDisposed == true)
                     _instance = new RegisterPatientUserControl();
                 return _instance;
             }
@@ -31,14 +32,22 @@ namespace Main_Project
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Method that tries to register the patient into the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void registerBtn_Click(object sender, EventArgs e)
         {
 
             try
             {
-                //Try to register patient by getting the data from the user input textboxes
-                DBConnection.getDBConnectionInstance().RegisterPatient(nameTxt.Text, addressTxt.Text, pstCodeTxt.Text, cityTxt.Text, dobTimePick.Value, Convert.ToInt32(phoneNumberTxt.Text));
+                Logger.Instance.Log("RegisterPatientUserControl:registerBtn_Click() -> Registering a patient");
 
+                //Try to register patient by getting the data from the user input textboxes
+                //Convert the date time from the value picker to a desired value
+                string dobTemp = dobTimePick.Value.ToString("d");
+                DBConnection.getDBConnectionInstance().SqlStatementExecute(Constants.RegisterPatient(nameTxt.Text, addressTxt.Text, pstCodeTxt.Text, cityTxt.Text, dobTemp, Convert.ToInt32(phoneNumberTxt.Text)));
                 //Show success message and close form
                 MessageBox.Show("Patient added successfully!");
 
@@ -50,14 +59,24 @@ namespace Main_Project
             }
         }
 
+        /// <summary>
+        /// Load method for the register patient user control
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RegisterPatient_Load(object sender, EventArgs e)
         {
+            //add maximum date to the date time picker
             dobTimePick.MaxDate = DateTime.Now;
         }
 
-        private void RegisterPatientUserControl_Load(object sender, EventArgs e)
+        //only allow number to be entered in the phone number text box
+        private void phoneNumberTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

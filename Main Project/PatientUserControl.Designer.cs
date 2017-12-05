@@ -33,11 +33,12 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.TestBtn = new System.Windows.Forms.Button();
             this.PrescriptionBtn = new System.Windows.Forms.Button();
-            this.findBtn = new System.Windows.Forms.Button();
             this.fileLbl = new System.Windows.Forms.Label();
             this.findInputTxtBox = new System.Windows.Forms.TextBox();
             this.userdataTableAdapter = new Main_Project.oversurgeryDataSetTableAdapters.userdataTableAdapter();
             this.oversurgeryDataSet = new Main_Project.oversurgeryDataSet();
+            this.printButton = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oversurgeryDataSet)).BeginInit();
             this.SuspendLayout();
@@ -45,31 +46,31 @@
             // refreshBtn
             // 
             this.refreshBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshBtn.Location = new System.Drawing.Point(129, 142);
+            this.refreshBtn.Location = new System.Drawing.Point(11, 114);
             this.refreshBtn.Margin = new System.Windows.Forms.Padding(2);
             this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(82, 27);
+            this.refreshBtn.Size = new System.Drawing.Size(82, 42);
             this.refreshBtn.TabIndex = 25;
-            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.Text = "Show All \r\n Patients";
             this.refreshBtn.UseVisualStyleBackColor = true;
             this.refreshBtn.Click += new System.EventHandler(this.PatientUserControl_Load);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 186);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 160);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(741, 166);
+            this.dataGridView1.Size = new System.Drawing.Size(741, 188);
             this.dataGridView1.TabIndex = 24;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnRegister
             // 
             this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(427, 51);
+            this.btnRegister.Location = new System.Drawing.Point(427, 25);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(106, 58);
@@ -81,7 +82,7 @@
             // TestBtn
             // 
             this.TestBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TestBtn.Location = new System.Drawing.Point(647, 51);
+            this.TestBtn.Location = new System.Drawing.Point(647, 25);
             this.TestBtn.Margin = new System.Windows.Forms.Padding(2);
             this.TestBtn.Name = "TestBtn";
             this.TestBtn.Size = new System.Drawing.Size(106, 58);
@@ -93,7 +94,7 @@
             // PrescriptionBtn
             // 
             this.PrescriptionBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrescriptionBtn.Location = new System.Drawing.Point(537, 51);
+            this.PrescriptionBtn.Location = new System.Drawing.Point(537, 25);
             this.PrescriptionBtn.Margin = new System.Windows.Forms.Padding(2);
             this.PrescriptionBtn.Name = "PrescriptionBtn";
             this.PrescriptionBtn.Size = new System.Drawing.Size(106, 58);
@@ -102,32 +103,20 @@
             this.PrescriptionBtn.UseVisualStyleBackColor = true;
             this.PrescriptionBtn.Click += new System.EventHandler(this.PrescriptionBtn_Click);
             // 
-            // findBtn
-            // 
-            this.findBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findBtn.Location = new System.Drawing.Point(257, 67);
-            this.findBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.findBtn.Name = "findBtn";
-            this.findBtn.Size = new System.Drawing.Size(111, 29);
-            this.findBtn.TabIndex = 20;
-            this.findBtn.Text = "Find Patient";
-            this.findBtn.UseVisualStyleBackColor = true;
-            this.findBtn.Click += new System.EventHandler(this.findBtn_Click);
-            // 
             // fileLbl
             // 
             this.fileLbl.AutoSize = true;
             this.fileLbl.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fileLbl.Location = new System.Drawing.Point(20, 143);
+            this.fileLbl.Location = new System.Drawing.Point(8, 18);
             this.fileLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.fileLbl.Name = "fileLbl";
-            this.fileLbl.Size = new System.Drawing.Size(87, 20);
+            this.fileLbl.Size = new System.Drawing.Size(115, 20);
             this.fileLbl.TabIndex = 19;
-            this.fileLbl.Text = "Patient File";
+            this.fileLbl.Text = "Search Patient";
             // 
             // findInputTxtBox
             // 
-            this.findInputTxtBox.Location = new System.Drawing.Point(12, 66);
+            this.findInputTxtBox.Location = new System.Drawing.Point(12, 40);
             this.findInputTxtBox.Margin = new System.Windows.Forms.Padding(2);
             this.findInputTxtBox.Multiline = true;
             this.findInputTxtBox.Name = "findInputTxtBox";
@@ -145,16 +134,28 @@
             this.oversurgeryDataSet.DataSetName = "oversurgeryDataSet";
             this.oversurgeryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // printButton
+            // 
+            this.printButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printButton.Location = new System.Drawing.Point(647, 129);
+            this.printButton.Margin = new System.Windows.Forms.Padding(2);
+            this.printButton.Name = "printButton";
+            this.printButton.Size = new System.Drawing.Size(106, 27);
+            this.printButton.TabIndex = 27;
+            this.printButton.Text = "Print Test";
+            this.printButton.UseVisualStyleBackColor = true;
+            this.printButton.Click += new System.EventHandler(this.printButton_Click);
+            // 
             // PatientUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.printButton);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.TestBtn);
             this.Controls.Add(this.PrescriptionBtn);
-            this.Controls.Add(this.findBtn);
             this.Controls.Add(this.fileLbl);
             this.Controls.Add(this.findInputTxtBox);
             this.Name = "PatientUserControl";
@@ -174,10 +175,11 @@
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button TestBtn;
         private System.Windows.Forms.Button PrescriptionBtn;
-        private System.Windows.Forms.Button findBtn;
         private System.Windows.Forms.Label fileLbl;
         private System.Windows.Forms.TextBox findInputTxtBox;
         private oversurgeryDataSetTableAdapters.userdataTableAdapter userdataTableAdapter;
         private oversurgeryDataSet oversurgeryDataSet;
+        private System.Windows.Forms.Button printButton;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }
