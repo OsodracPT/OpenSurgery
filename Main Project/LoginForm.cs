@@ -37,7 +37,7 @@ namespace Main_Project
 
             try
             {
-
+                Logger.Instance.Log("LoginFrom:loginButton_Click() -> Accessing the database with the user input");
                 //access the database and get an int
                 i = DBConnection.getDBConnectionInstance().TryLogin(txtUsername.Text, txtPassword.Text);
 

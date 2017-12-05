@@ -87,6 +87,7 @@
     <Compile Include="EditAppoinUserControl.Designer.cs">
       <DependentUpon>EditAppoinUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logger.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

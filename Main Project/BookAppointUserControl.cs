@@ -80,6 +80,9 @@ namespace Main_Project
                     //check too see if the staff member is already busy
                     int i = 0;
 
+                    Logger.Instance.Log("BookAppointUserControl:bookBtn_Click() -> Booking an appointment.");
+
+
                     try
                     {
 

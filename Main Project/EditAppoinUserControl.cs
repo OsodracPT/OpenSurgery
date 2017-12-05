@@ -131,6 +131,9 @@ namespace Main_Project
                     //check too see if the staff member is already busy
                     int i = 0;
 
+                    Logger.Instance.Log("EditAppointUserControl:updateBtn_Click() -> Updating an appointment.");
+
+
                     try
                     {
 

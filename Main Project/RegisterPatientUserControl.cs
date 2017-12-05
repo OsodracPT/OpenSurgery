@@ -42,6 +42,8 @@ namespace Main_Project
 
             try
             {
+                Logger.Instance.Log("RegisterPatientUserControl:registerBtn_Click() -> Registering a patient");
+
                 //Try to register patient by getting the data from the user input textboxes
                 //Convert the date time from the value picker to a desired value
                 string dobTemp = dobTimePick.Value.ToString("d");

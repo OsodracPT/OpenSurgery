@@ -82,6 +82,9 @@ namespace Main_Project
         private void LoadlistView()
         {
 
+            Logger.Instance.Log("StaffUserControlUserControl:LoadlistView() -> Loading the list view.");
+
+
             //Clears the list view
             listView1.Items.Clear();
             listView1.Columns.Clear();
@@ -132,6 +135,9 @@ namespace Main_Project
         /// <param name="staffID"></param>
         private void AddShiftToListView(string staffID)
         {
+
+            Logger.Instance.Log("StaffUserControlUserControl:AddShiftToListView() -> Adding shifts to the list view.");
+
 
             string date = dateTimePicker1.Text;
 

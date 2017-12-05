@@ -47,7 +47,7 @@
             this.bookLbl.AutoSize = true;
             this.bookLbl.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bookLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.bookLbl.Location = new System.Drawing.Point(28, 31);
+            this.bookLbl.Location = new System.Drawing.Point(28, 20);
             this.bookLbl.Name = "bookLbl";
             this.bookLbl.Size = new System.Drawing.Size(71, 30);
             this.bookLbl.TabIndex = 19;
@@ -58,7 +58,7 @@
             this.selectLbl.AutoSize = true;
             this.selectLbl.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.selectLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.selectLbl.Location = new System.Drawing.Point(56, 76);
+            this.selectLbl.Location = new System.Drawing.Point(56, 65);
             this.selectLbl.Name = "selectLbl";
             this.selectLbl.Size = new System.Drawing.Size(97, 20);
             this.selectLbl.TabIndex = 20;
@@ -69,7 +69,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.label1.Location = new System.Drawing.Point(274, 76);
+            this.label1.Location = new System.Drawing.Point(274, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 20);
             this.label1.TabIndex = 21;
@@ -80,7 +80,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.label2.Location = new System.Drawing.Point(56, 155);
+            this.label2.Location = new System.Drawing.Point(56, 144);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 20);
             this.label2.TabIndex = 22;
@@ -91,7 +91,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.label3.Location = new System.Drawing.Point(274, 155);
+            this.label3.Location = new System.Drawing.Point(274, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 20);
             this.label3.TabIndex = 23;
@@ -102,7 +102,7 @@
             this.timeComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.timeComboBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeComboBox.FormattingEnabled = true;
-            this.timeComboBox.Location = new System.Drawing.Point(278, 105);
+            this.timeComboBox.Location = new System.Drawing.Point(278, 94);
             this.timeComboBox.Name = "timeComboBox";
             this.timeComboBox.Size = new System.Drawing.Size(121, 25);
             this.timeComboBox.TabIndex = 24;
@@ -126,7 +126,7 @@
             this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(60, 108);
+            this.dateTimePicker1.Location = new System.Drawing.Point(60, 97);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(151, 22);
@@ -137,7 +137,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.label4.Location = new System.Drawing.Point(29, 217);
+            this.label4.Location = new System.Drawing.Point(29, 206);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 20);
             this.label4.TabIndex = 27;
@@ -146,7 +146,7 @@
             // descriptionTxt
             // 
             this.descriptionTxt.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionTxt.Location = new System.Drawing.Point(33, 250);
+            this.descriptionTxt.Location = new System.Drawing.Point(33, 239);
             this.descriptionTxt.Multiline = true;
             this.descriptionTxt.Name = "descriptionTxt";
             this.descriptionTxt.Size = new System.Drawing.Size(438, 80);
@@ -157,7 +157,7 @@
             this.staffComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.staffComboBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.staffComboBox.FormattingEnabled = true;
-            this.staffComboBox.Location = new System.Drawing.Point(60, 178);
+            this.staffComboBox.Location = new System.Drawing.Point(60, 167);
             this.staffComboBox.Name = "staffComboBox";
             this.staffComboBox.Size = new System.Drawing.Size(121, 25);
             this.staffComboBox.TabIndex = 29;
@@ -167,7 +167,7 @@
             this.patientCombox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.patientCombox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.patientCombox.FormattingEnabled = true;
-            this.patientCombox.Location = new System.Drawing.Point(278, 178);
+            this.patientCombox.Location = new System.Drawing.Point(278, 167);
             this.patientCombox.Name = "patientCombox";
             this.patientCombox.Size = new System.Drawing.Size(121, 25);
             this.patientCombox.TabIndex = 30;

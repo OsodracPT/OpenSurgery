@@ -122,6 +122,8 @@ namespace Main_Project
         /// <param name="e"></param>
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            Logger.Instance.Log("AppointmentUserControl:btnCancel_Click() -> Canceling an appointment.");
+
             //check to see if an appointment is seleted
             if (valueNotSelected == true)
             {

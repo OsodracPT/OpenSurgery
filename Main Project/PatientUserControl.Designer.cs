@@ -46,7 +46,7 @@
             // refreshBtn
             // 
             this.refreshBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshBtn.Location = new System.Drawing.Point(11, 140);
+            this.refreshBtn.Location = new System.Drawing.Point(11, 114);
             this.refreshBtn.Margin = new System.Windows.Forms.Padding(2);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(82, 42);
@@ -58,19 +58,19 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 186);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 160);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(741, 166);
+            this.dataGridView1.Size = new System.Drawing.Size(741, 188);
             this.dataGridView1.TabIndex = 24;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnRegister
             // 
             this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(427, 51);
+            this.btnRegister.Location = new System.Drawing.Point(427, 25);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(106, 58);
@@ -82,7 +82,7 @@
             // TestBtn
             // 
             this.TestBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TestBtn.Location = new System.Drawing.Point(647, 51);
+            this.TestBtn.Location = new System.Drawing.Point(647, 25);
             this.TestBtn.Margin = new System.Windows.Forms.Padding(2);
             this.TestBtn.Name = "TestBtn";
             this.TestBtn.Size = new System.Drawing.Size(106, 58);
@@ -94,7 +94,7 @@
             // PrescriptionBtn
             // 
             this.PrescriptionBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrescriptionBtn.Location = new System.Drawing.Point(537, 51);
+            this.PrescriptionBtn.Location = new System.Drawing.Point(537, 25);
             this.PrescriptionBtn.Margin = new System.Windows.Forms.Padding(2);
             this.PrescriptionBtn.Name = "PrescriptionBtn";
             this.PrescriptionBtn.Size = new System.Drawing.Size(106, 58);
@@ -107,7 +107,7 @@
             // 
             this.fileLbl.AutoSize = true;
             this.fileLbl.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fileLbl.Location = new System.Drawing.Point(8, 44);
+            this.fileLbl.Location = new System.Drawing.Point(8, 18);
             this.fileLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.fileLbl.Name = "fileLbl";
             this.fileLbl.Size = new System.Drawing.Size(115, 20);
@@ -116,7 +116,7 @@
             // 
             // findInputTxtBox
             // 
-            this.findInputTxtBox.Location = new System.Drawing.Point(12, 66);
+            this.findInputTxtBox.Location = new System.Drawing.Point(12, 40);
             this.findInputTxtBox.Margin = new System.Windows.Forms.Padding(2);
             this.findInputTxtBox.Multiline = true;
             this.findInputTxtBox.Name = "findInputTxtBox";
@@ -137,7 +137,7 @@
             // printButton
             // 
             this.printButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.printButton.Location = new System.Drawing.Point(647, 155);
+            this.printButton.Location = new System.Drawing.Point(647, 129);
             this.printButton.Margin = new System.Windows.Forms.Padding(2);
             this.printButton.Name = "printButton";
             this.printButton.Size = new System.Drawing.Size(106, 27);

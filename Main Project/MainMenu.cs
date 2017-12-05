@@ -25,13 +25,14 @@ namespace Main_Project
         /// <param name="e"></param>
         private void MainMenu_Load(object sender, EventArgs e)
         {
+            Logger.Instance.Log("MainMenu:MainMenu_Load() -> Loading the main Menu");
 
             userLbl.Text = LoginForm.UsernameText;
 
 
             //moves the selection side scroll to the correct position(selecting staff)
             SidePanelScroll.Height = staffButton.Height;
-            
+
             //starts the main menu with the staff user control already in front
             if (!userControlPanel.Controls.Contains(StaffUserControl.Instance))
             {
@@ -66,8 +67,6 @@ namespace Main_Project
             {
                 PatientUserControl.Instance.BringToFront();
                 PatientUserControl.Instance.PatientUserControlRefresh();
-
-
             }
 
         }
