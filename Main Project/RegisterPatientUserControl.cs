@@ -70,5 +70,13 @@ namespace Main_Project
             dobTimePick.MaxDate = DateTime.Now;
         }
 
+        //only allow number to be entered in the phone number text box
+        private void phoneNumberTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
