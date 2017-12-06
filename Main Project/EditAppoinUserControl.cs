@@ -73,7 +73,7 @@ namespace Main_Project
         public EditAppoinUserControl()
         {
             InitializeComponent();
-            string appointmentID = AppointmentUserControl.returnAppointmentValue();
+            string appointmentID = AppointmentUserControl.ReturnAppointmentValue();
         }
 
         /// <summary>
@@ -87,8 +87,8 @@ namespace Main_Project
             FillComboBoxes();
 
             //get the appointment id
-            string appointmentID = AppointmentUserControl.returnAppointmentValue();
-            AppointID = AppointmentUserControl.returnAppointmentValue();
+            string appointmentID = AppointmentUserControl.ReturnAppointmentValue();
+            AppointID = AppointmentUserControl.ReturnAppointmentValue();
 
 
 
@@ -280,8 +280,8 @@ namespace Main_Project
                 else
                     timeComboBox.Items.Add(i + ":00");
 
-            StaffName = AppointmentUserControl.returnStaffValue();
-            PatientName = AppointmentUserControl.returnPatientValue();
+            StaffName = AppointmentUserControl.ReturnStaffValue();
+            PatientName = AppointmentUserControl.ReturnPatientValue();
 
             //make the selected combo box item be on the right staff and patient from the previous user control
             staffComboBox.Text = StaffName;
