@@ -47,7 +47,7 @@ namespace Main_Project
         }
 
         //Sql statement that checks the user input with the data present in userdata table
-        public static String selectLogin(string username, string password)
+        public static String SelectLogin(string username, string password)
         {
 
             string selectLogin = "SELECT * FROM userdata WHERE username='" + username + "' and password='" + password + "'";
@@ -63,7 +63,7 @@ namespace Main_Project
         }
 
         //Sql statement responsible for inserting a new patient into the patient table
-        public static String RegisterPatient(string name, string address, string postcode, string city, string DoB, int phoneNumber)
+        public static String RegisterPatient(string name, string address, string postcode, string city, string DoB, string phoneNumber)
         {
 
             string registerPatient = $"INSERT INTO PatientData (patientName, address, postCode, city, dob, phoneNumber) VALUES('{name} ', '{address}', '{postcode} ', '{city}', '{DoB}', '{phoneNumber}')";
