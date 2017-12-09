@@ -49,7 +49,7 @@ namespace Main_Project
 
             //Get the quantity of staff for the loop
             int staffNumber = DBConnection.getDBConnectionInstance().GetIntValue(Constants.countStaff);
-            for (int i = 0; i < staffNumber; i++)
+            for (int i = 0; i <= staffNumber; i++)
             {
                 string staffID = Convert.ToString(i);
                 AddShiftToListView(staffID);
