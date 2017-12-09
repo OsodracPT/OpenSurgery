@@ -41,7 +41,6 @@
             this.nameTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.registerBtn = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dobTimePick
@@ -50,7 +49,7 @@
             this.dobTimePick.CustomFormat = "dd/MM/yyyy";
             this.dobTimePick.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dobTimePick.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dobTimePick.Location = new System.Drawing.Point(214, 126);
+            this.dobTimePick.Location = new System.Drawing.Point(218, 108);
             this.dobTimePick.Margin = new System.Windows.Forms.Padding(2);
             this.dobTimePick.Name = "dobTimePick";
             this.dobTimePick.Size = new System.Drawing.Size(116, 22);
@@ -59,7 +58,7 @@
             // cityTxt
             // 
             this.cityTxt.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cityTxt.Location = new System.Drawing.Point(510, 167);
+            this.cityTxt.Location = new System.Drawing.Point(514, 149);
             this.cityTxt.Margin = new System.Windows.Forms.Padding(2);
             this.cityTxt.Name = "cityTxt";
             this.cityTxt.Size = new System.Drawing.Size(116, 21);
@@ -69,7 +68,7 @@
             // 
             this.cityLbl.AutoSize = true;
             this.cityLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cityLbl.Location = new System.Drawing.Point(412, 167);
+            this.cityLbl.Location = new System.Drawing.Point(416, 149);
             this.cityLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.cityLbl.Name = "cityLbl";
             this.cityLbl.Size = new System.Drawing.Size(45, 21);
@@ -79,7 +78,7 @@
             // phoneNumberTxt
             // 
             this.phoneNumberTxt.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneNumberTxt.Location = new System.Drawing.Point(214, 167);
+            this.phoneNumberTxt.Location = new System.Drawing.Point(218, 149);
             this.phoneNumberTxt.Margin = new System.Windows.Forms.Padding(2);
             this.phoneNumberTxt.Multiline = true;
             this.phoneNumberTxt.Name = "phoneNumberTxt";
@@ -91,7 +90,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(80, 167);
+            this.label5.Location = new System.Drawing.Point(84, 149);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(130, 21);
@@ -102,7 +101,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(80, 125);
+            this.label4.Location = new System.Drawing.Point(84, 107);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 21);
@@ -112,7 +111,7 @@
             // pstCodeTxt
             // 
             this.pstCodeTxt.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pstCodeTxt.Location = new System.Drawing.Point(510, 128);
+            this.pstCodeTxt.Location = new System.Drawing.Point(514, 110);
             this.pstCodeTxt.Margin = new System.Windows.Forms.Padding(2);
             this.pstCodeTxt.Name = "pstCodeTxt";
             this.pstCodeTxt.Size = new System.Drawing.Size(116, 21);
@@ -122,7 +121,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(412, 130);
+            this.label3.Location = new System.Drawing.Point(416, 112);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 21);
@@ -132,7 +131,7 @@
             // addressTxt
             // 
             this.addressTxt.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressTxt.Location = new System.Drawing.Point(510, 88);
+            this.addressTxt.Location = new System.Drawing.Point(514, 70);
             this.addressTxt.Margin = new System.Windows.Forms.Padding(2);
             this.addressTxt.Name = "addressTxt";
             this.addressTxt.Size = new System.Drawing.Size(116, 21);
@@ -142,7 +141,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(412, 88);
+            this.label2.Location = new System.Drawing.Point(416, 70);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 21);
@@ -152,7 +151,7 @@
             // nameTxt
             // 
             this.nameTxt.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTxt.Location = new System.Drawing.Point(214, 80);
+            this.nameTxt.Location = new System.Drawing.Point(218, 62);
             this.nameTxt.Margin = new System.Windows.Forms.Padding(2);
             this.nameTxt.Multiline = true;
             this.nameTxt.Name = "nameTxt";
@@ -163,7 +162,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(80, 80);
+            this.label1.Location = new System.Drawing.Point(84, 62);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 21);
@@ -175,7 +174,7 @@
             this.registerBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.registerBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerBtn.ForeColor = System.Drawing.Color.White;
-            this.registerBtn.Location = new System.Drawing.Point(324, 252);
+            this.registerBtn.Location = new System.Drawing.Point(321, 238);
             this.registerBtn.Margin = new System.Windows.Forms.Padding(2);
             this.registerBtn.Name = "registerBtn";
             this.registerBtn.Size = new System.Drawing.Size(136, 40);
@@ -184,21 +183,10 @@
             this.registerBtn.UseVisualStyleBackColor = false;
             this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.label6.Location = new System.Drawing.Point(331, 15);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 20);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "Prescription";
-            // 
             // RegisterPatientUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.dobTimePick);
             this.Controls.Add(this.cityTxt);
             this.Controls.Add(this.cityLbl);
@@ -234,6 +222,5 @@
         private System.Windows.Forms.TextBox nameTxt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button registerBtn;
-        private System.Windows.Forms.Label label6;
     }
 }
