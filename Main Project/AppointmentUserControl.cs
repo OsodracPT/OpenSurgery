@@ -204,7 +204,7 @@ namespace Main_Project
         /// <param name="e"></param>
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
+            var index = e.RowIndex;
             valueNotSelected = false;
 
             DataGridViewRow selectedRow = dataGridView1.Rows[index];
@@ -228,16 +228,16 @@ namespace Main_Project
         /// Method that return the appointmentID public value
         /// </summary>
         /// <returns></returns>
-        public static string returnAppointmentValue()
+        public static string ReturnAppointmentValue()
         {
             return AppointmentID;
         }
 
-        public static string returnStaffValue()
+        public static string ReturnStaffValue()
         {
             return StaffName;
         }
-        public static string returnPatientValue()
+        public static string ReturnPatientValue()
         {
             return PatientName;
         }

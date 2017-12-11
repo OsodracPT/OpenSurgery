@@ -41,23 +41,6 @@ namespace Main_Project
             LoadlistView();
         }
 
-
-        //additions by Rom
-        private void checkdutyBtn_Click(object sender, EventArgs e)
-        {
-
-            string date = dateTimePicker1.Text;
-            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.SelectShiftQuery(date));
-
-            //get the table to be displayed from the data set
-            DataTable dtUser = dsUser.Tables[0];
-
-            //set the data source for the data grid view
-        }
-
-
-
-
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
@@ -66,7 +49,7 @@ namespace Main_Project
 
             //Get the quantity of staff for the loop
             int staffNumber = DBConnection.getDBConnectionInstance().GetIntValue(Constants.countStaff);
-            for (int i = 0; i < staffNumber; i++)
+            for (int i = 0; i <= staffNumber; i++)
             {
                 string staffID = Convert.ToString(i);
                 AddShiftToListView(staffID);

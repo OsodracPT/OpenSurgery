@@ -87,10 +87,10 @@ namespace Main_Project
             testfocus = false;
             try
             {
-                string DGCell = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
+                string dgCell = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
 
 
-                DataSet dsPatient = DBConnection.getDBConnectionInstance().getDataSet(Constants.SelectPrescription(DGCell));
+                DataSet dsPatient = DBConnection.getDBConnectionInstance().getDataSet(Constants.SelectPrescription(dgCell));
                 DataTable dtPatient = dsPatient.Tables[0];
                 dataGridView1.DataSource = dtPatient;
 

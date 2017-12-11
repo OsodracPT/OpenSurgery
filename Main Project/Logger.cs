@@ -11,7 +11,7 @@ namespace Main_Project
     {
         private static Logger _instance;
 
-        private string filePath;
+        readonly string filePath;
 
         //constructor
         private Logger()

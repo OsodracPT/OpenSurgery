@@ -120,8 +120,8 @@ namespace Main_Project
         private void singOutPicture_Click(object sender, EventArgs e)
         {
             this.Close();
-            LoginForm LoginForm = new LoginForm();
-            LoginForm.Show();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
         }
 
         //Code that will make the form movable

@@ -123,7 +123,7 @@ namespace Main_Project
             int i = 0;
 
 
-            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.selectLogin(username, password));
+            DataSet dsUser = DBConnection.getDBConnectionInstance().getDataSet(Constants.SelectLogin(username, password));
 
             //get the table to be displayed from the data set
             DataTable dtUser = dsUser.Tables[0];
