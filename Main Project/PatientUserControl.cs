@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,7 +15,13 @@ namespace Main_Project
 {
     public partial class PatientUserControl : UserControl
     {
-        private bool testfocus = false;
+        private bool patient_test_focus = false;
+
+
+        string @id = null;
+
+
+
 
         //singleton initiation
         private static PatientUserControl _instance;
@@ -41,7 +48,9 @@ namespace Main_Project
         /// <param name="e"></param>
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            testfocus = false;
+            show_print_test_button(false);
+            show_repete_prescription_button(false);
+
 
             Instance.Controls.Add(RegisterPatientUserControl.Instance);
 
@@ -84,28 +93,96 @@ namespace Main_Project
         /// <param name="e"></param>
         private void PrescriptionBtn_Click(object sender, EventArgs e)
         {
-            testfocus = false;
+            string dataTest;
             try
             {
-                string dgCell = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
-
-
-                DataSet dsPatient = DBConnection.getDBConnectionInstance().getDataSet(Constants.SelectPrescription(dgCell));
-                DataTable dtPatient = dsPatient.Tables[0];
-                dataGridView1.DataSource = dtPatient;
-
+                dataTest = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
+                prescriptionBtn();
             }
-            catch (Exception ex)
+
+            catch (Exception)
+            {
+                MessageBox.Show("No Patient Selected");
+            }
+
+
+
+
+
+        }
+        private void prescriptionBtn()
+
+        {
+            show_print_test_button(false);
+            show_repete_prescription_button(true);
+
+
+            if (@id != null)
             {
 
+                try
+                {
+
+
+
+                    DataSet dsPatient = DBConnection.getDBConnectionInstance().getDataSet(Constants.SelectPrescriptions(@id));
+                    DataTable dtPatient = dsPatient.Tables[0];
+                    dataGridView1.DataSource = dtPatient;
+
+                    if (dataGridView1 != null)
+                    {
+                        show_repete_prescription_button(true);
+                        
+                        
+                        
+                    }
+                    else
+                    {
+
+                    }
+
+
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+
+            }
+            else if (@id == null)
+            {
+                try
+                {
+
+
+                    string dgCell = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
+
+                    @id = dgCell;
+
+                    prescriptionBtn();
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
         }
 
 
 
+
         private void PatientUserControl_Load(object sender, EventArgs e)
         {
-            testfocus = false;
+            show_print_test_button(false);
+            show_repete_prescription_button(false);
+
+            findInputTxtBox.Text = "";
+            @id = null;
+
+
+
+
             // TODO: This line of code loads data into the 'oversurgeryDataSet.userdata' table. You can move, or remove it, as needed.
             this.userdataTableAdapter.Fill(this.oversurgeryDataSet.userdata);
 
@@ -127,7 +204,7 @@ namespace Main_Project
         private void findInputTxtBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             base.OnKeyPress(e);
-            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar)&& e.KeyChar != '/')
             {
                 e.Handled = true;
                 Console.WriteLine("Invalid Character inserted");
@@ -141,12 +218,19 @@ namespace Main_Project
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            testfocus = false;
+
+
         }
 
         private void findInputTxtBox_TextChanged(object sender, EventArgs e)
         {
-            testfocus = false;
+
+            show_print_test_button(false);
+            show_repete_prescription_button(false);
+
+            @id = null;
+
+
         }
 
         /// <summary>
@@ -156,20 +240,50 @@ namespace Main_Project
         /// <param name="e"></param>
         private void TestBtn_Click(object sender, EventArgs e)
         {
-            testfocus = true;
+            string dataTest;
             try
             {
-                string DGCell = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
-
-
-                DataSet dsPatient = DBConnection.getDBConnectionInstance().getDataSet(Constants.SelectPatientTest(DGCell));
-                DataTable dtPatient = dsPatient.Tables[0];
-                dataGridView1.DataSource = dtPatient;
-
+                dataTest = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
+                TestButton();
             }
-            catch (Exception ex)
-            {
 
+            catch (Exception)
+            {
+                MessageBox.Show("No Patient Selected");
+            }
+
+        }
+        private void TestButton()
+        {
+            show_print_test_button(true);
+            show_repete_prescription_button(false);
+            if (@id != null)
+            {
+                try
+                {
+
+
+
+                    DataSet dsPatient = DBConnection.getDBConnectionInstance().getDataSet(Constants.SelectPatientTest(@id));
+                    DataTable dtPatient = dsPatient.Tables[0];
+                    dataGridView1.DataSource = dtPatient;
+                    
+
+
+
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+            else if (@id == null)
+            {
+                string dgCell = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
+                @id = dgCell;
+
+                TestButton();
             }
         }
 
@@ -180,7 +294,7 @@ namespace Main_Project
         /// <param name="e"></param>
         private void printButton_Click(object sender, EventArgs e)
         {
-            if (testfocus == true)
+            if (patient_test_focus == true)
             {
                 //Printing the Contents
                 //https://www.codeproject.com/Articles/28046/Printing-of-DataGridView
@@ -201,6 +315,204 @@ namespace Main_Project
             {
                 MessageBox.Show("Please Select Tests then a Patient");
             }
+        }
+
+        private void fileLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void show_repete_prescription_button(bool i)
+        {
+            if (i == false)
+            {
+                button1.Visible = false;
+            }
+            else
+            {
+                button1.Visible = true;
+
+            }
+
+        }
+        private void show_print_test_button(bool i)
+        {
+            if (i == false)
+            {
+                button2.Visible = false;
+            }
+            else
+            {
+                button2.Visible = true;
+            }
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            testPrintGridview();
+            //Open the print preview dialog
+
+            printDocument2.Print();
+        }
+        private void testPrintGridview()
+        {
+            DataSet dsPatient = DBConnection.getDBConnectionInstance().getDataSet(Constants.PrintTests(@id));
+            DataTable dtPatient = dsPatient.Tables[0];
+            
+            dataGridView1.DataSource = dtPatient;
+
+            DataGridViewColumn column3 = dataGridView1.Columns[3];
+            DataGridViewColumn column0 = dataGridView1.Columns[0];
+            column3.Width = 330;
+            column0.Width = 150;
+
+        }
+
+
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            
+            if (id != null)
+            {
+                DateTime currentDateTime = DateTime.Now;
+
+                int restrictionDays;
+                int NumberOfDaysFromInitialPrescription;
+
+            try
+                {
+
+
+
+                    string prescription_id = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
+                    string re_prescription_status = Convert.ToString(dataGridView1.CurrentRow.Cells[5].Value);
+
+                    string sqlReplyDate = DBConnection.getDBConnectionInstance().GetStringValue(Constants.DateReply(prescription_id));
+                    string sqlReplyRestrictionDays = DBConnection.getDBConnectionInstance().GetStringValue(Constants.RestrictionDays(prescription_id));
+                    
+
+                    DateTime queryDate = Convert.ToDateTime(sqlReplyDate);
+
+
+                    Int32.TryParse(sqlReplyRestrictionDays, out restrictionDays);
+                    TimeSpan ts = currentDateTime - queryDate;
+
+                    NumberOfDaysFromInitialPrescription = ts.Days;
+
+
+                    if (NumberOfDaysFromInitialPrescription >= restrictionDays && re_prescription_status == "NO")
+                    {
+                        var result = MessageBox.Show("This patient is permitted for Re-Prescription. Are you sure you want to extend the selected Prescription for selected Patient?", "Re-Prescription Form", MessageBoxButtons.YesNo);
+                        if (result == DialogResult.Yes)
+                        {
+
+
+                            string formatted_date = currentDateTime.ToString("yyyy/MM/dd HH:mm");
+
+
+                            string prescription_medicat = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
+                            string prescription_course_days = Convert.ToString(dataGridView1.CurrentRow.Cells[3].Value);
+                            string rePrescription_day_limit = Convert.ToString(dataGridView1.CurrentRow.Cells[4].Value);
+
+
+                            try
+                            {
+                                DBConnection.getDBConnectionInstance().SqlStatementExecute(Constants.RePrescriptions(@id, formatted_date, prescription_medicat, prescription_course_days, rePrescription_day_limit));
+                                DBConnection.getDBConnectionInstance().SqlStatementExecute(Constants.ChangeRePrescriptionStatus(prescription_id));
+                                MessageBox.Show("Complete");
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Exeption Error Occoured");
+                            }
+
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Re-Prescription Cancelled");
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Re-Prescription Denied.");
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("No selected Patient");
+                }
+            }
+            else
+            {
+                MessageBox.Show(@id);
+            }
+            
+            
+            
+
+
+
+
+
+
+            ;
+            //string DGCell = Convert.ToString(dataGridView1.CurrentRow.Cells[4].Value);
+
+
+           
+            //if (DGCell == "0")
+            //{
+
+            //}
+        }
+
+        private void printDocument2_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            string sqlNameReply = DBConnection.getDBConnectionInstance().GetStringValue(Constants.NameReply(id));
+
+
+            
+
+            Bitmap bm = new Bitmap(this.dataGridView1.Width, this.dataGridView1.Height);
+            dataGridView1.DrawToBitmap(bm, new Rectangle(0, 0, this.dataGridView1.Width, this.dataGridView1.Height));
+
+            String drawString = sqlNameReply;
+
+            // Create font and brush.
+            Font drawFont = new Font("Arial", 20);
+            SolidBrush drawBrush = new SolidBrush(Color.Black);
+
+            // Create point for upper-left corner of drawing.
+            PointF drawPoint = new PointF(90.0F, 100.0F);
+
+            // Draw string to screen.
+            e.Graphics.DrawString(drawString, drawFont, drawBrush, drawPoint);
+
+
+            e.Graphics.DrawImage(bm, 35, 200);
+
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            show_print_test_button(false);
+            show_repete_prescription_button(false);
+
+            @id = null;
         }
     }
 }

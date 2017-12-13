@@ -46,7 +46,7 @@
             // dobTimePick
             // 
             this.dobTimePick.CalendarFont = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dobTimePick.CustomFormat = "dd/MM/yyyy";
+            this.dobTimePick.CustomFormat = "yyyy/MM/dd";
             this.dobTimePick.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dobTimePick.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dobTimePick.Location = new System.Drawing.Point(218, 108);
@@ -54,6 +54,7 @@
             this.dobTimePick.Name = "dobTimePick";
             this.dobTimePick.Size = new System.Drawing.Size(116, 22);
             this.dobTimePick.TabIndex = 25;
+            this.dobTimePick.ValueChanged += new System.EventHandler(this.dobTimePick_ValueChanged);
             // 
             // cityTxt
             // 

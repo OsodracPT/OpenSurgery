@@ -42,7 +42,7 @@ namespace Main_Project
             if (string.IsNullOrWhiteSpace(nameTxt.Text) || string.IsNullOrWhiteSpace(addressTxt.Text) || string.IsNullOrWhiteSpace(pstCodeTxt.Text) || string.IsNullOrWhiteSpace(pstCodeTxt.Text) || string.IsNullOrWhiteSpace(cityTxt.Text) || string.IsNullOrWhiteSpace(dobTimePick.Text) || string.IsNullOrWhiteSpace(phoneNumberTxt.Text))
             {
                 // Message box
-                MessageBox.Show("Please don't leave any blank space.");
+                MessageBox.Show("Please fill all Fields");
             }
             else
             {
@@ -52,7 +52,8 @@ namespace Main_Project
 
                     //Try to register patient by getting the data from the user input textboxes
                     //Convert the date time from the value picker to a desired value
-                    string dobTemp = dobTimePick.Value.ToString("d");
+                    string dobTemp = dobTimePick.Value.ToString("yyyy/MM/dd");
+                    
                     DBConnection.getDBConnectionInstance().SqlStatementExecute(Constants.RegisterPatient(nameTxt.Text, addressTxt.Text, pstCodeTxt.Text, cityTxt.Text, dobTemp, phoneNumberTxt.Text));
                     //Show success message and close form
                     MessageBox.Show("Patient added successfully!");
@@ -85,6 +86,11 @@ namespace Main_Project
             {
                 e.Handled = true;
             }
+        }
+
+        private void dobTimePick_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
