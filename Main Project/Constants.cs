@@ -8,26 +8,16 @@ namespace Main_Project
 {
     class Constants
     {
-        //selects all entries from userdata
-        public static String selectUserData = "SELECT * FROM userdata";
         //selects all patient data
         public static String selectPatient = "SELECT patientID AS [Patient ID], patientName AS Name," +
             "address AS Address, postCode AS [Post Code], city AS City, Dob AS [Date of Birth], " +
-            "phoneNumber AS [Phone Number]  FROM PatientData";
-        //selects specific data from patient data
-        public static String selectAllPatients = "SELECT patientName AS [Patient Name], dob AS [D.O.B], postCode AS [Post Code], patientID AS [Patient ID] FROM PatientData";
+            "phoneNumber AS [Phone Number]  FROM PatientData";        
         //gets all the patient names and order it alphabetically
         public static String selectPatientName = "SELECT  patientName FROM PatientData ORDER BY patientName";
         //select all entries from the medicalstaff
-        public static String selectStaff = "SELECT * FROM medicalStaff";
-        //gets all the staff names and order it alphabetically
-        public static String selectStaffName = "SELECT staffName FROM medicalstaff ORDER BY staffName";
+        public static String selectStaff = "SELECT * FROM medicalStaff";        
         //counts the number of staff
-        public static String countStaff = "SELECT COUNT(staffID) FROM medicalstaff";
-        //select all the entries from medical staff
-        public static String selectPrescr = "SELECT * FROM medicalStaff";
-        //select specific test and patient ID from the medical records
-        public static String selectTest = "SELECT test, patientID FROM medicalRecords";
+        public static String countStaff = "SELECT COUNT(staffID) FROM medicalstaff";               
         //selects all the appointments from the appointment table
         public static String selectAllAppointment = "SELECT appointmentID AS [Appointment ID], date AS Date," +
             "time AS Time, description AS [Description], staffName AS [Staff Name], patientName AS [Patient Name], " +
@@ -44,10 +34,7 @@ namespace Main_Project
             string printTest = "SELECT medical_test_title AS [Test Title] ,CASE WHEN medical_test_result = 1 THEN 'POSATIVE' ELSE 'NEGATIVE' END AS[Result],medical_test_date AS[Date], medical_test_conclusion AS[Brief Conclusion] FROM medicalRecords WHERE patient_id = '" + @id + "'";
             return printTest;
 
-        }
-
-        //select the maximum value of patient ID
-        public static String selectMaxID = "SELECT MAX(patientID) FROM PatientData";
+        }              
 
 
         //sql statement that takes in the staff name and gives out his ID
@@ -185,13 +172,13 @@ namespace Main_Project
             return countShifts;
         }
         //SQL query for patientPrescriptions.prescription_date_start
-        public static String DateReply(string dataGrid1)
+        public static String PrescriptionDateReply(string prescriptionDate)
         {
-            string dateReply = "SELECT prescription_date_start FROM patientPrescriptions WHERE prescription_id ='" + dataGrid1 + "'";
+            string dateReply = "SELECT prescription_date_start FROM patientPrescriptions WHERE prescription_id ='" + prescriptionDate + "'";
             return dateReply;
         }
         //SQL Query for patientPrescriptions.prescription_no_extention_duration total days#
-        public static String RestrictionDays(string prescription_id)
+        public static String PrescriptionDaysReply(string prescription_id)
         {
             string restrictionDays = "SELECT prescription_no_extention_duration FROM patientPrescriptions WHERE prescription_id ='" + prescription_id + "'";
             return restrictionDays;
@@ -209,9 +196,9 @@ namespace Main_Project
             return prescriptionStatus;
         }
 
-        public static String PrescriptionFindName(string dataGrid1)
+        public static String PrescriptionFindName(string patient_id)
         {
-            string prescriptionFindName = "SELECT CONCAT(patientName,' [ID ', patientID,']') FROM PatientData WHERE patientID ='" + dataGrid1 + "'";
+            string prescriptionFindName = "SELECT CONCAT(patientName,' [ID ', patientID,']') FROM PatientData WHERE patientID ='" + patient_id + "'";
             return prescriptionFindName;
         }
         

@@ -36,8 +36,8 @@
             this.fileLbl = new System.Windows.Forms.Label();
             this.userdataTableAdapter = new Main_Project.oversurgeryDataSetTableAdapters.userdataTableAdapter();
             this.oversurgeryDataSet = new Main_Project.oversurgeryDataSet();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Repete_Prescription_Btn = new System.Windows.Forms.Button();
+            this.TestPrint_Btn = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printDocument2 = new System.Drawing.Printing.PrintDocument();
             this.findInputTxtBox = new System.Windows.Forms.TextBox();
@@ -67,7 +67,6 @@
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.Size = new System.Drawing.Size(741, 188);
             this.dataGridView1.TabIndex = 24;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnRegister
             // 
@@ -125,29 +124,29 @@
             this.oversurgeryDataSet.DataSetName = "oversurgeryDataSet";
             this.oversurgeryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // button1
+            // Repete_Prescription_Btn
             // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(630, 114);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 42);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Repete Selected Prescription";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.Repete_Prescription_Btn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Repete_Prescription_Btn.Location = new System.Drawing.Point(630, 114);
+            this.Repete_Prescription_Btn.Margin = new System.Windows.Forms.Padding(2);
+            this.Repete_Prescription_Btn.Name = "Repete_Prescription_Btn";
+            this.Repete_Prescription_Btn.Size = new System.Drawing.Size(123, 42);
+            this.Repete_Prescription_Btn.TabIndex = 28;
+            this.Repete_Prescription_Btn.Text = "Repete Selected Prescription";
+            this.Repete_Prescription_Btn.UseVisualStyleBackColor = true;
+            this.Repete_Prescription_Btn.Click += new System.EventHandler(this.RePrescriptionBtn);
             // 
-            // button2
+            // TestPrint_Btn
             // 
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(630, 114);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 42);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "Print Selected Patient\'s Test Results";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.TestPrint_Btn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TestPrint_Btn.Location = new System.Drawing.Point(630, 114);
+            this.TestPrint_Btn.Margin = new System.Windows.Forms.Padding(2);
+            this.TestPrint_Btn.Name = "TestPrint_Btn";
+            this.TestPrint_Btn.Size = new System.Drawing.Size(123, 42);
+            this.TestPrint_Btn.TabIndex = 29;
+            this.TestPrint_Btn.Text = "Print Selected Patient\'s Test Results";
+            this.TestPrint_Btn.UseVisualStyleBackColor = true;
+            this.TestPrint_Btn.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // printDocument2
             // 
@@ -168,8 +167,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.TestPrint_Btn);
+            this.Controls.Add(this.Repete_Prescription_Btn);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnRegister);
@@ -197,8 +196,8 @@
         private System.Windows.Forms.Label fileLbl;
         private oversurgeryDataSetTableAdapters.userdataTableAdapter userdataTableAdapter;
         private oversurgeryDataSet oversurgeryDataSet;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Repete_Prescription_Btn;
+        private System.Windows.Forms.Button TestPrint_Btn;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Drawing.Printing.PrintDocument printDocument2;
         private System.Windows.Forms.TextBox findInputTxtBox;

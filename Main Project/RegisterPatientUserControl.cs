@@ -88,7 +88,7 @@ namespace Main_Project
             }
         }
 
-        private void dobTimePick_ValueChanged(object sender, EventArgs e)
+        private void RegisterPatientUserControl_Load(object sender, EventArgs e)
         {
 
         }

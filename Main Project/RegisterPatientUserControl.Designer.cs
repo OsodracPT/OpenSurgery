@@ -54,7 +54,6 @@
             this.dobTimePick.Name = "dobTimePick";
             this.dobTimePick.Size = new System.Drawing.Size(116, 22);
             this.dobTimePick.TabIndex = 25;
-            this.dobTimePick.ValueChanged += new System.EventHandler(this.dobTimePick_ValueChanged);
             // 
             // cityTxt
             // 
@@ -203,6 +202,7 @@
             this.Controls.Add(this.registerBtn);
             this.Name = "RegisterPatientUserControl";
             this.Size = new System.Drawing.Size(769, 366);
+            this.Load += new System.EventHandler(this.RegisterPatientUserControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

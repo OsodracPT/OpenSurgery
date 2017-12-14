@@ -18,7 +18,7 @@ namespace Main_Project
         private static string patientName;
 
 
-        static bool valueNotSelected = false;
+        static private bool valueNotSelected = false;
 
         //singleton initiation
         private static AppointmentUserControl _instance;

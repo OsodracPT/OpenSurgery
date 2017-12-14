@@ -15,16 +15,14 @@ namespace Main_Project
 {
     public partial class PatientUserControl : UserControl
     {
-        private bool patient_test_focus = false;
+        private bool patientTest_btn_focus = false;
 
 
-        string @id = null;
-
-
-
+        
 
         //singleton initiation
         private static PatientUserControl _instance;
+        private string @id = null;
 
         public static PatientUserControl Instance
         {
@@ -48,8 +46,8 @@ namespace Main_Project
         /// <param name="e"></param>
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            show_print_test_button(false);
-            show_repete_prescription_button(false);
+            FocusTestPrint_Btn(false);
+            FocusRepetePrescription_Btn(false);
 
 
             Instance.Controls.Add(RegisterPatientUserControl.Instance);
@@ -113,8 +111,8 @@ namespace Main_Project
         private void prescriptionBtn()
 
         {
-            show_print_test_button(false);
-            show_repete_prescription_button(true);
+            FocusTestPrint_Btn(false);
+            FocusRepetePrescription_Btn(true);
 
 
             if (@id != null)
@@ -131,22 +129,14 @@ namespace Main_Project
 
                     if (dataGridView1 != null)
                     {
-                        show_repete_prescription_button(true);
-                        
-                        
-                        
+                        FocusRepetePrescription_Btn(true);                              
                     }
                     else
                     {
-
                     }
-
-
-
                 }
                 catch (Exception ex)
                 {
-
                 }
 
             }
@@ -154,8 +144,6 @@ namespace Main_Project
             {
                 try
                 {
-
-
                     string dgCell = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
 
                     @id = dgCell;
@@ -164,7 +152,6 @@ namespace Main_Project
                 }
                 catch (Exception ex)
                 {
-
                 }
             }
         }
@@ -174,8 +161,8 @@ namespace Main_Project
 
         private void PatientUserControl_Load(object sender, EventArgs e)
         {
-            show_print_test_button(false);
-            show_repete_prescription_button(false);
+            FocusTestPrint_Btn(false);
+            FocusRepetePrescription_Btn(false);
 
             findInputTxtBox.Text = "";
             @id = null;
@@ -215,18 +202,13 @@ namespace Main_Project
                 findBtn_Click(sender, e);
             }
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-        }
+                
 
         private void findInputTxtBox_TextChanged(object sender, EventArgs e)
         {
 
-            show_print_test_button(false);
-            show_repete_prescription_button(false);
+            FocusTestPrint_Btn(false);
+            FocusRepetePrescription_Btn(false);
 
             @id = null;
 
@@ -255,8 +237,8 @@ namespace Main_Project
         }
         private void TestButton()
         {
-            show_print_test_button(true);
-            show_repete_prescription_button(false);
+            FocusTestPrint_Btn(true);
+            FocusRepetePrescription_Btn(false);
             if (@id != null)
             {
                 try
@@ -294,7 +276,7 @@ namespace Main_Project
         /// <param name="e"></param>
         private void printButton_Click(object sender, EventArgs e)
         {
-            if (patient_test_focus == true)
+            if (patientTest_btn_focus == true)
             {
                 //Printing the Contents
                 //https://www.codeproject.com/Articles/28046/Printing-of-DataGridView
@@ -317,52 +299,48 @@ namespace Main_Project
             }
         }
 
-        private void fileLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void show_repete_prescription_button(bool i)
+        
+        private void FocusRepetePrescription_Btn(bool i)
         {
             if (i == false)
             {
-                button1.Visible = false;
+                Repete_Prescription_Btn.Visible = false;
             }
             else
             {
-                button1.Visible = true;
+                Repete_Prescription_Btn.Visible = true;
 
             }
 
         }
-        private void show_print_test_button(bool i)
+        private void FocusTestPrint_Btn(bool i)
         {
             if (i == false)
             {
-                button2.Visible = false;
+                TestPrint_Btn.Visible = false;
             }
             else
             {
-                button2.Visible = true;
+                TestPrint_Btn.Visible = true;
             }
 
         }
-
+        
         private void button2_Click_1(object sender, EventArgs e)
         {
             testPrintGridview();
             //Open the print preview dialog
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = printDocument2;
+            printDialog.UseEXDialog = true;
+            //Get the document
+            if (DialogResult.OK == printDialog.ShowDialog())
+            {
+                printDocument2.DocumentName = "Test Page Print";
+                printDocument2.Print();
+            }
 
-            printDocument2.Print();
+            
         }
         private void testPrintGridview()
         {
@@ -380,37 +358,27 @@ namespace Main_Project
 
 
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void RePrescriptionBtn(object sender, EventArgs e)
         {
             
             if (id != null)
             {
                 DateTime currentDateTime = DateTime.Now;
-
                 int restrictionDays;
                 int NumberOfDaysFromInitialPrescription;
 
             try
                 {
-
-
-
                     string prescription_id = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
                     string re_prescription_status = Convert.ToString(dataGridView1.CurrentRow.Cells[5].Value);
+                    string sqlReplyDate = DBConnection.getDBConnectionInstance().GetStringValue(Constants.PrescriptionDateReply(prescription_id));
+                    string sqlReplyRestrictionDays = DBConnection.getDBConnectionInstance().GetStringValue(Constants.PrescriptionDaysReply(prescription_id));                   
 
-                    string sqlReplyDate = DBConnection.getDBConnectionInstance().GetStringValue(Constants.DateReply(prescription_id));
-                    string sqlReplyRestrictionDays = DBConnection.getDBConnectionInstance().GetStringValue(Constants.RestrictionDays(prescription_id));
-                    
-
-                    DateTime queryDate = Convert.ToDateTime(sqlReplyDate);
-
-
+                    DateTime queryDate = Convert.ToDateTime(sqlReplyDate);                    
                     Int32.TryParse(sqlReplyRestrictionDays, out restrictionDays);
                     TimeSpan ts = currentDateTime - queryDate;
 
-                    NumberOfDaysFromInitialPrescription = ts.Days;
-
-
+                    NumberOfDaysFromInitialPrescription = ts.Days;                    
                     if (NumberOfDaysFromInitialPrescription >= restrictionDays && re_prescription_status == "NO")
                     {
                         var result = MessageBox.Show("This patient is permitted for Re-Prescription. Are you sure you want to extend the selected Prescription for selected Patient?", "Re-Prescription Form", MessageBoxButtons.YesNo);
@@ -436,14 +404,11 @@ namespace Main_Project
                             {
                                 MessageBox.Show("Exeption Error Occoured");
                             }
-
-
                         }
                         else
                         {
                             MessageBox.Show("Re-Prescription Cancelled");
                         }
-
                     }
                     else
                     {
@@ -458,33 +423,13 @@ namespace Main_Project
             else
             {
                 MessageBox.Show(@id);
-            }
-            
-            
-            
-
-
-
-
-
-
-            ;
-            //string DGCell = Convert.ToString(dataGridView1.CurrentRow.Cells[4].Value);
-
-
-           
-            //if (DGCell == "0")
-            //{
-
-            //}
+            }                                                             
         }
 
         private void printDocument2_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             string sqlNameReply = DBConnection.getDBConnectionInstance().GetStringValue(Constants.NameReply(id));
-
-
-            
+                        
 
             Bitmap bm = new Bitmap(this.dataGridView1.Width, this.dataGridView1.Height);
             dataGridView1.DrawToBitmap(bm, new Rectangle(0, 0, this.dataGridView1.Width, this.dataGridView1.Height));
@@ -503,17 +448,10 @@ namespace Main_Project
 
 
             e.Graphics.DrawImage(bm, 35, 200);
-
-
+            
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            show_print_test_button(false);
-            show_repete_prescription_button(false);
-
-            @id = null;
-        }
+        
     }
 }
 
