@@ -8,7 +8,7 @@ This report documents the building of an application for the over surgery clinic
 allow its user to manage appointments, medical staff members and patients.
 
 <div style="text-align:center">
-<img src="/img/screenshot.jpg" alt="Application screenshot" width="400"/>
+<img src="/img/screenshot.jpg" alt="Application screenshot" width="600"/>
 </div>
 
 ## Built With 🛠️
